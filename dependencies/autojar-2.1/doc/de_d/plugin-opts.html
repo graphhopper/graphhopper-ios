@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head> 
+    <title>Autojar</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="../css/moc.css"  rel="stylesheet" type="text/css" />
+    <link href="../css/de.css"  rel="stylesheet" type="text/css" />
+    <link href="../css/stdFooter.css"  rel="stylesheet" type="text/css" />
+</head>
+
+<body style="background-color:#c0c0c0;text-align:center">
+<div id="pagewrapper">
+<table style="width:100%; color: white; background-image: url(../img/head.png);">
+<tr style="height:120px">
+    <td style="width:25%"> 
+    </td>
+    <td align="right" valign="top"><div id="kopfoben">Automatisches Erzeugen von Java-Archiven</div></td>
+</tr>
+</table>
+
+<div style="margin-top:-3.5em;float:right"> 
+    <table><tr> <table cellspacing="0" cellpadding="5"><tr><td><a class="horMenu" href="index.html"><span style="font-size:1.2em;padding:10px">Allgemeines</span></a></td><td><a class="horMenu" href="usage.html"><span style="font-size:1.2em;padding:10px">Kommandozeilenversion</span></a></td><td><a class="horMenuA" href="plugin.html"><span style="font-size:1.2em;padding:10px">Eclipse-Plugin</span></a></td></tr></table>
+</tr></table>
+</div>
+
+<table style="width: 100%" cellspacing=10>
+    <tr>
+        <td>Bernd Eggink, <a href="mailto:monoped@users.sourceforge.net"> monoped@users.sourceforge.net</a></td>
+        <td align="right"><a href="http://sourceforge.net/projects/autojar" style="text-decoration:none">Projektseite:
+<img style="margin:5px;vertical-align:middle" src="http://sflogo.sourceforge.net/sflogo.php?group_id=156918&type=12" width="120" height="30" border="0" alt="SourceForge.net" /></a></td>
+    </tr>
+</table>
+
+<div id="content">
+    <table style="width: 99%">
+        <tr>
+            <!-- sidebar -->
+
+            <td id="sidebartd"> 
+                <div style="margin-left:10px">
+                    <a href="../en_d/plugin-opts.html" style="text-decoration:none" >
+                    <img border="0" src="../img/us.gif" style="padding-right:10px">Englische Version</a><p> 
+                </div>        
+
+                <table id="navitab" cellspacing="0" cellpadding="0" >
+            <tr><td><a class="navi2 line_white" href="plugin.html">Plugin</a></td>
+            </tr>
+            <tr><td><a class="navi2 line_white" href="plugin-start.html">Bedienung</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="plugin-start.html">Start des Plugins</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="plugin-conf.html">Konfiguration</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="plugin-classpath.html">Classpath</a></td>
+            </tr>
+            <tr><td><a class="navi3a line_white" href="plugin-opts.html">Optionen</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="plugin-classes.html">Klassen</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="plugin-files.html">Dateisuche</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="plugin-reso.html">Datei-Direktangabe</a></td>
+            </tr>
+    </table>
+            </td>
+
+            <!-- main -->
+
+            <td rowspan="2" id="maintd">     <div class="kopf">Optionen</div>
+
+    In diesem Fenster lassen sich verschiedene Optionen einstellen. 
+
+    <blockquote><img border="0" src="../img/wiz3.png"></blockquote>
+
+    <strong>(1)</strong> Hier wird der Umfang der Protokollierung eingestellt, entsprechend den
+    Optionen -q, -v und -D der Kommandozeilenversion (siehe <a
+    href="options.html">Optionen</a>). 
+    
+    <p><strong>(2)</strong> Darunter folgen Radio-Buttons, mit denen sich die Behandlung von Reflection
+    festlegen lässt. Sie entsprechen den Optionen -d und -a (siehe <a
+    href="dynamic.html">Reflection</a>).
+    
+    <p><strong>(3)</strong> Die folgenden Checkboxen erlauben es, Dateien aus
+    Extension-Verzeichnissen mit in das Archiv zu übernehmen (Option -e)
+    und den Classpath auch für die Suche nach normalen Dateien zu verwenden
+    (Option -b).
+    
+    <p>Bei den folgenden Eingabefeldern kann entweder eine direkte Angabe gemacht
+    werden oder durch Klick auf "..." ein Auswahldialog gestartet werden.
+
+    <p><strong>(4)</strong> Hier wird der Pfad der Ausgabedatei eingegeben.
+    Diese Angabe ist obligatorisch. Wenn die Endung <code>.jar</code> ist, wird automatisch ein
+    MANIFEST-Eintrag hinzugefügt.
+
+    <p><strong>(5)</strong> Wenn eine eigene Manifest-Datei angegeben wird,
+    übernimmt Autojar ihren Inhalt in
+    die MANIFEST-Datei des erzeugten Archivs. Falls sie einen
+    Main-Class-Eintrag enthält, wird diese Klasse automatisch gesucht und
+    eingebunden, wie immer einschließlich aller direkt oder indirekt
+    referenzierten Klassen.
+    
+    <p><strong>(6)</strong> Hier kann man eine Textdatei angeben, die eine Liste von zu
+    suchenden Klassennamen enthält (einen pro Zeile). Die Angabe ist nicht
+    unbedingt nötig, da Klassen normalerweise direkt über den Wizard eingegeben
+    werden, ermöglicht es aber, längere Klassenlisten unabhängig von Eclipse
+    vorzubereiten. 
+     </td>
+        </tr>
+    </table>
+</div>                                  <!-- content -->
+    <table cellspacing=0 cellpadding=0 width="100%">
+    <tr>
+        <!-- "top" arrow -->
+
+        <td id="sidebartdbot">
+            <a href="#top" title="top">
+                <img src="../img/top.gif" border="0" alt="up" style="padding-bottom:5px;padding-left:10px">
+            </a>
+        </td>
+        <!-- previous / next -->
+<td id="prevnext">
+<div style="float:left; text-align:left">
+<a href="plugin-classpath.html" style="text-decoration:none">                 <img src="../img/back.gif" alt="" id="back"> Classpath</a> 
+</div><div style="float: right; text-align:right">
+<a href="plugin-classes.html" style="text-decoration:none">Klassen                     <img src="../img/forward.gif" alt="" id="forw"></a>
+</div>
+        </td>
+    </tr>
+    </table>
+    <div id="stdFooter">
+        Created 2011-05-16 by mopcoge
+    </div>
+
+</div>                                  <!-- pagewrapper -->
+</body>
+</html>

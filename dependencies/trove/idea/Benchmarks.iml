@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$TROVE_VCS_ROOT$/benchmarks">
+      <sourceFolder url="file://$TROVE_VCS_ROOT$/benchmarks/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="Core" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$TROVE_VCS_ROOT$/benchmarks/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$TROVE_VCS_ROOT$/benchmarks/lib" recursive="false" />
+      </library>
+    </orderEntry>
+  </component>
+</module>
+

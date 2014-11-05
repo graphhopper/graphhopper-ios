@@ -1,0 +1,17 @@
+#prevnext {
+    vertical-align:bottom;
+    border-top: 1px dotted; 
+    padding-top:10px;
+    padding-right:10px;
+    padding-left:10px;
+    padding-bottom:5px;
+}
+
+#stdFooter {
+    vertical-align: middle; 
+    font-size:75%;
+    background-color: #84AAC7;
+    color: ;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}  

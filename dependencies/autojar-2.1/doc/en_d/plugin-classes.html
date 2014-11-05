@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head> 
+    <title>Autojar</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="../css/moc.css"  rel="stylesheet" type="text/css" />
+    <link href="../css/en.css"  rel="stylesheet" type="text/css" />
+    <link href="../css/stdFooter.css"  rel="stylesheet" type="text/css" />
+</head>
+
+<body style="background-color:#c0c0c0;text-align:center">
+<div id="pagewrapper">
+<table style="width:100%; color: white; background-image: url(../img/head.png);">
+<tr style="height:120px">
+    <td style="width:25%"> 
+    </td>
+    <td align="right" valign="top"><div id="kopfoben">Automatic creation of Java archives</div></td>
+</tr>
+</table>
+
+<div style="margin-top:-3.5em;float:right"> 
+    <table><tr> <table cellspacing="0" cellpadding="5"><tr><td><a class="horMenu" href="index.html"><span style="font-size:1.2em;padding:10px">Preface</span></a></td><td><a class="horMenu" href="usage.html"><span style="font-size:1.2em;padding:10px">Command line version</span></a></td><td><a class="horMenuA" href="plugin.html"><span style="font-size:1.2em;padding:10px">Eclipse plugin</span></a></td></tr></table>
+</tr></table>
+</div>
+
+<table style="width: 100%" cellspacing=10>
+    <tr>
+        <td>Bernd Eggink, <a href="mailto:monoped@users.sourceforge.net"> monoped@users.sourceforge.net</a></td>
+        <td align="right"><a href="http://sourceforge.net/projects/autojar" style="text-decoration:none">Project page:
+<img style="margin:5px;vertical-align:middle" src="http://sflogo.sourceforge.net/sflogo.php?group_id=156918&type=12" width="120" height="30" border="0" alt="SourceForge.net" /></a></td>
+    </tr>
+</table>
+
+<div id="content">
+    <table style="width: 99%">
+        <tr>
+            <!-- sidebar -->
+
+            <td id="sidebartd"> 
+                <div style="margin-left:10px">
+                    <a href="../de_d/plugin-classes.html" style="text-decoration:none" >
+                    <img border="0" src="../img/us.gif" style="padding-right:10px">German version</a><p> 
+                </div>        
+
+                <table id="navitab" cellspacing="0" cellpadding="0" >
+            <tr><td><a class="navi2 line_white" href="plugin.html">Plugin</a></td>
+            </tr>
+            <tr><td><a class="navi2 line_white" href="plugin-start.html">Usage</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="plugin-start.html">Plugin start</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="plugin-conf.html">Configuration</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="plugin-classpath.html">Classpath</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="plugin-opts.html">Options</a></td>
+            </tr>
+            <tr><td><a class="navi3a line_white" href="plugin-classes.html">Class lookup</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="plugin-files.html">File lookup</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="plugin-reso.html">Directly supplied files</a></td>
+            </tr>
+    </table>
+            </td>
+
+            <!-- main -->
+
+            <td rowspan="2" id="maintd"> <div class="kopf">Class lookup</div>
+    Enter names of classes which here are to be looked up and copied to
+    the output archive. After copying, the bytecode of any class is scanned
+    recursively for referenced classes. These are copied as well, if not
+    yet contained in the file.
+
+    <blockquote><img border="0" src="../img/wiz4.png"></blockquote>
+
+    <strong>(1)</strong> Enter a qualified class name in the input field 
+    and add it to the list <strong>(2)</strong> by clicking on "add".
+    List entries may be deleted by selecting them
+    and clicking on "remove".
+
+    <p>Frequently supplying the name of the main class
+    is sufficient to generate a complete archive. 
+    If the project contains more than one, 
+    the plugin can present a list of main classes.
+    Click on "Select a main class" and select one.
+
+    <p>Class names may contain wildcards <code>?</code> and <code>*</code> in their last components.
+    In this case all classes matching the pattern are looked up and inserted.
+    For example, the expression <code>a.b.*</code> will copy <em>all</em>
+    classes belonging to the package <code>a.b</code>. A recursive form
+    <code>a.b.**.class</code> is also possible. This would mean that all classes
+    from package <code>a.b</code> <em>and all its subpackages</em> are copied.
+
+    <p><strong>(3)</strong> In case you don't want to transfer classes from
+    certain sources, you can enter the appropriate prefixes here. 
+    If Autojar finds a file in a base (i.e., directory
+    or archive from the class path), it checks if the path of that base
+    starts with any of these prefixes. If it does, the class is skipped.
+    
+    <p>Either enter a prefix in the input field and click on "add", or 
+    click on "..." to start a file selection dialog. The selected 
+    directory or archive will be used as prefix. Items can be removed from the list
+    by selecting them and clicking on "remove". </td>
+        </tr>
+    </table>
+</div>                                  <!-- content -->
+    <table cellspacing=0 cellpadding=0 width="100%">
+    <tr>
+        <!-- "top" arrow -->
+
+        <td id="sidebartdbot">
+            <a href="#top" title="top">
+                <img src="../img/top.gif" border="0" alt="up" style="padding-bottom:5px;padding-left:10px">
+            </a>
+        </td>
+        <!-- previous / next -->
+<td id="prevnext">
+<div style="float:left; text-align:left">
+<a href="plugin-opts.html" style="text-decoration:none">                 <img src="../img/back.gif" alt="" id="back"> Options</a> 
+</div><div style="float: right; text-align:right">
+<a href="plugin-files.html" style="text-decoration:none">File lookup                     <img src="../img/forward.gif" alt="" id="forw"></a>
+</div>
+        </td>
+    </tr>
+    </table>
+    <div id="stdFooter">
+        Created 2011-05-16 by mopcoge
+    </div>
+
+</div>                                  <!-- pagewrapper -->
+</body>
+</html>

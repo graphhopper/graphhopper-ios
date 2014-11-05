@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>net.sf.trove4j</groupId>
+    <artifactId>trove4j</artifactId>
+    <version>3.0rc-SNAPSHOT</version>
+    <packaging>bundle</packaging>
+    <name>GNU Trove</name>
+    <description>The Trove library provides high speed regular and
+        primitive collections for Java.
+    </description>
+    <url>http://trove4j.sourceforge.net/</url>
+    <licenses>
+        <license>
+            <name>GNU Lesser General Public License 2.1</name>
+            <url>http://www.gnu.org/licenses/lgpl-2.1.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://trove4j.svn.sourceforge.net/svnroot/trove4j</url>
+    </scm>
+    <distributionManagement>
+        <repository>
+            <id>trove4j-ftp</id>
+            <url>ftp://ftp.site/maven2</url>
+        </repository>
+    </distributionManagement>
+    <build>
+        <sourceDirectory>src</sourceDirectory>
+        <testSourceDirectory>test</testSourceDirectory>
+
+        <resources>
+            <resource>
+                <directory>${basedir}</directory>
+                <includes>
+                    <include>*.txt</include>
+                    <include>*.xml</include>
+                </includes>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <target>
+                                <mkdir dir="${project.build.outputDirectory}"/>
+
+                                <!---->
+                                <javac srcdir="${basedir}/generator_src"
+                                       destdir="${project.build.outputDirectory}"
+                                       debug="true" verbose="true"
+                                       includeantruntime="false"
+                                       source="1.5" target="1.5"/>
+
+                                <java classname="gnu.trove.generator.Generator">
+                                    <arg value="${basedir}/templates"/>
+                                    <arg value="${project.build.sourceDirectory}"/>
+                                    <classpath>
+                                        <pathelement path="${project.build.outputDirectory}"/>
+                                    </classpath>
+                                </java>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.sun</groupId>
+                        <artifactId>tools</artifactId>
+                        <version>1.5.0</version>
+                        <scope>system</scope>
+                        <systemPath>${java.home}/../lib/tools.jar</systemPath>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.3.7</version>
+                <configuration>
+                    <instructions>
+                        <Main-Class>gnu.trove.Version</Main-Class>
+                        <Implementation-Vendor>${project.groupId}</Implementation-Vendor>
+                        <Implementation-Version>${project.version} ${maven.build.timestamp}</Implementation-Version>
+
+                        <Export-Package>gnu.trove*;version=${project.version}</Export-Package>
+                    </instructions>
+                </configuration>
+                <extensions>true</extensions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.3.1</version>
+                <configuration>
+                    <archive>
+                        <index>true</index>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.1.2</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <maxmemory>256m</maxmemory>
+                    <header>&lt;a href=&quot;http://trove4j.sourceforge.net/&quot;>GNU Trove&lt;/a></header>
+                    <excludePackageNames>
+                        gnu.trove.impl.*
+                    </excludePackageNames>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <phase>verify</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ftp</artifactId>
+                <version>1.0-alpha-6</version>
+            </extension>
+        </extensions>
+
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>colt</groupId>
+            <artifactId>colt</artifactId>
+            <version>1.2.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!--
+                <dependency>
+                    <groupId>net.sf.trove4j</groupId>
+                    <artifactId>trove4j</artifactId>
+                    <version>2.1.0</version>
+                    <scope>test</scope>
+                </dependency>
+        -->
+
+
+    </dependencies>
+
+    <developers>
+        <developer>
+            <name>Rob Eden</name>
+        </developer>
+        <developer>
+            <name>Jeff Randall</name>
+        </developer>
+        <developer>
+            <name>Johan Parent</name>
+        </developer>
+        <developer>
+            <name>Eric D. Friedman</name>
+        </developer>
+    </developers>
+</project>

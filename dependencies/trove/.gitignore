@@ -1,0 +1,7 @@
+# Compiled source #
+###################
+*.class
+
+# IDE Workspace Files #
+#######################
+*.iws

@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head> 
+    <title>Autojar</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="../css/moc.css"  rel="stylesheet" type="text/css" />
+    <link href="../css/de.css"  rel="stylesheet" type="text/css" />
+    <link href="../css/stdFooter.css"  rel="stylesheet" type="text/css" />
+</head>
+
+<body style="background-color:#c0c0c0;text-align:center">
+<div id="pagewrapper">
+<table style="width:100%; color: white; background-image: url(../img/head.png);">
+<tr style="height:120px">
+    <td style="width:25%"> 
+    </td>
+    <td align="right" valign="top"><div id="kopfoben">Automatisches Erzeugen von Java-Archiven</div></td>
+</tr>
+</table>
+
+<div style="margin-top:-3.5em;float:right"> 
+    <table><tr> <table cellspacing="0" cellpadding="5"><tr><td><a class="horMenu" href="index.html"><span style="font-size:1.2em;padding:10px">Allgemeines</span></a></td><td><a class="horMenuA" href="usage.html"><span style="font-size:1.2em;padding:10px">Kommandozeilenversion</span></a></td><td><a class="horMenu" href="plugin.html"><span style="font-size:1.2em;padding:10px">Eclipse-Plugin</span></a></td></tr></table>
+</tr></table>
+</div>
+
+<table style="width: 100%" cellspacing=10>
+    <tr>
+        <td>Bernd Eggink, <a href="mailto:monoped@users.sourceforge.net"> monoped@users.sourceforge.net</a></td>
+        <td align="right"><a href="http://sourceforge.net/projects/autojar" style="text-decoration:none">Projektseite:
+<img style="margin:5px;vertical-align:middle" src="http://sflogo.sourceforge.net/sflogo.php?group_id=156918&type=12" width="120" height="30" border="0" alt="SourceForge.net" /></a></td>
+    </tr>
+</table>
+
+<div id="content">
+    <table style="width: 99%">
+        <tr>
+            <!-- sidebar -->
+
+            <td id="sidebartd"> 
+                <div style="margin-left:10px">
+                    <a href="../en_d/special.html" style="text-decoration:none" >
+                    <img border="0" src="../img/us.gif" style="padding-right:10px">Englische Version</a><p> 
+                </div>        
+
+                <table id="navitab" cellspacing="0" cellpadding="0" >
+            <tr><td><a class="navi2 line_white" href="usage.html">Aufruf</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="options.html">Optionen</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="files.html">Dateiparameter</a></td>
+            </tr>
+            <tr><td><a class="navi3a line_white" href="special.html">Spezielle Parameter</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="dynamic.html">Reflection</a></td>
+            </tr>
+            <tr><td><a class="navi2 line_white" href="examples.html">Beispiele</a></td>
+            </tr>
+    </table>
+            </td>
+
+            <!-- main -->
+
+            <td rowspan="2" id="maintd"> 
+<div class="kopf">Spezielle Parameter</div>
+
+Diese aus einem Minuszeichen und einem Buchstaben bestehenden
+Pseudo-Optionen sind keine Dateien, sondern beeinflussen die Verarbeitung eines oder
+mehrerer folgender (normaler) Dateiparameter. Falls der erste
+Dateiparameter eine spezieller ist, muss davor ein -- eingefügt werden,
+damit er nicht als Option missverstanden wird.
+
+<ul style="padding-left:1em"> 
+    <li style="padding-bottom:10px">
+
+        <strong><code>-C <i>verzeichnis name</i></code></strong> 
+
+        <br>Diese Angabe hat dieselbe Bedeutung wie beim normalen
+        <code>jar</code>-Kommando: Das Arbeitsverzeichnis wird temporär auf
+        <code><i>verzeichnis</i></code> gesetzt, der Parameter
+        <code><i>name</i></code> wird ausgewertet, danach das Arbeitsverzeichnis
+        wieder auf den alten Stand zurückgesetzt. In <code><i>name</i></code>
+        können die Musterzeichen ? und * enthalten sein. Ein Punkt bezeichnet den
+        gesamten Verzeichnisinhalt.
+
+    </li> 
+
+    <li style="padding-bottom:10px">
+
+        <strong><code>-X <i>muster</i></code></strong>
+
+        <br>Hiermit wird ein
+        Ausschluss-Muster für Dateien vorgegeben. Es wirkt auf nachfolgende Parameter,
+        die Dateilisten generieren (Verzeichnisse, Musterausdrücke oder ".").
+        Dateien, deren Namen dem Muster entsprechen, werden übergangen. Beliebig
+        viele solcher Angaben können in die Parameterliste eingestreut werden; sie
+        werden intern durch ein logisches "oder" verknüpft. Gibt man als Muster ein Minuszeichen an
+        (<code><strong>-X -</strong></code> oder
+        <code><strong>-X-</strong></code>), wird die Musterliste gelöscht, d.h. bis
+        auf weiteres werden dann wieder <em>alle</em> Dateien übernommen.
+
+        <br>Mit dieser Angabe lassen sich z.B. spezielle Unterverzeichnisse wie
+        <code>.svn</code> oder <code>.bzr</code> ausblenden.
+
+    </li>
+    <li style="padding-bottom:10px">
+
+        <strong><code>-Y <i>bibliothek</i></code></strong> 
+        
+        <br>Aus der angegebenen Bibliothek übernimmt Autojar - im Gegensatz
+        zu allen anderen Fällen - <em>keine</em> Klassen. Es untersucht
+        jedoch wie üblich deren Bytecode und übernimmt referenzierte
+        Klassen anderer Herkunft in das Zielarchiv. Dies kann benutzt
+        werden, um eine Art "Hilfsbibliothek" für
+        <code><i>bibliothek</i></code> zu generieren.
+
+        <br>Bei einer späteren Verwendung von <code><i>bibliothek</i></code> muss dann
+        zusätzlich das hier angegebene Zielarchiv über den
+        Classpath erreichbar sein.
+    </li>
+</ul> </td>
+        </tr>
+    </table>
+</div>                                  <!-- content -->
+    <table cellspacing=0 cellpadding=0 width="100%">
+    <tr>
+        <!-- "top" arrow -->
+
+        <td id="sidebartdbot">
+            <a href="#top" title="top">
+                <img src="../img/top.gif" border="0" alt="up" style="padding-bottom:5px;padding-left:10px">
+            </a>
+        </td>
+        <!-- previous / next -->
+<td id="prevnext">
+<div style="float:left; text-align:left">
+<a href="files.html" style="text-decoration:none">                 <img src="../img/back.gif" alt="" id="back"> Dateiparameter</a> 
+</div><div style="float: right; text-align:right">
+<a href="dynamic.html" style="text-decoration:none">Reflection                     <img src="../img/forward.gif" alt="" id="forw"></a>
+</div>
+        </td>
+    </tr>
+    </table>
+    <div id="stdFooter">
+        Created 2011-05-16 by mopcoge
+    </div>
+
+</div>                                  <!-- pagewrapper -->
+</body>
+</html>

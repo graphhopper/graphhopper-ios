@@ -1,0 +1,63 @@
+a.sf:link, a.sf:visited {
+    font-size:16px;
+    color: #000080;
+    text-decoration: none;
+}
+
+a.sf:hover {
+    font-size:16px;
+    color:#FE0000;
+    text-decoration: none;
+}
+
+img#icon {
+    margin-right:15px;
+    margin-left:10px;
+    border:0;
+    vertical-align:middle
+}
+
+#icontext {
+    color:;
+    font-size:200%;
+    font-weight:bold;
+}
+
+#maintd {
+    vertical-align:top;
+    padding-left:10px;
+    padding-bottom:5px;
+    width: 76%;
+}
+
+#kopfoben {
+    padding-top:27px;
+    font-size:160%;
+    font-weight:bold;
+    margin-right:10px;
+}
+
+.kopf { 
+    font-size:140%;
+    font-weight: bold;
+    border-bottom:1px solid #84AAC7;
+    border-left:15px solid #84AAC7; 
+    padding-left: 10px; 
+    padding-top:5px; 
+    padding-bottom:5px;
+    margin-bottom:10px;
+}    
+
+.subkopf {  
+    font-size:110%;
+    font-weight: bold;
+    padding-top:5px;
+    padding-bottom:5px;
+    margin-top:15px;
+    margin-bottom:10px;
+    width:100%;
+}
+
+.subkapitel {
+    margin-left: 15px;
+}

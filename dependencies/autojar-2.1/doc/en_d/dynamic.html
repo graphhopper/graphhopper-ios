@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head> 
+    <title>Autojar</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="../css/moc.css"  rel="stylesheet" type="text/css" />
+    <link href="../css/en.css"  rel="stylesheet" type="text/css" />
+    <link href="../css/stdFooter.css"  rel="stylesheet" type="text/css" />
+</head>
+
+<body style="background-color:#c0c0c0;text-align:center">
+<div id="pagewrapper">
+<table style="width:100%; color: white; background-image: url(../img/head.png);">
+<tr style="height:120px">
+    <td style="width:25%"> 
+    </td>
+    <td align="right" valign="top"><div id="kopfoben">Automatic creation of Java archives</div></td>
+</tr>
+</table>
+
+<div style="margin-top:-3.5em;float:right"> 
+    <table><tr> <table cellspacing="0" cellpadding="5"><tr><td><a class="horMenu" href="index.html"><span style="font-size:1.2em;padding:10px">Preface</span></a></td><td><a class="horMenuA" href="usage.html"><span style="font-size:1.2em;padding:10px">Command line version</span></a></td><td><a class="horMenu" href="plugin.html"><span style="font-size:1.2em;padding:10px">Eclipse plugin</span></a></td></tr></table>
+</tr></table>
+</div>
+
+<table style="width: 100%" cellspacing=10>
+    <tr>
+        <td>Bernd Eggink, <a href="mailto:monoped@users.sourceforge.net"> monoped@users.sourceforge.net</a></td>
+        <td align="right"><a href="http://sourceforge.net/projects/autojar" style="text-decoration:none">Project page:
+<img style="margin:5px;vertical-align:middle" src="http://sflogo.sourceforge.net/sflogo.php?group_id=156918&type=12" width="120" height="30" border="0" alt="SourceForge.net" /></a></td>
+    </tr>
+</table>
+
+<div id="content">
+    <table style="width: 99%">
+        <tr>
+            <!-- sidebar -->
+
+            <td id="sidebartd"> 
+                <div style="margin-left:10px">
+                    <a href="../de_d/dynamic.html" style="text-decoration:none" >
+                    <img border="0" src="../img/us.gif" style="padding-right:10px">German version</a><p> 
+                </div>        
+
+                <table id="navitab" cellspacing="0" cellpadding="0" >
+            <tr><td><a class="navi2 line_white" href="usage.html">Usage</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="options.html">Options</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="files.html">File parameters</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="special.html">Special parameters</a></td>
+            </tr>
+            <tr><td><a class="navi3a line_white" href="dynamic.html">Reflection</a></td>
+            </tr>
+            <tr><td><a class="navi2 line_white" href="examples.html">Examples</a></td>
+            </tr>
+    </table>
+            </td>
+
+            <!-- main -->
+
+            <td rowspan="2" id="maintd"> 
+<div class="kopf">Reflection</div>
+
+If option -d is supplied, Autojar scans the bytecode of every class for
+invocations of <code>Class.forName()</code> and warns about any occurence. In
+cases where the method's parameter is a string literal, Autojar knows the class
+in advance; the message will then look like this:
+
+<blockquote><code>
+* Dynamic loading: class Test, method g, name="Blah"
+</code></blockquote>
+
+If option <code>-a</code> is present (implies -d), Autojar tries to find and
+include this class in the usual way. If it succeeds, the message reads
+
+<blockquote><code>
+* Dynamic loading: class Test, method g, name="Blah" (RESOLVED)
+</code></blockquote>
+
+If, however, <code>Class.forName()</code> is called with a string reference,
+Autojar can't find out the class name. Such calls are printed at the end
+of the run in a separate list. Example:
+
+<blockquote><pre><code>* Dynamic loading, unknown classname:
+    class Test, method f
+    class Foo, method bar
+</code></pre></blockquote>
+
+The resulting archive may then be incomplete, and using it may lead to
+<code>ClassNotFound</code> exceptions, provided that the corresponding 
+<code>Class.forName()</code> calls actually get executed. 
+
+<p>Compiler generated <code>Class.forName()</code> calls are ignored. </td>
+        </tr>
+    </table>
+</div>                                  <!-- content -->
+    <table cellspacing=0 cellpadding=0 width="100%">
+    <tr>
+        <!-- "top" arrow -->
+
+        <td id="sidebartdbot">
+            <a href="#top" title="top">
+                <img src="../img/top.gif" border="0" alt="up" style="padding-bottom:5px;padding-left:10px">
+            </a>
+        </td>
+        <!-- previous / next -->
+<td id="prevnext">
+<div style="float:left; text-align:left">
+<a href="special.html" style="text-decoration:none">                 <img src="../img/back.gif" alt="" id="back"> Special parameters</a> 
+</div><div style="float: right; text-align:right">
+<a href="examples.html" style="text-decoration:none">Examples                     <img src="../img/forward.gif" alt="" id="forw"></a>
+</div>
+        </td>
+    </tr>
+    </table>
+    <div id="stdFooter">
+        Created 2011-05-16 by mopcoge
+    </div>
+
+</div>                                  <!-- pagewrapper -->
+</body>
+</html>

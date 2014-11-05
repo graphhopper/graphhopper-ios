@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head> 
+    <title>Autojar</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="../css/moc.css"  rel="stylesheet" type="text/css" /> 
+    <link href="../css/autojar.css"  rel="stylesheet" type="text/css" />
+</head>
+<body style="background-color:#c0c0c0;text-align:center">
+
+<div id="pagewrapper">
+<table style="width:100%; color: white; background-image: url(../img/head.png);">
+<tr style="height:120px">
+    <td style="width:25%"> 
+    </td>
+    <td align="right" valign="top"><div id="kopfoben">Automatic creation of Java archives</div></td>
+</tr>
+</table>
+
+<div style="margin-top:-3.5em;float:right"> 
+    <table><tr> <table cellspacing="0" cellpadding="5"><tr><td><a class="horMenu" href="../index.html"><div style="font-size:1.2em;padding:5px">Preface</div></a></td><td><a class="horMenu" href="usage.html"><div style="font-size:1.2em;padding:5px">Command line version</div></a></td><td><a class="horMenuA" href="plugin.html"><div style="font-size:1.2em;padding:5px">Eclipse plugin</div></a></td></tr></table>
+ </tr></table>
+</div>
+
+<table style="width: 100%" cellspacing=10>
+    <tr>
+        <td>Bernd Eggink, <a href="mailto:monoped@users.sourceforge.net"> monoped@users.sourceforge.net</a></td>
+        <td align="right"><a href="https://sourceforge.net/projects/autojar/"> 
+    <img src="../img/sf16.png" border="0" align="top" style="margin-right:5px">SourceForge project page</a></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td align="right"></td>
+    </tr>
+</table>
+
+<div id="content">
+    <table style="width: 99%">
+        <tr>
+            <!-- sidebar -->
+
+            <td id="sidebartd"> <table id="navitab" cellspacing="0" cellpadding="0" >
+            <tr><td><a class="navi2 line_white" href="plugin.html">Plugin</a></td>
+            </tr>
+            <tr><td><a class="navi2 line_white" href="plugin-start.html">Usage</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="plugin-start.html">Plugin start</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="plugin-opts.html">Options</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="plugin-classes.html">Class lookup</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="plugin-files.html">File lookup</a></td>
+            </tr>
+            <tr><td><a class="navi3a line_white" href="plugin-reso.html">Directly supplied files</a></td>
+            </tr>
+    </table> 
+                <div style="margin-top:50px; text-align:left">
+                    <a href="https://sourceforge.net">
+                        <img alt="" border=0 style="padding-left:10px" src="http://sourceforge.net/sflogo.php?group_id=156918\&type=2">
+                    </a>
+                </div>
+            </td>
+
+            <!-- main -->
+
+            <td rowspan="2" id="maintd">     <div class="kopf">Directly supplied files</div>
+
+    Here, in contrast to the previous window, complete file paths are 
+    selected. The files are added to the output, if not yet present.
+    No lookup is done. 
+
+    <blockquote><img border="0" src="../img/plugshot5.png"></blockquote>
+
+    If archives (.jar or .zip) are selected, they are not added themselves, but
+    the files they contain. In other words, they are expanded first.
+
+    <p>After all inputs have been made, "Finish" starts the actual
+    Autojar action, and the log output appears in the console window.
+
+    <p><font color="red">Note: The files selected in this window are presently
+    <em>not</em> stored with the project. The next time the plugin is started
+    for this project, they have to be selected again.</font> 
+     </td>
+        </tr>
+    </table>
+</div>                                  <!-- content -->
+
+    <table cellspacing=0 cellpadding=0 width="100%">
+    <tr>
+        <!-- "top" arrow -->
+
+        <td id="sidebartdbot">
+            <a href="#top" title="top">
+                <img src="../img/top.gif" border="0" alt="up" style="padding-bottom:5px;padding-left:10px">
+            </a>
+        </td>
+        <!-- previous / next -->
+<td id="prevnext">
+<div style="width:49%; float:left; text-align:left">
+<a href="plugin-files.html" style="text-decoration:none"><img src="../img/back.gif" id=back> File lookup</a> 
+</div><div style="float: right; width:49%;text-align:right">
+</div>
+        </td>
+    </tr>
+    </table>
+    <div id="footer">
+        Created 2007-10-05 by mopcoge
+    </div>
+
+</div>                                  <!-- pagewrapper -->
+</body>
+</html>

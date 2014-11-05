@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head> 
+    <title>Autojar</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="../css/moc.css"  rel="stylesheet" type="text/css" />
+    <link href="../css/en.css"  rel="stylesheet" type="text/css" />
+    <link href="../css/stdFooter.css"  rel="stylesheet" type="text/css" />
+</head>
+
+<body style="background-color:#c0c0c0;text-align:center">
+<div id="pagewrapper">
+<table style="width:100%; color: white; background-image: url(../img/head.png);">
+<tr style="height:120px">
+    <td style="width:25%"> 
+    </td>
+    <td align="right" valign="top"><div id="kopfoben">Automatic creation of Java archives</div></td>
+</tr>
+</table>
+
+<div style="margin-top:-3.5em;float:right"> 
+    <table><tr> <table cellspacing="0" cellpadding="5"><tr><td><a class="horMenu" href="index.html"><span style="font-size:1.2em;padding:10px">Preface</span></a></td><td><a class="horMenu" href="usage.html"><span style="font-size:1.2em;padding:10px">Command line version</span></a></td><td><a class="horMenuA" href="plugin.html"><span style="font-size:1.2em;padding:10px">Eclipse plugin</span></a></td></tr></table>
+</tr></table>
+</div>
+
+<table style="width: 100%" cellspacing=10>
+    <tr>
+        <td>Bernd Eggink, <a href="mailto:monoped@users.sourceforge.net"> monoped@users.sourceforge.net</a></td>
+        <td align="right"><a href="http://sourceforge.net/projects/autojar" style="text-decoration:none">Project page:
+<img style="margin:5px;vertical-align:middle" src="http://sflogo.sourceforge.net/sflogo.php?group_id=156918&type=12" width="120" height="30" border="0" alt="SourceForge.net" /></a></td>
+    </tr>
+</table>
+
+<div id="content">
+    <table style="width: 99%">
+        <tr>
+            <!-- sidebar -->
+
+            <td id="sidebartd"> 
+                <div style="margin-left:10px">
+                    <a href="../de_d/plugin-reso.html" style="text-decoration:none" >
+                    <img border="0" src="../img/us.gif" style="padding-right:10px">German version</a><p> 
+                </div>        
+
+                <table id="navitab" cellspacing="0" cellpadding="0" >
+            <tr><td><a class="navi2 line_white" href="plugin.html">Plugin</a></td>
+            </tr>
+            <tr><td><a class="navi2 line_white" href="plugin-start.html">Usage</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="plugin-start.html">Plugin start</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="plugin-conf.html">Configuration</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="plugin-classpath.html">Classpath</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="plugin-opts.html">Options</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="plugin-classes.html">Class lookup</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="plugin-files.html">File lookup</a></td>
+            </tr>
+            <tr><td><a class="navi3a line_white" href="plugin-reso.html">Directly supplied files</a></td>
+            </tr>
+    </table>
+            </td>
+
+            <!-- main -->
+
+            <td rowspan="2" id="maintd"> <div class="kopf">Directly supplied files</div>
+    Here, like in the previous page, files can be specified that are to be added to 
+    the archive. However, they are supplied directly, not looked up. 
+    A path can either be entered in the text field below and appended to the list by
+    clicking on "add", or a file selection dialog can be started 
+    by clicking on "...". To remove one or more items from the list, select 
+    them and click on "remove".
+
+    <blockquote><img border="0" src="../img/wiz6.png"></blockquote>
+
+    <p>In many cases it doesn't make sense to use the complete file path as
+    an entry name, especially if the file contains resources that will
+    be accessed via the class path (<code>getResource(), getResourceAsStream()</code>). 
+    As of version 1.0.2, the absolute path
+    can be splitted into a base directory and a relative path. 
+    Only the relative part (shown in the second table column) is used as the
+    zip entry name. This corresponds to the -C pseudo option in the 
+    command line interface.
+    After entering a file, the root directory is separated from the
+    path (see above). By selecting entries and clicking the shift buttons
+    <--- and ---> path components can be moved from right to left and vice
+    versa.
+
+    <p>Example: If in the situation shown above the <--- button is
+    pressed 4 times, the result will look like this:
+
+    <blockquote><img border="0" src="../img/wiz6a.png"></blockquote>
+
+    <p>Archives (.jar or .zip) entered here will not be 
+    added as a single file, but as a set of contained files;
+    in other words, they are expanded first.
+
+    <p>This is the last wizard page, so the "Next" button is deactivated.
+    After filling out everything, click on "Finish" to start the 
+    creation of the archive. The log will appear in the console window. </td>
+        </tr>
+    </table>
+</div>                                  <!-- content -->
+    <table cellspacing=0 cellpadding=0 width="100%">
+    <tr>
+        <!-- "top" arrow -->
+
+        <td id="sidebartdbot">
+            <a href="#top" title="top">
+                <img src="../img/top.gif" border="0" alt="up" style="padding-bottom:5px;padding-left:10px">
+            </a>
+        </td>
+        <!-- previous / next -->
+<td id="prevnext">
+<div style="float:left; text-align:left">
+<a href="plugin-files.html" style="text-decoration:none">                 <img src="../img/back.gif" alt="" id="back"> File lookup</a> 
+</div><div style="float: right; text-align:right">
+</div>
+        </td>
+    </tr>
+    </table>
+    <div id="stdFooter">
+        Created 2011-05-16 by mopcoge
+    </div>
+
+</div>                                  <!-- pagewrapper -->
+</body>
+</html>

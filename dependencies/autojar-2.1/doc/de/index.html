@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head> 
+    <title>Autojar</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="../css/moc.css"  rel="stylesheet" type="text/css" /> 
+    <link href="../css/autojar.css"  rel="stylesheet" type="text/css" />
+</head>
+<body style="background-color:#c0c0c0;text-align:center">
+
+<div id="pagewrapper">
+<table style="width:100%; color: white; background-image: url(../img/head.png);">
+<tr style="height:120px">
+    <td style="width:25%"> 
+    </td>
+    <td align="right" valign="top"><div id="kopfoben">Automatisches Erzeugen von Java-Archiven</div></td>
+</tr>
+</table>
+
+<div style="margin-top:-3.5em;float:right"> 
+    <table><tr> <table cellspacing="0" cellpadding="5"><tr><td><a class="horMenuA" href="index.html"><div style="font-size:1.2em;padding:5px">Allgemeines</div></a></td><td><a class="horMenu" href="usage.html"><div style="font-size:1.2em;padding:5px">Kommandozeilenversion</div></a></td><td><a class="horMenu" href="plugin.html"><div style="font-size:1.2em;padding:5px">Eclipse-Plugin</div></a></td></tr></table>
+ </tr></table>
+</div>
+
+<table style="width: 100%" cellspacing=10>
+    <tr>
+        <td>Bernd Eggink, <a href="mailto:monoped@users.sourceforge.net"> monoped@users.sourceforge.net</a></td>
+        <td align="right"><a href="https://sourceforge.net/projects/autojar/"> 
+    <img src="../img/sf16.png" border="0" align="top" style="margin-right:5px">SourceForge Projektseite</a></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td align="right"><a href="../index.html">
+    <img alt="englisch" border=0 src="../img/us.gif" style="margin-right:7px" align="top">Englische Version</a></td>
+    </tr>
+</table>
+
+<div id="content">
+    <table style="width: 99%">
+        <tr>
+            <!-- sidebar -->
+
+            <td id="sidebartd"> <table id="navitab" cellspacing="0" cellpadding="0" >
+            <tr><td><a class="navi2 line_white" href="index.html#purpose">Kurzbeschreibung</a></td>
+            </tr>
+            <tr><td><a class="navi2 line_white" href="index.html#history">Geschichte</a></td>
+            </tr>
+            <tr><td><a class="navi2 line_white" href="index.html#bugs">Bugs</a></td>
+            </tr>
+            <tr><td><a class="navi2 line_white" href="download.html">Download</a></td>
+            </tr>
+    </table> 
+                <div style="margin-top:50px; text-align:left">
+                    <a href="https://sourceforge.net">
+                        <img alt="" border=0 style="padding-left:10px" src="http://sourceforge.net/sflogo.php?group_id=156918\&type=2">
+                    </a>
+                </div>
+            </td>
+
+            <!-- main -->
+
+            <td rowspan="2" id="maintd">     <div class="kopf">Allgemeines</div>
+    <a name="purpose"><div class="subkopf">Kurzbeschreibung</div></a><div class="subkapitel">
+
+        Autojar dient dazu, jar-Archive minimaler Größe aus unterschiedlichen
+        Qellen (eigenen Klassen, Verzeichnissen, Archiven) zu erzeugen.
+        Ausgehend von einer oder mehreren Klassen wird der Bytecode rekursiv
+        nach weiteren benutzten Klassen durchsucht; diese werden ggf. aus ihrem
+        Archiv extrahiert und in die Ausgabedatei übernommen. Das resultierende
+        Archiv enthält alle tatsächlich benutzten Klassen, und nur diese. Somit
+        lassen sich z.B. Größe und Ladezeit von Applets klein halten oder
+        Applikationen unabhängig von installierten Bibliotheken machen. 
+
+        <p>Ähnlich wie nach Klassen kann Autojar Verzeichnisse und Archive auch
+        nach anderen Ressourcen (wie Bilddateien) durchsuchen und die
+        gefundenen Dateien automatisch angefügen. Weitere
+        Anwendungsmöglichkeiten sind das Vereinigen mehrerer Archive zu einem
+        einzigen, oder das Austauschen einzelner Klassen in einem jar-File.
+
+        <p>Ein prinzipielles Problem stellt <code>reflection</code> dar.
+        Autojar kann nicht wissen, welche Klassen das Programm zur Laufzeit mit
+        <code>Class.forName()</code> lädt. Es kann aber im Bytecode nach
+        Aufrufen von <code>Class.forName()</code> suchen und entsprechende
+        Warnungen ausgeben. Nur wenn ein konstanter Klassennamen als Parameter
+        verwendet wird, ist Autojar in der Lage, die Klasse zu suchen und
+        automatisch einzubinden.
+
+        <p>Autojar ist mit JREs ab <strong>1.4.2</strong> verwendbar. Es benutzt Klassen aus dem
+        <strong>BCEL</strong>-Paket (<a
+        href="http://jakarta.apache.org/bcel/">http://jakarta.apache.org/bcel/</a>)
+        und aus <strong>log4j</strong> (<a
+        href="http://logging.apache.org/log4j/">http://logging.apache.org/log4j/</a>).
+
+        <p>Ab Version 2.0 gibt es Autojar in zwei Varianten: Ein Kommandozeilen-Programm, 
+        das über Optionen gesteuert wird, und ein Plugin für Eclipse.
+    </div>
+
+    <a name="history"><div class="subkopf">Geschichte</div></a><div class="subkapitel">
+
+        <strong>Version 2.0</strong>: Interne Umstrukturierung im Zusammenhang
+        mit der Plugin-Entwicklung. Die Klasse
+        <code>org.sourceforge.autojar.Ajar</code> enthält das Interface, das
+        von Autojar und dem Plugin benutzt wird. Protokollierung jetzt durch
+        <code>log4j</code>. <br>Musterzeichen '?' und '*' werden in
+        Klassennamen ausgewertet; damit können z.B. alle Klassen eines Packages
+        global übernommen werden.  <br>War-Archive werden wie jar-Archive
+        behandelt, zip-Dateien werden automatisch entpackt und übernommen.
+        <br>Erste Version des Eclipse-Plugins.
+
+        <p><img src="../img/warning.png" border="0"> Die aktuellen
+        Versionen <strong>autojar-2.0pre1</strong> und
+        <strong>autojar-plugin-1.0pre1</strong> sind Vorabversionen und im
+        Wesentlichen für tapfere Betatester gedacht!
+
+        <p><strong>Version 1.3.1</strong>: Kleinere Bugs entfernt. 
+
+        <br>Wenn <code>-v</code> angegeben ist, wird jetzt eine Liste der Archive
+        ausgegeben, die im Classpath angegeben, aber nicht benötigt wurden.
+
+        <br>Neue Option <code>-X</code> zum Ausschließen bestimmter Datei- oder
+        Verzeichnisnamen.
+
+        <p><strong>Version 1.3</strong>: 
+        Umzug nach SourceForge.
+
+        <br>Einige Bugs beseitigt. Normale Dateien werden jetzt auch korrekt behandelt,
+        wenn sie mehrere Punkte enthalten.
+
+        <br>Dynamisches Laden von Klassen wird erkannt; neue Optionen -d und -a.
+
+        <br>Jeder Programmparameter kann von der Form <code>@datei</code> sein, nicht
+        nur der erste.
+
+        <p><strong>Version 1.2.2</strong>: 
+        Einige Bugs entfernt.
+
+        <br>Neue Optionen: -e, -q, -D.
+
+        <br>Jokerzeichen ? and * können in in Suchpfaden verwendet werden. 
+
+        <br>Verbesserte Abhängigkeitsprüfung.
+
+        <br>Fehlende Dateien werden gemeldet.
+
+        <p><strong>Version 1.1:</strong> Mit der Option -p kann ein Suchpfad
+        für Nicht-Klassen-Dateien (z.B. .gif - Dateien) angegeben werden. 
+        Alternativ weist die Option -b autojar an, den Classpath auch für
+        andere Dateien zu verwenden.
+    </div>
+
+    <a name="bugs"><div class="subkopf">Bugs</div></a><div class="subkapitel">
+        Bitte melden Sie Bugs über das
+        <a href="https://sourceforge.net/tracker/?group_id=156918&atid=801711">SourceForge Bug-System</a>.
+    </div> </td>
+        </tr>
+    </table>
+</div>                                  <!-- content -->
+
+    <table cellspacing=0 cellpadding=0 width="100%">
+    <tr>
+        <!-- "top" arrow -->
+
+        <td id="sidebartdbot">
+            <a href="#top" title="top">
+                <img src="../img/top.gif" border="0" alt="up" style="padding-bottom:5px;padding-left:10px">
+            </a>
+        </td>
+        <!-- previous / next -->
+<td id="prevnext">
+<div style="width:49%; float:left; text-align:left">
+</div><div style="float: right; width:49%;text-align:right">
+<a href="download.html" style="text-decoration:none">Download <img src="../img/forward.gif" id=forw></a>
+</div>
+        </td>
+    </tr>
+    </table>
+    <div id="footer">
+        Created 2007-10-05 by mopcoge
+    </div>
+
+</div>                                  <!-- pagewrapper -->
+</body>
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$TROVE_VCS_ROOT$/generator_src">
+      <sourceFolder url="file://$TROVE_VCS_ROOT$/generator_src" isTestSource="false" />
+    </content>
+    <content url="file://$TROVE_VCS_ROOT$/generator_test">
+      <sourceFolder url="file://$TROVE_VCS_ROOT$/generator_test" isTestSource="true" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="JUnit" level="project" />
+  </component>
+</module>
+

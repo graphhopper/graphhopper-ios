@@ -1,0 +1,253 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head> 
+    <title>Autojar</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="../css/moc.css"  rel="stylesheet" type="text/css" />
+    <link href="../css/de.css"  rel="stylesheet" type="text/css" />
+    <link href="../css/stdFooter.css"  rel="stylesheet" type="text/css" />
+</head>
+
+<body style="background-color:#c0c0c0;text-align:center">
+<div id="pagewrapper">
+<table style="width:100%; color: white; background-image: url(../img/head.png);">
+<tr style="height:120px">
+    <td style="width:25%"> 
+    </td>
+    <td align="right" valign="top"><div id="kopfoben">Automatisches Erzeugen von Java-Archiven</div></td>
+</tr>
+</table>
+
+<div style="margin-top:-3.5em;float:right"> 
+    <table><tr> <table cellspacing="0" cellpadding="5"><tr><td><a class="horMenu" href="index.html"><span style="font-size:1.2em;padding:10px">Allgemeines</span></a></td><td><a class="horMenuA" href="usage.html"><span style="font-size:1.2em;padding:10px">Kommandozeilenversion</span></a></td><td><a class="horMenu" href="plugin.html"><span style="font-size:1.2em;padding:10px">Eclipse-Plugin</span></a></td></tr></table>
+</tr></table>
+</div>
+
+<table style="width: 100%" cellspacing=10>
+    <tr>
+        <td>Bernd Eggink, <a href="mailto:monoped@users.sourceforge.net"> monoped@users.sourceforge.net</a></td>
+        <td align="right"><a href="http://sourceforge.net/projects/autojar" style="text-decoration:none">Projektseite:
+<img style="margin:5px;vertical-align:middle" src="http://sflogo.sourceforge.net/sflogo.php?group_id=156918&type=12" width="120" height="30" border="0" alt="SourceForge.net" /></a></td>
+    </tr>
+</table>
+
+<div id="content">
+    <table style="width: 99%">
+        <tr>
+            <!-- sidebar -->
+
+            <td id="sidebartd"> 
+                <div style="margin-left:10px">
+                    <a href="../en_d/examples.html" style="text-decoration:none" >
+                    <img border="0" src="../img/us.gif" style="padding-right:10px">Englische Version</a><p> 
+                </div>        
+
+                <table id="navitab" cellspacing="0" cellpadding="0" >
+            <tr><td><a class="navi2 line_white" href="usage.html">Aufruf</a></td>
+            </tr>
+            <tr><td><a class="navi2a line_white" href="examples.html">Beispiele</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="examples.html#std">Standardfall</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="examples.html#reflect">Reflection</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="examples.html#libs">Archive manipulieren</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="examples.html#auxiliary">Hilfsarchive</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="examples.html#autojar">Autojar</a></td>
+            </tr>
+    </table>
+            </td>
+
+            <!-- main -->
+
+            <td rowspan="2" id="maintd"> 
+<div class="kopf">Beispiele</div>
+
+
+<a name="std"><div class="subkopf">Standardfall</div></a><div class="subkapitel">
+
+Ein Programm besteht aus der Hauptklasse <code>example.std.Std</code> und 
+weiteren Klassen, die im Verzeichnis <code>classes</code> liegen. Außerdem
+werden Klassen aus dem Archiv <code>libs/lib1.jar</code> benutzt. 
+Das Programm benötigt ferner die Grafikdatei <code>img1.png</code>, die 
+im Archiv <code>libs/imgs.jar</code> liegt. Die Manifestdatei <code>std.mf</code>
+enthält einen gültigen <code>Main-Class</code> - Eintrag. Das Ausgabe-Archiv soll <code>std.jar</code>
+heißen. Das Kommando lautet dann:
+
+<blockquote><code><strong><pre>java -jar autojar.jar -o std.jar -vc "classes:libs/lib1.jar" \
+    -p libs/imgs.jar -m std.mf img1.png</pre></strong></code>
+</blockquote>
+
+Alternativ könnte man schreiben:
+
+<blockquote>
+    <code><strong><pre>java -jar autojar.jar -o std.jar -vc "classes:libs/*.jar" -m std.mf \
+    -b img1.png</pre></strong></code>
+</blockquote>    
+
+</div>
+
+<a name="reflect"><div class="subkopf">Reflection</div></a><div class="subkapitel">
+
+Die Klassen- und Resourcedateien eines Programms liegen im Verzeichnis 
+<code>classes</code> und im
+Archiv <code>my.jar</code>. Die Hauptklasse <code>com.wow.MyApp</code> lädt
+dynamisch eine Treiberklasse. Wie diese heißt, weiß man nicht, vermutet sie
+aber im Archiv <code>drivers.jar</code>. Man verwendet dann probeweise die
+Option <code>-a</code> und gibt das Archiv mit an:
+
+<blockquote><code><strong><pre>java -jar autojar.jar -av -o myapp.jar  \
+    -c classes:my.jar:drivers.jar com/wow/MyApp.class</pre></strong></code> 
+</blockquote>
+
+Wenn die Ausgabe eine Zeile der Art
+
+<blockquote><code>
+* Dynamic loading: class com.wow.MyApp, method init, name="some.nice.Driver" (RESOLVED)
+</code></blockquote>
+
+enthält, war der Klassenname <code>some.nice.Driver</code> als Literal angegeben, 
+Autojar hat die Klasse gefunden und eingebunden.
+
+<br>Fehlt das RESOLVED am Ende der Zeile, ist der Namen der Treiberklasse
+zwar bekannt, aber sie konnte nicht über den Classpath gefunden werden. Wo
+sie liegt, muss man zunächst (wie auch immer) herausfinden. Angenommen, sie
+befindet sich in dem Archiv <code>otherdrivers.jar</code>, dann nimmt man
+dieses mit in den Classpath auf: 
+
+<blockquote><code><strong><pre>java -jar autojar.jar -av -o myapp.jar \
+    -c classes:my.jar:drivers.jar:otherdrivers.jar com/wow/MyApp.class</pre></strong></code> 
+</blockquote>
+
+<p>Wird statt dessen eine Zeile der Art
+
+<blockquote><code><pre>
+* Dynamic loading, unknown classname:
+    class com.wow.MyApp, method init
+</pre></code></blockquote>
+
+konnte Autojar den Namen der zu ladenden Klasse nicht
+herausfinden, weil er nicht als Literal angegeben war. 
+Das letzte Mittel wäre dann, das Programm trotzdem zu starten und
+auf eine <code>ClassNotFound</code> - Exception zu warten. Dem Fehlertext lässt
+sich entnehmen, wie die fehlende Klasse heißt; beim nächsten autojar-Aufruf
+kann sie dann als Dateiparameter mit angegeben werden.
+
+</div>
+
+<a name="libs"><div class="subkopf">Archive manipulieren</div></a><div class="subkapitel">
+
+Drei Archive <code>libA.jar</code>, <code>libB.jar</code> und <code>libC.zip</code>
+sollen  zu einem einzigen, <code>libSum.jar</code>,  zusammengefasst werden.
+Dabei sollen Einträge, deren Namen auf <code>.old</code> enden, nicht übernommen
+werden:
+
+<blockquote><code><strong>
+java -jar autojar.jar -o libSum.jar -- -X '*.old' libA.jar libB.jar libC.zip
+</strong></code></blockquote>
+
+Wenn in mehreren Quelldateien ein Eintrag mit dem gleichen Namen vorkommt, wird
+nur der erste übernommen. Das kann man sich z.B. zunutze machen, um eine 
+Klassenbibliothek zu ändern. Angenommen, man möchte in einer umfangreichen
+Open-Source-Bibliothek <code>libX.jar</code> eine einzige Klasse, etwa
+<code>a.b.X</code>, verändern. Man besorgt sich dann die Quellen, ändert
+<code>a/b/X.java</code> und übersetzt nur diese Klasse neu:
+
+<blockquote><code><strong>
+javac -d classes -classpath classes:libX.jar a/b/X.java
+</strong></code></blockquote>
+
+Danach erzeugt man ein geändertes Archiv <code>libX1.jar</code> mit dem Kommando
+
+<blockquote><code><strong>
+java -jar autojar.jar -o libX1.jar -c classes a.b.X.class libX.jar
+</strong></code></blockquote>
+
+Man beachte die Reihenfolge der beiden letzten Parameter!
+</div>
+
+<a name="auxiliary"><div class="subkopf">Hilfsarchive für Bibliotheken</div></a><div class="subkapitel">
+
+Entwicklern soll eine Bibliothek <code>libA.jar</code> zur Verfügung gestellt
+werden. Die Klassen dieser Bibliothek benötigen einige Klassen aus
+<code>lib1.jar</code> und <code>lib2.jar</code>. Autojar soll diese
+Klassen extrahieren und zu einer Hilfsbibliothek <code>libAux.jar</code>
+zusammenfassen, die dann zusammen mit <code>libA.jar</code> ausgeliefert
+wird. Der folgende Aufruf erzeugt diese Hilfsbibliothek:
+
+<blockquote><code><strong>
+java -jar autojar.jar -o libAux.jar -c lib1.jar:lib2.jar -- -Y libA.jar
+</strong></code></blockquote>
+
+Ohne den Prefix -Y würde <code>libAux.jar</code> zusätzlich den gesamten Inhalt von
+<code>libA.jar</code> enthalten.
+
+</div>
+
+<a name="autojar"><div class="subkopf">Wie Autojar sich selbst erzeugt</div></a><div class="subkapitel">
+
+Das Archiv <code>autojar.jar</code> ist durch Anwendung von Autojar auf sich selbst entstanden.
+Das Kommando sieht im Prinzip so aus:
+
+<blockquote><code><strong><pre>java -classpath classes org.sourceforge.autojar.Autojar \
+    -av -c classes:libs/bcel.jar:libs/log4j.jar -p log4j -o autojar.jar \
+    -m autojar.mf -- -X .bzr @src/classlist log4j.properties
+</pre></strong></code></blockquote>
+
+Erläuterung: Autojar benötigt Klassen aus den Bibliotheken
+<code>bcel.jar</code> und <code>log4j.jar</code> und muss außerdem die
+Steuerdatei <code>log4j.properties</code> einbinden, die im Verzeichnis
+<code>log4j</code> liegt. Da das Projekt unter der Kontrolle von 
+<a href="http://bazaar.canonical.com/en/" target="_blank">Bazaar</a>
+ist, gibt es allenthalben Verzeichnisse <code>.bzr</code>, die nicht mit
+übernommen werden sollen. Viele Klassen des Packages
+<code>org.apache.bcel.generic</code> werden dynamisch geladen, zwei weitere von
+<code>log4j</code>. Damit die Kommandozeile nicht zu lang wird, wurden diese
+Namen zeilenweise in die Datei <code>src/classlist</code> geschrieben. 
+
+<p>Eine Alternative, die ohne <code>src/classlist</code> auskommt, könnte so aussehen:
+
+<blockquote><code><strong><pre>java -cp classes org.sourceforge.autojar.Autojar -av \
+    -c classes:libs/bcel.jar:libs/log4j.jar -p log4j -o autojar.jar \
+    -m autojar.mf -- -X .bzr "org.apache.bcel.generic.*.class" \
+    log4j.properties org.apache.log4j.ConsoleAppender.class \
+    org.apache.log4j.PatternLayout.class 
+</pre></strong></code></blockquote>
+
+Hier werden <em>alle</em> Klassen des Packages
+<code>org.apache.bcel.generic</code> übernommen, einschließlich einiger nicht
+benötigter, und die beiden log4j-Klassen direkt angegeben. Die
+entstehende jar-Datei ist um etwa 20K größer.
+
+</div> </td>
+        </tr>
+    </table>
+</div>                                  <!-- content -->
+    <table cellspacing=0 cellpadding=0 width="100%">
+    <tr>
+        <!-- "top" arrow -->
+
+        <td id="sidebartdbot">
+            <a href="#top" title="top">
+                <img src="../img/top.gif" border="0" alt="up" style="padding-bottom:5px;padding-left:10px">
+            </a>
+        </td>
+        <!-- previous / next -->
+<td id="prevnext">
+<div style="float:left; text-align:left">
+<a href="dynamic.html" style="text-decoration:none">                 <img src="../img/back.gif" alt="" id="back"> Reflection</a> 
+</div><div style="float: right; text-align:right">
+<a href="plugin.html" style="text-decoration:none">Eclipse-Plugin                     <img src="../img/forward.gif" alt="" id="forw"></a>
+</div>
+        </td>
+    </tr>
+    </table>
+    <div id="stdFooter">
+        Created 2011-05-16 by mopcoge
+    </div>
+
+</div>                                  <!-- pagewrapper -->
+</body>
+</html>

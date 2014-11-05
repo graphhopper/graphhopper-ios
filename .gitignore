@@ -1,0 +1,8 @@
+.DS_Store
+*.xcworkspace
+xcuserdata
+build/
+class.list
+dependencies/graphhopper-compat/.graphhopper-compat
+j2objc/
+src/

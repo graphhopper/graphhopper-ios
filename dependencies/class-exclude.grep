@@ -1,0 +1,9 @@
+com/graphhopper/reader/dem/CGIARProvider.java
+com/graphhopper/reader/dem/HeightTile.java
+com/graphhopper/reader/dem/SRTMProvider.java
+com/graphhopper/reader/OSMInputFile.java
+com/graphhopper/reader/pbf/
+com/graphhopper/storage/SynchedDAWrapper.java
+com/graphhopper/storage/UnsafeDataAccess.java
+com/graphhopper/util/Helper7.java
+com/graphhopper/util/QueryTorture.java

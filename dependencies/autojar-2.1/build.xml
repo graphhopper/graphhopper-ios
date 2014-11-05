@@ -1,0 +1,56 @@
+<project name="colt" default="jar" basedir=".">
+
+  <property name="version"  value="2.0pre1"/>
+  <property name="src"      value="src"/>
+  <property name="docs"     value="javadoc"/>
+  <property name="build"    value="build"/>
+  <property name="j2se.apiurl"
+    value="http://java.sun.com/j2se/1.4/docs/api/"/>
+  <property name ="bcel.apiurl"
+    value="http://jakarta.apache.org/bcel/apidocs/"/>
+  <property name ="log4j.apiurl"
+      value="http://logging.apache.org/log4j/docs/api/index.html"/>
+
+
+  <target name="init">
+    <mkdir dir="${build}"/>
+  </target>
+
+  <target name="compile" depends="init">
+    <javac srcdir="${src}" 
+	debug="on"
+	optimize="on"
+        destdir="${build}"
+    />
+  </target>
+
+  <target name="jar" depends="compile">
+    <jar jarfile="autojar-${version}.jar" 
+	 includes="de/**"
+	 manifest="${src}/autojar.mf"
+         basedir="${build}"
+		 />
+  </target>
+
+  <target name="javadoc">
+    <mkdir dir="${docs}"/>
+    <javadoc destdir="${docs}" 
+		packagenames="org.*,de.*"
+		sourcepath="${src}" 
+		private="off"
+	 >
+
+	<link href="${j2se.apiurl}"/>
+	<link href="${bcel.apiurl}"/>
+	<link href="${log4j.apiurl}"/>
+    </javadoc>
+  </target>
+
+  <target name="clean">
+    <delete dir="${build}"/>
+    <delete>
+      <fileset dir="." includes="autojar-*.jar"/>
+    </delete>
+  </target>
+
+</project>

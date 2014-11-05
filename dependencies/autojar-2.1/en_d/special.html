@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head> 
+    <title>Autojar</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="../css/moc.css"  rel="stylesheet" type="text/css" />
+    <link href="../css/en.css"  rel="stylesheet" type="text/css" />
+    <link href="../css/stdFooter.css"  rel="stylesheet" type="text/css" />
+</head>
+
+<body style="background-color:#c0c0c0;text-align:center">
+<div id="pagewrapper">
+<table style="width:100%; color: white; background-image: url(../img/head.png);">
+<tr style="height:120px">
+    <td style="width:25%"> 
+    </td>
+    <td align="right" valign="top"><div id="kopfoben">Automatic creation of Java archives</div></td>
+</tr>
+</table>
+
+<div style="margin-top:-3.5em;float:right"> 
+    <table><tr> <table cellspacing="0" cellpadding="5"><tr><td><a class="horMenu" href="index.html"><span style="font-size:1.2em;padding:10px">Preface</span></a></td><td><a class="horMenuA" href="usage.html"><span style="font-size:1.2em;padding:10px">Command line version</span></a></td><td><a class="horMenu" href="plugin.html"><span style="font-size:1.2em;padding:10px">Eclipse plugin</span></a></td></tr></table>
+</tr></table>
+</div>
+
+<table style="width: 100%" cellspacing=10>
+    <tr>
+        <td>Bernd Eggink, <a href="mailto:monoped@users.sourceforge.net"> monoped@users.sourceforge.net</a></td>
+        <td align="right"><a href="http://sourceforge.net/projects/autojar" style="text-decoration:none">Project page:
+<img style="margin:5px;vertical-align:middle" src="http://sflogo.sourceforge.net/sflogo.php?group_id=156918&type=12" width="120" height="30" border="0" alt="SourceForge.net" /></a></td>
+    </tr>
+</table>
+
+<div id="content">
+    <table style="width: 99%">
+        <tr>
+            <!-- sidebar -->
+
+            <td id="sidebartd"> 
+                <div style="margin-left:10px">
+                    <a href="../de_d/special.html" style="text-decoration:none" >
+                    <img border="0" src="../img/us.gif" style="padding-right:10px">German version</a><p> 
+                </div>        
+
+                <table id="navitab" cellspacing="0" cellpadding="0" >
+            <tr><td><a class="navi2 line_white" href="usage.html">Usage</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="options.html">Options</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="files.html">File parameters</a></td>
+            </tr>
+            <tr><td><a class="navi3a line_white" href="special.html">Special parameters</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="dynamic.html">Reflection</a></td>
+            </tr>
+            <tr><td><a class="navi2 line_white" href="examples.html">Examples</a></td>
+            </tr>
+    </table>
+            </td>
+
+            <!-- main -->
+
+            <td rowspan="2" id="maintd"> 
+<div class="kopf">Special parameters</div>
+
+A special (pseudo option) parameter consists of a hyphen and a letter. It 
+doesn't represent a file or an option, but instead influences the
+processing of the following file parameter(s). If the first file parameter
+is a special one, a -- must be inserted before it, otherwise it will be
+mistaken for an option.
+
+<ul style="padding-left:1em">
+    <li style="padding-bottom:10px">
+
+        <strong><code>-C <i>directory name</i></code></strong>
+
+        <br>This has the same meaning as with the <code>jar</code>
+        command: The working directory is temporarily set to
+        <code><i>directory</i></code>, then <code><i>name</i></code> is evaluated, and
+        then the working directory is reset to the original value.
+        <code><i>name</i></code> may contain wildcards (* and ?). A single dot denotes the
+        directory as a whole.</a>
+
+    </li> 
+
+    <li style="padding-bottom:10px">
+
+        <strong><code>-X <i>pattern</i></code></strong>
+
+        <br>This defines an exclude pattern for files. It affects subsequent
+        parameters which generate a file list (directories, patterns, or ".").
+        Files matching an exclude pattern are ignored. If multiple 
+        patterns are given, they are logically combined by  a logical "or". A pattern
+        consisting of a single hyphen (<code><strong>-X -</strong></code> or
+        <code><strong>-X-</strong></code>) clears the pattern list, so that (up to
+        the next -X) all files are copied again. 
+
+        <br>This parameter can be used, for example, to skip special directories
+        like <code>.svn</code> or <code>.bzr</code>.
+
+    <li style="padding-bottom:10px">
+
+        <strong><code>-Y <i>library</i></code></strong>
+        
+        <br>In contrast to other cases Autojar doesn't copy any classes from
+        the library. It scans, however, their bytecode and copies referenced
+        classes from other sources into the output library. This can be
+        used to generate an "auxiliary library" for <code><i>library</i></code>. 
+    
+        <br>When <code><i>library</i></code> is used later on, the generated output library
+        must be accessible by the classpath in addition to <code><i>library</i></code>
+        itself.
+    </li>
+</ul> </td>
+        </tr>
+    </table>
+</div>                                  <!-- content -->
+    <table cellspacing=0 cellpadding=0 width="100%">
+    <tr>
+        <!-- "top" arrow -->
+
+        <td id="sidebartdbot">
+            <a href="#top" title="top">
+                <img src="../img/top.gif" border="0" alt="up" style="padding-bottom:5px;padding-left:10px">
+            </a>
+        </td>
+        <!-- previous / next -->
+<td id="prevnext">
+<div style="float:left; text-align:left">
+<a href="files.html" style="text-decoration:none">                 <img src="../img/back.gif" alt="" id="back"> File parameters</a> 
+</div><div style="float: right; text-align:right">
+<a href="dynamic.html" style="text-decoration:none">Reflection                     <img src="../img/forward.gif" alt="" id="forw"></a>
+</div>
+        </td>
+    </tr>
+    </table>
+    <div id="stdFooter">
+        Created 2011-05-16 by mopcoge
+    </div>
+
+</div>                                  <!-- pagewrapper -->
+</body>
+</html>

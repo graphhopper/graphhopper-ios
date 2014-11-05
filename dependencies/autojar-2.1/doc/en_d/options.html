@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head> 
+    <title>Autojar</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="../css/moc.css"  rel="stylesheet" type="text/css" />
+    <link href="../css/en.css"  rel="stylesheet" type="text/css" />
+    <link href="../css/stdFooter.css"  rel="stylesheet" type="text/css" />
+</head>
+
+<body style="background-color:#c0c0c0;text-align:center">
+<div id="pagewrapper">
+<table style="width:100%; color: white; background-image: url(../img/head.png);">
+<tr style="height:120px">
+    <td style="width:25%"> 
+    </td>
+    <td align="right" valign="top"><div id="kopfoben">Automatic creation of Java archives</div></td>
+</tr>
+</table>
+
+<div style="margin-top:-3.5em;float:right"> 
+    <table><tr> <table cellspacing="0" cellpadding="5"><tr><td><a class="horMenu" href="index.html"><span style="font-size:1.2em;padding:10px">Preface</span></a></td><td><a class="horMenuA" href="usage.html"><span style="font-size:1.2em;padding:10px">Command line version</span></a></td><td><a class="horMenu" href="plugin.html"><span style="font-size:1.2em;padding:10px">Eclipse plugin</span></a></td></tr></table>
+</tr></table>
+</div>
+
+<table style="width: 100%" cellspacing=10>
+    <tr>
+        <td>Bernd Eggink, <a href="mailto:monoped@users.sourceforge.net"> monoped@users.sourceforge.net</a></td>
+        <td align="right"><a href="http://sourceforge.net/projects/autojar" style="text-decoration:none">Project page:
+<img style="margin:5px;vertical-align:middle" src="http://sflogo.sourceforge.net/sflogo.php?group_id=156918&type=12" width="120" height="30" border="0" alt="SourceForge.net" /></a></td>
+    </tr>
+</table>
+
+<div id="content">
+    <table style="width: 99%">
+        <tr>
+            <!-- sidebar -->
+
+            <td id="sidebartd"> 
+                <div style="margin-left:10px">
+                    <a href="../de_d/options.html" style="text-decoration:none" >
+                    <img border="0" src="../img/us.gif" style="padding-right:10px">German version</a><p> 
+                </div>        
+
+                <table id="navitab" cellspacing="0" cellpadding="0" >
+            <tr><td><a class="navi2 line_white" href="usage.html">Usage</a></td>
+            </tr>
+            <tr><td><a class="navi3a line_white" href="options.html">Options</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="files.html">File parameters</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="special.html">Special parameters</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="dynamic.html">Reflection</a></td>
+            </tr>
+            <tr><td><a class="navi2 line_white" href="examples.html">Examples</a></td>
+            </tr>
+    </table>
+            </td>
+
+            <!-- main -->
+
+            <td rowspan="2" id="maintd"> 
+<div class="kopf">Options</div>
+
+Options are prefixed by a hyphen. Several option characters may be combined,
+e.g. <code>-vac<i>path</i></code> instead of <code>-v -a -c<i>path</i></code>.
+Some options need an attribute, which can follow immediately or after a
+sequence of white space (e.g. <code>-c<i>path</i></code> or <code>-c<i>
+path</i></code>). 
+<p>
+
+<table style="border: 1px solid" rules="all" cellpadding=6 >
+<tr bgcolor="#F0F0F0"> 
+    <th align="left" style="width:20%">Option</th>
+    <th align="left">Meaning</th>
+</tr>
+
+<tr> 
+    <td valign="top"> -h </td>           
+    <td>Print help and exit program.</td> 
+</tr>
+
+<tr> 
+    <td valign="top"> -o <i>outfile</i> </td>
+    <td> The archive to be created. This option is mandatory.</td> 
+</tr>
+
+<tr> 
+    <td valign="top"> -c <i>class path</i>  </td>
+
+    <td> 
+    Class path in the ususal form (system dependent), used for for class
+    look-up. The default value is ".". 
+
+    <p>The name part of each component may contain wildcards * and ?. 
+
+    <p>Example (Linux):
+    Directory <code>/foo</code> contains the archives
+    <code>a.jar</code>, <code>b.jar</code>, <code>c.jar</code>. 
+    The expression <code>-c "/ah/oh:/foo/*.jar"</code> will be expanded into
+    <pre><code>    -c /ah/oh:/foo/a.jar:/foo/b.jar:/foo/c.jar</code></pre> 
+    The argument has to be quoted to prevent expansion by the shell.
+
+    <p>Example (Windows):
+    Directory <code>C:\foo</code> contains the archives
+    <code>a.jar</code>, <code>b.jar</code>, <code>c.jar</code>. 
+    The expression <code>-c C:\ah\oh;C:\foo\*.jar</code> will be expanded into 
+    <pre><code>    -c C:\ah\oh;C:\foo\a.jar;C:\foo\b.jar;C:\foo\c.jar</code></pre> 
+
+    Several options <code>-c</code> are combined to a single class path;
+    <code><pre>    -c/usr/x:/sys/y -c /usr/z</pre></code> 
+    is the same as 
+    <code><pre>    -c /usr/x:/sys/y:/usr/z</pre></code>
+    </td>
+</tr>
+
+<tr> 
+    <td valign="top"> -p <i>filepath</i> </td>
+    <td> Search path for non-class files, same format as class path. </td>
+</tr>
+
+<tr> 
+    <td width='100'> -b</td> 
+    <td>Use class path for non-class file lookup, too.</td>
+</tr>
+
+<tr> 
+    <td valign="top"> -m <i>manifest</i> </td>  
+    <td>The manifest file. Its content will be added to the generated <code>MANIFEST.MF</code>.
+        If it contains a <code>Main-Class:</code> entry, the class name will be treated
+        as if supplied on the command line.
+    </td>
+</tr>
+
+<tr> <td valign="top"> -d </td>
+     <td>Autojar scans the bytecode of all classes (except those from the JRE) for
+        invocations of <code>Class.forName()</code> and issues correspondig warnings
+        (see <a href="dynamic.html">Reflection</a>).
+     </td>
+</tr>     
+
+<tr> <td valign="top"> -a </td>
+     <td>If Autojar finds an invocation of the kind <code>Class.forName("<i>name</i>")</code>,
+        it tries to find and include the class <code><i>name</i></code>. Implies -d.
+     </td>
+</tr>     
+
+<tr> <td valign="top"> -A </td>
+     <td> Autojar looks for calls like <code>Class#getResource("<i>name</i>")</code> or
+        <code>Class#getResourceAsStream("<i>name</i>")</code>. If the parameter is
+        a string constant, the resource file is looked up using the classpath, and
+        if found, copied to the output. Implies -d.
+     </td>
+</tr>
+
+<tr> 
+    <td valign="top"> -e </td>
+
+    <td>All classes needed from archives in extension directories (system property
+    "java.ext.dirs") are added to the output. Without this option, classes
+    from an extension archive are copied only if the archive has been explicitly
+    added to the class path (option -c). </td>
+
+</tr>
+
+<tr> 
+    <td valign="top"> -v </td>      
+    <td> Verbose mode. </td> 
+</tr>
+
+<tr> 
+    <td valign="top"> -D </td>           
+    <td> Debug mode, print stack trace in case of errors. Normally not needed.</td>
+</tr>
+
+<tr> 
+    <td valign="top"> -q </td>
+    <td> Be quiet. No output except errors.</td>
+</tr>
+
+<tr> 
+    <td valign="top"> -x <i>prefix</i> </td>    
+    <td> Prefix for files to be excluded. Archives and directories in the class path
+    starting with <i>prefix</i> are ignored. Multiple declarations are allowed.
+    </td>
+</tr>
+    
+<tr> 
+    <td valign="top"> -- </td>      
+    <td> End of options. All subsequent parameters are treated as file parameters.
+    This option is only necessary if the first file parameter starts with a hyphen.
+    </td> 
+</tr>
+
+</table> </td>
+        </tr>
+    </table>
+</div>                                  <!-- content -->
+    <table cellspacing=0 cellpadding=0 width="100%">
+    <tr>
+        <!-- "top" arrow -->
+
+        <td id="sidebartdbot">
+            <a href="#top" title="top">
+                <img src="../img/top.gif" border="0" alt="up" style="padding-bottom:5px;padding-left:10px">
+            </a>
+        </td>
+        <!-- previous / next -->
+<td id="prevnext">
+<div style="float:left; text-align:left">
+<a href="usage.html" style="text-decoration:none">                 <img src="../img/back.gif" alt="" id="back"> Usage</a> 
+</div><div style="float: right; text-align:right">
+<a href="files.html" style="text-decoration:none">File parameters                     <img src="../img/forward.gif" alt="" id="forw"></a>
+</div>
+        </td>
+    </tr>
+    </table>
+    <div id="stdFooter">
+        Created 2011-05-16 by mopcoge
+    </div>
+
+</div>                                  <!-- pagewrapper -->
+</body>
+</html>

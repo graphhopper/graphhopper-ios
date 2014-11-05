@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head> 
+    <title>Autojar</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="../css/moc.css"  rel="stylesheet" type="text/css" /> 
+    <link href="../css/autojar.css"  rel="stylesheet" type="text/css" />
+</head>
+<body style="background-color:#c0c0c0;text-align:center">
+
+<div id="pagewrapper">
+<table style="width:100%; color: white; background-image: url(../img/head.png);">
+<tr style="height:120px">
+    <td style="width:25%"> 
+    </td>
+    <td align="right" valign="top"><div id="kopfoben">Automatisches Erzeugen von Java-Archiven</div></td>
+</tr>
+</table>
+
+<div style="margin-top:-3.5em;float:right"> 
+    <table><tr> <table cellspacing="0" cellpadding="5"><tr><td><a class="horMenu" href="index.html"><div style="font-size:1.2em;padding:5px">Allgemeines</div></a></td><td><a class="horMenuA" href="usage.html"><div style="font-size:1.2em;padding:5px">Kommandozeilenversion</div></a></td><td><a class="horMenu" href="plugin.html"><div style="font-size:1.2em;padding:5px">Eclipse-Plugin</div></a></td></tr></table>
+ </tr></table>
+</div>
+
+<table style="width: 100%" cellspacing=10>
+    <tr>
+        <td>Bernd Eggink, <a href="mailto:monoped@users.sourceforge.net"> monoped@users.sourceforge.net</a></td>
+        <td align="right"><a href="https://sourceforge.net/projects/autojar/"> 
+    <img src="../img/sf16.png" border="0" align="top" style="margin-right:5px">SourceForge Projektseite</a></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td align="right"></td>
+    </tr>
+</table>
+
+<div id="content">
+    <table style="width: 99%">
+        <tr>
+            <!-- sidebar -->
+
+            <td id="sidebartd"> <table id="navitab" cellspacing="0" cellpadding="0" >
+            <tr><td><a class="navi2 line_white" href="usage.html">Aufruf</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="options.html">Optionen</a></td>
+            </tr>
+            <tr><td><a class="navi3a line_white" href="files.html">Dateiparameter</a></td>
+            </tr>
+            <tr><td><a class="navi3 line_white" href="dynamic.html">Reflection</a></td>
+            </tr>
+            <tr><td><a class="navi2 line_white" href="examples.html">Beispiele</a></td>
+            </tr>
+    </table> 
+                <div style="margin-top:50px; text-align:left">
+                    <a href="https://sourceforge.net">
+                        <img alt="" border=0 style="padding-left:10px" src="http://sourceforge.net/sflogo.php?group_id=156918\&type=2">
+                    </a>
+                </div>
+            </td>
+
+            <!-- main -->
+
+            <td rowspan="2" id="maintd"> 
+<div class="kopf">Dateiparameter</div>
+
+Eine beliebige Anzahl von Datei- oder Verzeichnispfaden kann angegeben werden.
+Was im Einzelnen geschieht, hängt vom Dateityp ab. Grundsätzlich wird eine
+Datei nur in die Ausgabe übernommen, wenn sie noch nicht darin enthalten ist;
+die Reihenfolge der Parameter ist also relevant.
+
+<ul style="padding-left:1em"> 
+
+<li style="padding-bottom:10px"> <strong>Klassen</strong>: 
+
+    Die Angabe von Klassen erfolgt in der Form
+    <code><i>klassenname</i>.class</code>, wobei
+    <code><i>klassenname</i></code> der vollständige Klassenname ist. Der
+    Classpath wird nach der Klassendatei durchsucht. Wurde sie gefunden, fügt
+    Autojar sie in die Ausgabedatei ein, untersucht dann den Bytecode rekursiv
+    nach weiteren verwendeten Klassen und fügt diese ggf. ebenfalls in die
+    Ausgabedatei ein.
+
+    <p>Die letzte Komponente des Klassennamens kann Musterzeichen * und ?
+    enthalten. In diesem Fall werden alle Klassen gesucht und eingefügt, die
+    dem Muster entsprechen. So übernimmt z.B. <code>a.b.*.class</code> alle
+    Klassen aus dem Package <code>a.b</code>.
+
+    <p>Ein Muster der Form <code>**.class</code> bewirkt eine rekursive Kopie.
+    Beispiel: Mit dem Parameter <code>a.b.**.class</code> erreicht man, dass
+    alle Klassen des Packages <code>a.b</code> und alle Klassen in dessen
+    Unterpackages (<code>a.b.x</code>, <code>a.b.x.y</code>, <code>a.b.z</code>
+    usw.) übernommen werden.
+
+</li>
+
+<li style="padding-bottom:10px"><strong>.jar- und .war - Dateien</strong>: 
+
+    Alle in dem Archiv enthaltenen Dateien werden in das Ausgabearchiv
+    eingefügt, mit Ausnahme des "META-INF"-Verzeichnisses. Klassendateien
+    werden nach anderen verwendeteten Klassen durchsucht wie oben beschrieben.
+
+</li>
+
+<li style="padding-bottom:10px"><strong>.zip - Dateien</strong>: 
+
+    Wie .jar-Dateien, jedoch werden Klassendateien <em>nicht</em> speziell
+    behandelt.
+
+</li>
+
+<li style="padding-bottom:10px"><strong>Andere Dateien</strong>: 
+
+    Bezeichnet der Pfad eine existierende Datei, wird diese ins Archiv
+    übernommen. Wenn die Datei nicht existiert, der Pfad relativ ist und ein
+    Suchpfad für Nicht-Klassen-Dateien angegeben wurde (Option -p oder -b),
+    wird die Datei über den Pfad gesucht und ggf. an das Archiv angehängt. 
+    Wie bei Klassendateien kann die letzte Pfadkomponente Musterzeichen
+    enthalten. Wenn die letzte Komponente <code>**</code> lautet (z.B. 
+    <code>a/b/**</code>), wird das entsprechende Verzeichnis (<code>a/b</code>) 
+    gesucht und rekursiv, mit allen Dateien und Unterverzeichnissen, in das 
+    Ausgabearchiv kopiert.
+
+    <p>Einen nur aus <code>**</code> bestehenden Parameter anzugeben, ist
+    normalerweise nicht sinnvoll; das würde das gesamte Arbeitsverzeichnis in
+    die Ausgabe kopieren. Eine Klassendatei mit einem absoluten Dateipfad
+    anzugeben, ist ebenfalls nicht besonders sinnvoll. Sie würde wie eine
+    normale Datei behandelt, d.h. ohne rekursive Klassensuche.
+
+</li>
+
+<li style="padding-bottom:10px"><strong>Verzeichnisse</strong>: 
+
+    Verzeichnisse werden rekursiv mit allen Dateien und Unterverzeichnissen
+    angehängt, ausgenommen solche, deren Namen einem mit <code>-X</code>
+    angegebenen Muster entsprechen (siehe unten). Alle Dateien, auch
+    Klassendateien, werden als normale Dateien betrachtet.
+
+</li>
+
+<li style="padding-bottom:10px">
+
+    Der <strong>spezielle Parameter <code>-C <i>verzeichnis
+    name</i></code></strong> hat dieselbe Bedeutung wie beim normalen
+    <code>jar</code>-Kommando: Das Arbeitsverzeichnis wird temporär auf
+    <code><i>verzeichnis</i></code> gesetzt, der Parameter
+    <code><i>name</i></code> wird ausgewertet, danach das Arbeitsverzeichnis
+    wieder auf den alten Stand zurückgesetzt. In <code><i>muster</i></code>
+    können die Musterzeichen ? und * enthalten sein. Ein Punkt bezeichnet den
+    gesamten Verzeichnisinhalt.
+
+</li> 
+
+<li style="padding-bottom:10px">
+
+    Der <strong>spzielle Parameter<code>-X <i>muster</i></code></strong> gibt ein
+    Ausschluss-Muster für Dateien vor. Es wirkt auf nachfolgende Parameter,
+    die Dateilisten generieren (Verzeichnisse, Musterausdrücke oder ".").
+    Dateien, deren Namen dem Muster entsprechen, werden übergangen. Beliebig
+    viele solcher Angaben können in die Parameterliste eingestreut werden; sie
+    werden intern mit "oder" verknüpft. Gibt man als Muster ein Minuszeichen an
+    (<code><strong>-X -</strong></code> oder
+    <code><strong>-X-</strong></code>), wird die Musterliste gelöscht, d.h. bis
+    auf weiteres werden dann wieder <em>alle</em> Dateien übernommen.
+
+    <br>Mit dieser Angabe lassen sich z.B. spezielle Unterverzeichnisse wie
+    <code>.svn</code> oder <code>.cvs</code> ausblenden.
+
+</li>
+</ul>
+
+<p>Man beachte, dass <code>-C</code> und <code>-X</code> <em>keine</em>
+Optionen sind. Falls eine solche Angabe den ersten Nicht-Optionsparameter
+darstellt, muss <code>--</code> davor gesetzt werden, damit Autojar ihn nicht
+als Option interpretiert (siehe <a href="options.html">Optionen</a>).
+
+<p>Klassen aus der Java-Runtimebibliothek werden niemals in das Archiv aufgenommen.
+
+<p>Am Ende des Programmlaufs gibt Autojar, sofern die Option -q nicht angegeben
+ist, eine Liste der nicht gefundenen Dateien aus, ferner eine Liste der
+Suchpfadkomponenten (Archive oder Verzeichnisse), die nie benutzt wurden. </td>
+        </tr>
+    </table>
+</div>                                  <!-- content -->
+
+    <table cellspacing=0 cellpadding=0 width="100%">
+    <tr>
+        <!-- "top" arrow -->
+
+        <td id="sidebartdbot">
+            <a href="#top" title="top">
+                <img src="../img/top.gif" border="0" alt="up" style="padding-bottom:5px;padding-left:10px">
+            </a>
+        </td>
+        <!-- previous / next -->
+<td id="prevnext">
+<div style="width:49%; float:left; text-align:left">
+<a href="options.html" style="text-decoration:none"><img src="../img/back.gif" id=back> Optionen</a> 
+</div><div style="float: right; width:49%;text-align:right">
+<a href="dynamic.html" style="text-decoration:none">Reflection <img src="../img/forward.gif" id=forw></a>
+</div>
+        </td>
+    </tr>
+    </table>
+    <div id="footer">
+        Created 2007-10-05 by mopcoge
+    </div>
+
+</div>                                  <!-- pagewrapper -->
+</body>
+</html>

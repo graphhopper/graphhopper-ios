@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head> 
+    <title>Autojar</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link href="../css/moc.css"  rel="stylesheet" type="text/css" /> 
+    <link href="../css/autojar.css"  rel="stylesheet" type="text/css" />
+</head>
+<body style="background-color:#c0c0c0;text-align:center">
+
+<div id="pagewrapper">
+<table id="titletab">
+<tr style="height:120px">
+    <td style="width:25%"> 
+    </td>
+    <td align="right" valign="top"><div id="kopfoben">Automatisches Erzeugen von Java-Archiven</div></td>
+</tr>
+</table>
+
+<div style="margin-top:-3.5em;float:right"> 
+    <table><tr> <table cellspacing="0" cellpadding="5"><tr><td><a class="horMenu" href="index.html"><div style="font-size:1.2em;padding:5px">Allgemeines</div></a></td><td><a class="horMenuA" href="cmdline.html"><div style="font-size:1.2em;padding:5px">Kommandozeile</div></a></td><td><a class="horMenu" href="plugin/index.html"><div style="font-size:1.2em;padding:5px">Eclipse-Plugin</div></a></td></tr></table>
+ </tr></table>
+</div>
+
+<table style="width: 100%" cellspacing=10>
+    <tr>
+        <td>Bernd Eggink, <A href="mailto:monoped@users.sourceforge.net"> monoped@users.sourceforge.net</A></td>
+        <td align="right"><a href="https://sourceforge.net/projects/autojar">SourceForge Projektseite</a></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td align="right"></td>
+    </tr>
+</table>
+
+<div id="content">
+    <table style="width: 99%">
+        <tr>
+            <!-- sidebar -->
+
+            <td id="sidebartd"> <table id="navitab" cellspacing="0" cellpadding="0" >
+            <tr><td><a class="navi2 line_white" href="usage.html">Aufruf</a></td>
+            </tr>
+            <tr><td><a class="navi2 line_white" href="examples.html">Beispiele</a></td>
+            </tr>
+            <tr><td><a class="navi2 line_white" href="compile.html">Selbst kompilieren</a></td>
+            </tr>
+    </table> 
+                <div style="margin-top:50px; text-align:left">
+                    <a href="https://sourceforge.net">
+                        <img alt="" border=0 style="padding-left:10px" src="http://sourceforge.net/sflogo.php?group_id=156918\&type=2">
+                    </a>
+                </div>
+            </td>
+
+            <!-- main -->
+
+            <td rowspan="2" id="maintd">     <div class="kopf">Aufruf</div>
+
+        Das Paket enthält zwei Versionen mit gleicher Funktionalität. Die eine,
+        <code>autojar.jar</code>, wurde von autojar selbst erzeugt und enthält
+        alle notwendigen Klassen aus der BCEL-Bibliothek. Sie ist zu benutzen,
+        wenn man BCEL nicht installiert hat. Aufruf:
+
+        <blockquote><code><strong>java -jar autojar.jar [option...]
+        [datei...]</strong></code></blockquote>
+
+        Die andere, <code>autojar-core.jar</code> enthält nur die eigentlichen
+        autojar-Klassen. Sie ist kleiner, benötigt aber bcel-5.1.jar (oder
+        besser) im Classpath. Aufruf:
+
+        <blockquote><code><strong>java -cp autojar-core.jar:bcel.jar
+        de.uni_hamburg.eggink.autojar.Autojar [option...]
+        [datei...]</strong></code></blockquote>
+
+        (Windows-Benutzer verwenden wie üblich Semikolon statt Doppelpunkt im Classpath).
+
+        <p>Jeder Programmparameter (Optionen und Dateien) kann auch indirekt
+        als Textdatei angegeben werden. Beispiel:
+
+        <blockquote>
+            <code><strong>java -jar autojar.jar -o old.jar @params -c in.jar @class-list</strong></code>
+        </blockquote>
+            
+        Hier wird jede Zeile der Datei <code>params</code> bzw.
+        <code>class-list</code> als ein Programmparameter betrachtet und in die
+        Liste der Aufrufparameter eingefügt. </td>
+        </tr>
+    </table>
+</div>                                  <!-- content -->
+
+    <table cellspacing=0 cellpadding=0 width="100%">
+    <tr>
+        <!-- "top" arrow -->
+
+        <td id="sidebartdbot">
+            <a href="#top" title="top">
+                <img src="../img/top.gif" border="0" alt="up" style="padding-bottom:5px;padding-left:10px">
+            </a>
+        </td>
+        <!-- previous / next -->
+<td id="prevnext">
+<div style="width:49%; float:left; text-align:left">
+<a href="index.html" style="text-decoration:none"><img src="../img/back.gif" id=back> Allgemeines</a> 
+</div><div style="float: right; width:49%;text-align:right">
+<a href="usage.html" style="text-decoration:none">Aufruf <img src="../img/forward.gif" id=forw></a>
+</div>
+        </td>
+    </tr>
+    </table>
+    <div id="footer">
+        Created 2007-05-28 by mopCoge
+    </div>
+
+</div>                                  <!-- pagewrapper -->
+</body>
+</html>
