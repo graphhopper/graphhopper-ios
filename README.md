@@ -6,6 +6,9 @@ and creates the `libgraphhopper.a` library to be used on iOS and OS X.
 It uses [j2objc](https://github.com/google/j2objc) to translate the .java sources 
 into Objective-C.
 
+Take a look at [graphhopper-ios-sample](https://github.com/clns/graphhopper-ios-sample) 
+for the easiest way to get started.
+
 ## Getting Started
 
 Run the following commands in Terminal:
