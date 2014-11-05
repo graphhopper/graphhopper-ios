@@ -9,7 +9,28 @@
 /* Begin PBXFileReference section */
 		FA9FF1D71A0679A30003C5FA /* libgraphhopper.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgraphhopper.a; path = build/libgraphhopper.a; sourceTree = SOURCE_ROOT; };
 		FABC91D41A06CC7000B4106B /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = src; sourceTree = "<group>"; };
-		FAE1E98F1A09520C00654F13 /* translations */ = {isa = PBXFileReference; lastKnownFileType = folder; name = translations; path = build/translations; sourceTree = "<group>"; };
+		FABCD8B01A0A47520013FB88 /* bg.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = bg.txt; path = build/translations/bg.txt; sourceTree = "<group>"; };
+		FABCD8B11A0A47520013FB88 /* ca.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = ca.txt; path = build/translations/ca.txt; sourceTree = "<group>"; };
+		FABCD8B21A0A47520013FB88 /* de_DE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = de_DE.txt; path = build/translations/de_DE.txt; sourceTree = "<group>"; };
+		FABCD8B31A0A47520013FB88 /* el.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = el.txt; path = build/translations/el.txt; sourceTree = "<group>"; };
+		FABCD8B41A0A47520013FB88 /* en_US.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = en_US.txt; path = build/translations/en_US.txt; sourceTree = "<group>"; };
+		FABCD8B51A0A47520013FB88 /* es.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = es.txt; path = build/translations/es.txt; sourceTree = "<group>"; };
+		FABCD8B61A0A47520013FB88 /* fil.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = fil.txt; path = build/translations/fil.txt; sourceTree = "<group>"; };
+		FABCD8B71A0A47520013FB88 /* fr.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = fr.txt; path = build/translations/fr.txt; sourceTree = "<group>"; };
+		FABCD8B81A0A47520013FB88 /* gl.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = gl.txt; path = build/translations/gl.txt; sourceTree = "<group>"; };
+		FABCD8B91A0A47520013FB88 /* he.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = he.txt; path = build/translations/he.txt; sourceTree = "<group>"; };
+		FABCD8BA1A0A47520013FB88 /* it.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = it.txt; path = build/translations/it.txt; sourceTree = "<group>"; };
+		FABCD8BB1A0A47520013FB88 /* ja.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = ja.txt; path = build/translations/ja.txt; sourceTree = "<group>"; };
+		FABCD8BC1A0A47520013FB88 /* nl.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = nl.txt; path = build/translations/nl.txt; sourceTree = "<group>"; };
+		FABCD8BD1A0A47520013FB88 /* pt_BR.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = pt_BR.txt; path = build/translations/pt_BR.txt; sourceTree = "<group>"; };
+		FABCD8BE1A0A47520013FB88 /* pt_PT.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = pt_PT.txt; path = build/translations/pt_PT.txt; sourceTree = "<group>"; };
+		FABCD8BF1A0A47520013FB88 /* ro.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = ro.txt; path = build/translations/ro.txt; sourceTree = "<group>"; };
+		FABCD8C01A0A47520013FB88 /* ru.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = ru.txt; path = build/translations/ru.txt; sourceTree = "<group>"; };
+		FABCD8C11A0A47520013FB88 /* si.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = si.txt; path = build/translations/si.txt; sourceTree = "<group>"; };
+		FABCD8C21A0A47520013FB88 /* sk.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = sk.txt; path = build/translations/sk.txt; sourceTree = "<group>"; };
+		FABCD8C31A0A47520013FB88 /* sv_SE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = sv_SE.txt; path = build/translations/sv_SE.txt; sourceTree = "<group>"; };
+		FABCD8C41A0A47520013FB88 /* tr.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = tr.txt; path = build/translations/tr.txt; sourceTree = "<group>"; };
+		FABCD8C51A0A47520013FB88 /* uk.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = uk.txt; path = build/translations/uk.txt; sourceTree = "<group>"; };
 		FAE1E9911A09527F00654F13 /* libjre_emul.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjre_emul.a; path = j2objc/lib/libjre_emul.a; sourceTree = SOURCE_ROOT; };
 		FAE1E9921A0952A200654F13 /* libj2objc_main.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libj2objc_main.a; path = j2objc/lib/libj2objc_main.a; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -27,9 +48,38 @@
 			isa = PBXGroup;
 			children = (
 				FABC91D41A06CC7000B4106B /* src */,
-				FAE1E98F1A09520C00654F13 /* translations */,
+				FABCD8AF1A0A47230013FB88 /* Translations */,
 			);
 			name = graphhopper;
+			sourceTree = "<group>";
+		};
+		FABCD8AF1A0A47230013FB88 /* Translations */ = {
+			isa = PBXGroup;
+			children = (
+				FABCD8B01A0A47520013FB88 /* bg.txt */,
+				FABCD8B11A0A47520013FB88 /* ca.txt */,
+				FABCD8B21A0A47520013FB88 /* de_DE.txt */,
+				FABCD8B31A0A47520013FB88 /* el.txt */,
+				FABCD8B41A0A47520013FB88 /* en_US.txt */,
+				FABCD8B51A0A47520013FB88 /* es.txt */,
+				FABCD8B61A0A47520013FB88 /* fil.txt */,
+				FABCD8B71A0A47520013FB88 /* fr.txt */,
+				FABCD8B81A0A47520013FB88 /* gl.txt */,
+				FABCD8B91A0A47520013FB88 /* he.txt */,
+				FABCD8BA1A0A47520013FB88 /* it.txt */,
+				FABCD8BB1A0A47520013FB88 /* ja.txt */,
+				FABCD8BC1A0A47520013FB88 /* nl.txt */,
+				FABCD8BD1A0A47520013FB88 /* pt_BR.txt */,
+				FABCD8BE1A0A47520013FB88 /* pt_PT.txt */,
+				FABCD8BF1A0A47520013FB88 /* ro.txt */,
+				FABCD8C01A0A47520013FB88 /* ru.txt */,
+				FABCD8C11A0A47520013FB88 /* si.txt */,
+				FABCD8C21A0A47520013FB88 /* sk.txt */,
+				FABCD8C31A0A47520013FB88 /* sv_SE.txt */,
+				FABCD8C41A0A47520013FB88 /* tr.txt */,
+				FABCD8C51A0A47520013FB88 /* uk.txt */,
+			);
+			name = Translations;
 			sourceTree = "<group>";
 		};
 		FAE1E9901A09525E00654F13 /* Libraries */ = {
