@@ -1,0 +1,3 @@
+Main-Class: org.sourceforge.autojar.Autojar
+
+
