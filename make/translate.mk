@@ -13,7 +13,7 @@ TRANSLATE_MAKE_LIST = $(filter $? $(TRANSLATE_NEW_FILES),$^)
 
 $(TRANSLATE_TARGET): $(TRANSLATE_JAVA_FULL)
 	@mkdir -p $(GEN_OBJC_DIR)
-	$(call long_list_to_file,$(TRANSLATE_LIST),$(TRANSLATE_MAKE_LIST))
+#	$(call long_list_to_file,$(TRANSLATE_LIST),$(TRANSLATE_MAKE_LIST))
 	@if [ -s $(TRANSLATE_LIST) ]; then \
 	  echo Translating sources.; \
 	  $(TRANSLATE_CMD) @$(TRANSLATE_LIST); \
