@@ -1,4 +1,6 @@
-class.list: dependencies/trove/trove4j-stripped.jar dependencies/class-exclude.grep graphhopper/core/.graphhopper-compat
+COMPAT_FILES = $(shell cat dependencies/graphhopper-ios-compat/.gitignore | grep ^\!.*\.java | sed s:\!:graphhopper/:)
+
+class.list: dependencies/trove/trove4j-stripped.jar dependencies/class-exclude.grep $(COMPAT_FILES)
 	@if [ "$(MAKECMDGOALS)" != "class.list" ]; then echo "error: You need to run \`make class.list\` first"; exit 1; fi
 	@rm -f $@
 	find graphhopper/core/src/main/java -name '*.java' | grep -vf dependencies/class-exclude.grep >> $@
@@ -7,13 +9,11 @@ class.list: dependencies/trove/trove4j-stripped.jar dependencies/class-exclude.g
 
 # GraphHopper
 
-graphhopper/core:
-	@git submodule init
-	@git submodule update
+graphhopper/%.java: dependencies/graphhopper-ios-compat/%.java
+	cp $< $@
 
-graphhopper/core/.graphhopper-compat: dependencies/graphhopper-compat | graphhopper/core
-	@cp -R dependencies/graphhopper-compat/ graphhopper/core
-	@touch $@
+force-compat:
+	@for file in $(COMPAT_FILES:graphhopper%=dependencies/graphhopper-ios-compat%); do touch $$file; done
 
 # j2objc
 
