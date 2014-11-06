@@ -1,3 +1,6 @@
 [submodule "graphhopper"]
 	path = graphhopper
 	url = https://github.com/graphhopper/graphhopper.git
+[submodule "graphhopper-ios-sample/mbxmapkit"]
+	path = graphhopper-ios-sample/mbxmapkit
+	url = https://github.com/mapbox/mbxmapkit
