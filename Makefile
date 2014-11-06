@@ -15,6 +15,8 @@ TRANSLATE_SOURCEPATH = graphhopper/core/src/main/java:dependencies/trove/src/:de
 TRANSLATE_ARGS := --doc-comments --mem-debug -encoding UTF-8 --extract-unsequenced --final-methods-as-functions --hide-private-members
 include make/translate.mk
 
+translate: $(COMPAT_FILES)
+
 ifdef PRODUCT_NAME
 FAT_LIB_NAME := $(PRODUCT_NAME)
 else

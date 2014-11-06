@@ -1,6 +1,6 @@
 COMPAT_FILES = $(shell cat dependencies/graphhopper-ios-compat/.gitignore | grep ^\!.*\.java | sed s:\!:graphhopper/:)
 
-class.list: dependencies/trove/trove4j-stripped.jar dependencies/class-exclude.grep $(COMPAT_FILES)
+class.list: dependencies/trove/trove4j-stripped.jar dependencies/class-exclude.grep
 	@if [ "$(MAKECMDGOALS)" != "class.list" ]; then echo "error: You need to run \`make class.list\` first"; exit 1; fi
 	@rm -f $@
 	find graphhopper/core/src/main/java -name '*.java' | grep -vf dependencies/class-exclude.grep >> $@
