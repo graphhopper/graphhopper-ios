@@ -11,7 +11,7 @@ into Objective-C.
 To get started run the following commands in Terminal:
 
 ```sh
-git clone https://github.com/graphhopper/graphhopper-ios.git
+git clone https://github.com/clns/graphhopper-ios.git
 cd graphhopper-ios && ./init.sh
 ```
 
@@ -20,19 +20,16 @@ to use GraphHopper on iOS or OS X.
 
 You have two options:
 
-1. Head over to the [[graphhopper-ios-sample|tree/master/graphhopper-ios-sample]] 
-project and follow the instructions there. This is the easiest way to get started.
+1. Head over to [graphhopper-ios-sample](https://github.com/clns/graphhopper-ios/tree/master/graphhopper-ios-sample) 
+and follow the instructions there. This is the easiest way to get started.
 
 2. Manually add *graphhopper.xcodeproj* to your Xcode project. See the Usage section below.
 
 ## Usage
 
-You can either add *graphhopper.xcodeproj* to your project and configure it accordingly 
-or you can compile the library from the Terminal and only add the library and sources
+You can either add *graphhopper.xcodeproj* to your project and let Xcode compile the library 
+or you can compile it from the Terminal and then add the library and sources
 to your Xcode project.
-
-> Note that the Terminal method compiles the library for the following architectures: 
-macosx, simulator, iphoneos, so this method is not recommended.
 
 ### Xcode
 
@@ -52,18 +49,21 @@ your target selected in "Add to targets:")
 
 You're now ready to use GraphHopper on iOS and OS X.
 
-> Note that you are responsible for loading graph data. For an example check out 
-the graphhopper-ios-sample project.
+> Note: You are responsible for loading graph data. For an example check out 
+the [graphhopper-ios-sample](https://github.com/clns/graphhopper-ios/tree/master/graphhopper-ios-sample) project.
 
 ### Terminal
 
 Alternatively, you can translate and compile the library by invoking `make` 
 in the Terminal. You can then link the library 
 `graphhopper-ios/build/libgraphhopper.a` and it's header files at `graphhopper-ios/src` 
-manually into your project. For all the other requirements see the Xcode section above.
+manually into your project. For all the other configurations see the Xcode section above.
+
+> Note: This method compiles the library for the following architectures: 
+macosx, simulator, iphoneos, so it is not recommended.
 
 ## Requirements
 
 * iOS 7.0+ or OS X 10.10 (it might work on older versions but haven't tested)
 * JDK 1.7 or higher
-* Xcode 6 or higher
+* Xcode 6.0 or higher

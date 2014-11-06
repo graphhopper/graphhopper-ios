@@ -8,6 +8,7 @@ fi
 if [ ! -e $GRAPH_FILE ]; then
   mv $FILE $GRAPH_FILE
 fi
-git stash save "Before importing"
+git reset --hard HEAD
 ./graphhopper.sh import $GRAPH_FILE
-git stash pop
+cd ..
+make force-compat

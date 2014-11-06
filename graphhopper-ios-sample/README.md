@@ -1,7 +1,7 @@
 graphhopper-ios-sample
 ======================
 
-This is a sample project that provides a starting point for [[graphhopper-ios|]]. 
+This is a sample project that provides a starting point for running GraphHopper on iOS. 
 This is the easiest way to get started.
 
 ## Getting Started
@@ -10,10 +10,11 @@ To get started the only thing you need to do is to import data.
 
 #### Import Data
 
-For the routing to work, you need to import graph data. The Xcode project 
-has a reference to the graph data at *graphhopper-ios/graphhopper/graph-data.osm-gh*.
+The Xcode project has a reference to the graph data at 
+*graphhopper-ios/graphhopper/graph-data.osm-gh*.
 
-You can import a sample graph by running this command in Terminal:
+You can import a sample graph by running this command in Terminal 
+(while in the root of [graphhopper-ios-sample](https://github.com/clns/graphhopper-ios/tree/master/graphhopper-ios-sample)):
 
 ```sh
 ./graphhopper-ios-sample/import-sample.sh
@@ -27,4 +28,7 @@ and experiment with GraphHopper on iOS and OS X.
 
 ## Requirements
 
-Everything that graphhopper-ios requires but was only tested on iOS 8.0+.
+Everything that [graphhopper-ios-sample](https://github.com/clns/graphhopper-ios/tree/master/graphhopper-ios-sample) 
+requires but the sample project was only tested on iOS 8.0+.
+
+Also for the import you'll need [Maven](http://maven.apache.org).
