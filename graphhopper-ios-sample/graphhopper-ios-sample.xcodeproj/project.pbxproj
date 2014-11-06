@@ -1,0 +1,685 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FABCD8D61A0A61430013FB88 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FABCD8D51A0A61430013FB88 /* main.m */; };
+		FABCD8D91A0A61430013FB88 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FABCD8D81A0A61430013FB88 /* AppDelegate.m */; };
+		FABCD8DC1A0A61430013FB88 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FABCD8DB1A0A61430013FB88 /* ViewController.m */; };
+		FABCD8E11A0A61430013FB88 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FABCD8E01A0A61430013FB88 /* Images.xcassets */; };
+		FABCD8E41A0A61430013FB88 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FABCD8E21A0A61430013FB88 /* LaunchScreen.xib */; };
+		FABCD8F01A0A61430013FB88 /* graphhopper_ios_sampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FABCD8EF1A0A61430013FB88 /* graphhopper_ios_sampleTests.m */; };
+		FABCD9371A0A62D90013FB88 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FABCD9361A0A62D90013FB88 /* libz.dylib */; };
+		FABCD9391A0A62E20013FB88 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABCD9381A0A62E20013FB88 /* Security.framework */; };
+		FABCD93B1A0A62EE0013FB88 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FABCD93A1A0A62EE0013FB88 /* libsqlite3.dylib */; };
+		FABCD9421A0A65020013FB88 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABCD93E1A0A65020013FB88 /* Main_iPad.storyboard */; };
+		FABCD9431A0A65020013FB88 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABCD9401A0A65020013FB88 /* Main_iPhone.storyboard */; };
+		FABCD9691A0A8C620013FB88 /* Directions.m in Sources */ = {isa = PBXBuildFile; fileRef = FABCD9681A0A8C620013FB88 /* Directions.m */; };
+		FAFEF8891A0BE918002C11A3 /* graph-data.osm-gh in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF8881A0BE918002C11A3 /* graph-data.osm-gh */; };
+		FAFEF88D1A0BE96D002C11A3 /* libjre_emul.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFEF88A1A0BE96D002C11A3 /* libjre_emul.a */; };
+		FAFEF88E1A0BE96D002C11A3 /* libj2objc_main.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFEF88B1A0BE96D002C11A3 /* libj2objc_main.a */; };
+		FAFEF88F1A0BE96D002C11A3 /* libgraphhopper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFEF88C1A0BE96D002C11A3 /* libgraphhopper.a */; };
+		FAFEF8A71A0BE988002C11A3 /* bg.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF8901A0BE988002C11A3 /* bg.txt */; };
+		FAFEF8A81A0BE988002C11A3 /* ca.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF8911A0BE988002C11A3 /* ca.txt */; };
+		FAFEF8A91A0BE988002C11A3 /* de_DE.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF8921A0BE988002C11A3 /* de_DE.txt */; };
+		FAFEF8AA1A0BE988002C11A3 /* el.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF8931A0BE988002C11A3 /* el.txt */; };
+		FAFEF8AB1A0BE988002C11A3 /* en_US.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF8941A0BE988002C11A3 /* en_US.txt */; };
+		FAFEF8AC1A0BE988002C11A3 /* es.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF8951A0BE988002C11A3 /* es.txt */; };
+		FAFEF8AD1A0BE988002C11A3 /* fil.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF8961A0BE988002C11A3 /* fil.txt */; };
+		FAFEF8AE1A0BE988002C11A3 /* fr.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF8971A0BE988002C11A3 /* fr.txt */; };
+		FAFEF8AF1A0BE988002C11A3 /* gl.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF8981A0BE988002C11A3 /* gl.txt */; };
+		FAFEF8B01A0BE988002C11A3 /* he.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF8991A0BE988002C11A3 /* he.txt */; };
+		FAFEF8B11A0BE988002C11A3 /* it.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF89A1A0BE988002C11A3 /* it.txt */; };
+		FAFEF8B21A0BE988002C11A3 /* ja.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF89B1A0BE988002C11A3 /* ja.txt */; };
+		FAFEF8B31A0BE988002C11A3 /* nl.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF89C1A0BE988002C11A3 /* nl.txt */; };
+		FAFEF8B41A0BE988002C11A3 /* pt_BR.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF89D1A0BE988002C11A3 /* pt_BR.txt */; };
+		FAFEF8B51A0BE988002C11A3 /* pt_PT.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF89E1A0BE988002C11A3 /* pt_PT.txt */; };
+		FAFEF8B61A0BE988002C11A3 /* ro.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF89F1A0BE988002C11A3 /* ro.txt */; };
+		FAFEF8B71A0BE988002C11A3 /* ru.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF8A01A0BE988002C11A3 /* ru.txt */; };
+		FAFEF8B81A0BE988002C11A3 /* si.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF8A11A0BE988002C11A3 /* si.txt */; };
+		FAFEF8B91A0BE988002C11A3 /* sk.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF8A21A0BE988002C11A3 /* sk.txt */; };
+		FAFEF8BA1A0BE988002C11A3 /* sv_SE.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF8A31A0BE988002C11A3 /* sv_SE.txt */; };
+		FAFEF8BB1A0BE988002C11A3 /* tr.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF8A41A0BE988002C11A3 /* tr.txt */; };
+		FAFEF8BC1A0BE988002C11A3 /* uk.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF8A51A0BE988002C11A3 /* uk.txt */; };
+		FAFEF8CE1A0BEC6D002C11A3 /* MBXMapKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFEF8C51A0BEC6D002C11A3 /* MBXMapKit.m */; };
+		FAFEF8CF1A0BEC6D002C11A3 /* MBXOfflineMapDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFEF8C71A0BEC6D002C11A3 /* MBXOfflineMapDatabase.m */; };
+		FAFEF8D01A0BEC6D002C11A3 /* MBXOfflineMapDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFEF8C91A0BEC6D002C11A3 /* MBXOfflineMapDownloader.m */; };
+		FAFEF8D11A0BEC6D002C11A3 /* MBXPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFEF8CB1A0BEC6D002C11A3 /* MBXPointAnnotation.m */; };
+		FAFEF8D21A0BEC6D002C11A3 /* MBXRasterTileOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = FAFEF8CD1A0BEC6D002C11A3 /* MBXRasterTileOverlay.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FABCD8EA1A0A61430013FB88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FABCD8C81A0A61430013FB88 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FABCD8CF1A0A61430013FB88;
+			remoteInfo = "graphhopper-ios-sample";
+		};
+		FAFEF8BD1A0BE996002C11A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAFEF8841A0BE8FB002C11A3 /* graphhopper.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = FAF57F741A04E10C00340FDB;
+			remoteInfo = graphhopper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FABCD8D01A0A61430013FB88 /* graphhopper-ios-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "graphhopper-ios-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FABCD8D41A0A61430013FB88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FABCD8D51A0A61430013FB88 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FABCD8D71A0A61430013FB88 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FABCD8D81A0A61430013FB88 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FABCD8DA1A0A61430013FB88 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FABCD8DB1A0A61430013FB88 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FABCD8E01A0A61430013FB88 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FABCD8E31A0A61430013FB88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		FABCD8E91A0A61430013FB88 /* graphhopper-ios-sampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "graphhopper-ios-sampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FABCD8EE1A0A61430013FB88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FABCD8EF1A0A61430013FB88 /* graphhopper_ios_sampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = graphhopper_ios_sampleTests.m; sourceTree = "<group>"; };
+		FABCD9361A0A62D90013FB88 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		FABCD9381A0A62E20013FB88 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		FABCD93A1A0A62EE0013FB88 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		FABCD93F1A0A65020013FB88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		FABCD9411A0A65020013FB88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		FABCD9551A0A6C310013FB88 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		FABCD9671A0A8C620013FB88 /* Directions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Directions.h; sourceTree = "<group>"; };
+		FABCD9681A0A8C620013FB88 /* Directions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Directions.m; sourceTree = "<group>"; };
+		FAFEF8841A0BE8FB002C11A3 /* graphhopper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = graphhopper.xcodeproj; path = ../graphhopper.xcodeproj; sourceTree = "<group>"; };
+		FAFEF8881A0BE918002C11A3 /* graph-data.osm-gh */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "graph-data.osm-gh"; path = "../graphhopper/graph-data.osm-gh"; sourceTree = "<group>"; };
+		FAFEF88A1A0BE96D002C11A3 /* libjre_emul.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjre_emul.a; path = ../j2objc/lib/libjre_emul.a; sourceTree = "<group>"; };
+		FAFEF88B1A0BE96D002C11A3 /* libj2objc_main.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libj2objc_main.a; path = ../j2objc/lib/libj2objc_main.a; sourceTree = "<group>"; };
+		FAFEF88C1A0BE96D002C11A3 /* libgraphhopper.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgraphhopper.a; path = ../build/libgraphhopper.a; sourceTree = "<group>"; };
+		FAFEF8901A0BE988002C11A3 /* bg.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = bg.txt; path = build/translations/bg.txt; sourceTree = "<group>"; };
+		FAFEF8911A0BE988002C11A3 /* ca.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ca.txt; path = build/translations/ca.txt; sourceTree = "<group>"; };
+		FAFEF8921A0BE988002C11A3 /* de_DE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = de_DE.txt; path = build/translations/de_DE.txt; sourceTree = "<group>"; };
+		FAFEF8931A0BE988002C11A3 /* el.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = el.txt; path = build/translations/el.txt; sourceTree = "<group>"; };
+		FAFEF8941A0BE988002C11A3 /* en_US.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = en_US.txt; path = build/translations/en_US.txt; sourceTree = "<group>"; };
+		FAFEF8951A0BE988002C11A3 /* es.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = es.txt; path = build/translations/es.txt; sourceTree = "<group>"; };
+		FAFEF8961A0BE988002C11A3 /* fil.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fil.txt; path = build/translations/fil.txt; sourceTree = "<group>"; };
+		FAFEF8971A0BE988002C11A3 /* fr.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fr.txt; path = build/translations/fr.txt; sourceTree = "<group>"; };
+		FAFEF8981A0BE988002C11A3 /* gl.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = gl.txt; path = build/translations/gl.txt; sourceTree = "<group>"; };
+		FAFEF8991A0BE988002C11A3 /* he.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = he.txt; path = build/translations/he.txt; sourceTree = "<group>"; };
+		FAFEF89A1A0BE988002C11A3 /* it.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = it.txt; path = build/translations/it.txt; sourceTree = "<group>"; };
+		FAFEF89B1A0BE988002C11A3 /* ja.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ja.txt; path = build/translations/ja.txt; sourceTree = "<group>"; };
+		FAFEF89C1A0BE988002C11A3 /* nl.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = nl.txt; path = build/translations/nl.txt; sourceTree = "<group>"; };
+		FAFEF89D1A0BE988002C11A3 /* pt_BR.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = pt_BR.txt; path = build/translations/pt_BR.txt; sourceTree = "<group>"; };
+		FAFEF89E1A0BE988002C11A3 /* pt_PT.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = pt_PT.txt; path = build/translations/pt_PT.txt; sourceTree = "<group>"; };
+		FAFEF89F1A0BE988002C11A3 /* ro.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ro.txt; path = build/translations/ro.txt; sourceTree = "<group>"; };
+		FAFEF8A01A0BE988002C11A3 /* ru.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ru.txt; path = build/translations/ru.txt; sourceTree = "<group>"; };
+		FAFEF8A11A0BE988002C11A3 /* si.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = si.txt; path = build/translations/si.txt; sourceTree = "<group>"; };
+		FAFEF8A21A0BE988002C11A3 /* sk.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sk.txt; path = build/translations/sk.txt; sourceTree = "<group>"; };
+		FAFEF8A31A0BE988002C11A3 /* sv_SE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sv_SE.txt; path = build/translations/sv_SE.txt; sourceTree = "<group>"; };
+		FAFEF8A41A0BE988002C11A3 /* tr.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = tr.txt; path = build/translations/tr.txt; sourceTree = "<group>"; };
+		FAFEF8A51A0BE988002C11A3 /* uk.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = uk.txt; path = build/translations/uk.txt; sourceTree = "<group>"; };
+		FAFEF8C31A0BEC6D002C11A3 /* MBXConstantsAndTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBXConstantsAndTypes.h; sourceTree = "<group>"; };
+		FAFEF8C41A0BEC6D002C11A3 /* MBXMapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBXMapKit.h; sourceTree = "<group>"; };
+		FAFEF8C51A0BEC6D002C11A3 /* MBXMapKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBXMapKit.m; sourceTree = "<group>"; };
+		FAFEF8C61A0BEC6D002C11A3 /* MBXOfflineMapDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBXOfflineMapDatabase.h; sourceTree = "<group>"; };
+		FAFEF8C71A0BEC6D002C11A3 /* MBXOfflineMapDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBXOfflineMapDatabase.m; sourceTree = "<group>"; };
+		FAFEF8C81A0BEC6D002C11A3 /* MBXOfflineMapDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBXOfflineMapDownloader.h; sourceTree = "<group>"; };
+		FAFEF8C91A0BEC6D002C11A3 /* MBXOfflineMapDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBXOfflineMapDownloader.m; sourceTree = "<group>"; };
+		FAFEF8CA1A0BEC6D002C11A3 /* MBXPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBXPointAnnotation.h; sourceTree = "<group>"; };
+		FAFEF8CB1A0BEC6D002C11A3 /* MBXPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBXPointAnnotation.m; sourceTree = "<group>"; };
+		FAFEF8CC1A0BEC6D002C11A3 /* MBXRasterTileOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBXRasterTileOverlay.h; sourceTree = "<group>"; };
+		FAFEF8CD1A0BEC6D002C11A3 /* MBXRasterTileOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBXRasterTileOverlay.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FABCD8CD1A0A61430013FB88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FABCD93B1A0A62EE0013FB88 /* libsqlite3.dylib in Frameworks */,
+				FABCD9391A0A62E20013FB88 /* Security.framework in Frameworks */,
+				FAFEF88F1A0BE96D002C11A3 /* libgraphhopper.a in Frameworks */,
+				FAFEF88E1A0BE96D002C11A3 /* libj2objc_main.a in Frameworks */,
+				FAFEF88D1A0BE96D002C11A3 /* libjre_emul.a in Frameworks */,
+				FABCD9371A0A62D90013FB88 /* libz.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FABCD8E61A0A61430013FB88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FABCD8C71A0A61430013FB88 = {
+			isa = PBXGroup;
+			children = (
+				FAFEF8841A0BE8FB002C11A3 /* graphhopper.xcodeproj */,
+				FABCD8D21A0A61430013FB88 /* graphhopper-ios-sample */,
+				FABCD8EC1A0A61430013FB88 /* graphhopper-ios-sampleTests */,
+				FAFEF8C21A0BEC6D002C11A3 /* MBXMapKit */,
+				FABCD9A51A0AB4550013FB88 /* Graph */,
+				FABCD8D11A0A61430013FB88 /* Products */,
+				FAFEF8A61A0BE988002C11A3 /* Translations */,
+				FABCD9021A0A62860013FB88 /* Libraries */,
+			);
+			sourceTree = "<group>";
+		};
+		FABCD8D11A0A61430013FB88 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FABCD8D01A0A61430013FB88 /* graphhopper-ios-sample.app */,
+				FABCD8E91A0A61430013FB88 /* graphhopper-ios-sampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FABCD8D21A0A61430013FB88 /* graphhopper-ios-sample */ = {
+			isa = PBXGroup;
+			children = (
+				FABCD8D71A0A61430013FB88 /* AppDelegate.h */,
+				FABCD8D81A0A61430013FB88 /* AppDelegate.m */,
+				FABCD9671A0A8C620013FB88 /* Directions.h */,
+				FABCD9681A0A8C620013FB88 /* Directions.m */,
+				FABCD8DA1A0A61430013FB88 /* ViewController.h */,
+				FABCD8DB1A0A61430013FB88 /* ViewController.m */,
+				FABCD93E1A0A65020013FB88 /* Main_iPad.storyboard */,
+				FABCD9401A0A65020013FB88 /* Main_iPhone.storyboard */,
+				FABCD8E01A0A61430013FB88 /* Images.xcassets */,
+				FABCD8E21A0A61430013FB88 /* LaunchScreen.xib */,
+				FABCD8D31A0A61430013FB88 /* Supporting Files */,
+			);
+			path = "graphhopper-ios-sample";
+			sourceTree = "<group>";
+		};
+		FABCD8D31A0A61430013FB88 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FABCD8D41A0A61430013FB88 /* Info.plist */,
+				FABCD8D51A0A61430013FB88 /* main.m */,
+				FABCD9551A0A6C310013FB88 /* PrefixHeader.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FABCD8EC1A0A61430013FB88 /* graphhopper-ios-sampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				FABCD8EF1A0A61430013FB88 /* graphhopper_ios_sampleTests.m */,
+				FABCD8ED1A0A61430013FB88 /* Supporting Files */,
+			);
+			path = "graphhopper-ios-sampleTests";
+			sourceTree = "<group>";
+		};
+		FABCD8ED1A0A61430013FB88 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FABCD8EE1A0A61430013FB88 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FABCD9021A0A62860013FB88 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				FABCD93A1A0A62EE0013FB88 /* libsqlite3.dylib */,
+				FABCD9381A0A62E20013FB88 /* Security.framework */,
+				FABCD9361A0A62D90013FB88 /* libz.dylib */,
+				FAFEF88A1A0BE96D002C11A3 /* libjre_emul.a */,
+				FAFEF88B1A0BE96D002C11A3 /* libj2objc_main.a */,
+				FAFEF88C1A0BE96D002C11A3 /* libgraphhopper.a */,
+			);
+			name = Libraries;
+			path = "../graphhopper-ios";
+			sourceTree = "<group>";
+		};
+		FABCD9A51A0AB4550013FB88 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				FAFEF8881A0BE918002C11A3 /* graph-data.osm-gh */,
+			);
+			name = Graph;
+			sourceTree = "<group>";
+		};
+		FAFEF8851A0BE8FB002C11A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAFEF8A61A0BE988002C11A3 /* Translations */ = {
+			isa = PBXGroup;
+			children = (
+				FAFEF8901A0BE988002C11A3 /* bg.txt */,
+				FAFEF8911A0BE988002C11A3 /* ca.txt */,
+				FAFEF8921A0BE988002C11A3 /* de_DE.txt */,
+				FAFEF8931A0BE988002C11A3 /* el.txt */,
+				FAFEF8941A0BE988002C11A3 /* en_US.txt */,
+				FAFEF8951A0BE988002C11A3 /* es.txt */,
+				FAFEF8961A0BE988002C11A3 /* fil.txt */,
+				FAFEF8971A0BE988002C11A3 /* fr.txt */,
+				FAFEF8981A0BE988002C11A3 /* gl.txt */,
+				FAFEF8991A0BE988002C11A3 /* he.txt */,
+				FAFEF89A1A0BE988002C11A3 /* it.txt */,
+				FAFEF89B1A0BE988002C11A3 /* ja.txt */,
+				FAFEF89C1A0BE988002C11A3 /* nl.txt */,
+				FAFEF89D1A0BE988002C11A3 /* pt_BR.txt */,
+				FAFEF89E1A0BE988002C11A3 /* pt_PT.txt */,
+				FAFEF89F1A0BE988002C11A3 /* ro.txt */,
+				FAFEF8A01A0BE988002C11A3 /* ru.txt */,
+				FAFEF8A11A0BE988002C11A3 /* si.txt */,
+				FAFEF8A21A0BE988002C11A3 /* sk.txt */,
+				FAFEF8A31A0BE988002C11A3 /* sv_SE.txt */,
+				FAFEF8A41A0BE988002C11A3 /* tr.txt */,
+				FAFEF8A51A0BE988002C11A3 /* uk.txt */,
+			);
+			name = Translations;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		FAFEF8C21A0BEC6D002C11A3 /* MBXMapKit */ = {
+			isa = PBXGroup;
+			children = (
+				FAFEF8C31A0BEC6D002C11A3 /* MBXConstantsAndTypes.h */,
+				FAFEF8C41A0BEC6D002C11A3 /* MBXMapKit.h */,
+				FAFEF8C51A0BEC6D002C11A3 /* MBXMapKit.m */,
+				FAFEF8C61A0BEC6D002C11A3 /* MBXOfflineMapDatabase.h */,
+				FAFEF8C71A0BEC6D002C11A3 /* MBXOfflineMapDatabase.m */,
+				FAFEF8C81A0BEC6D002C11A3 /* MBXOfflineMapDownloader.h */,
+				FAFEF8C91A0BEC6D002C11A3 /* MBXOfflineMapDownloader.m */,
+				FAFEF8CA1A0BEC6D002C11A3 /* MBXPointAnnotation.h */,
+				FAFEF8CB1A0BEC6D002C11A3 /* MBXPointAnnotation.m */,
+				FAFEF8CC1A0BEC6D002C11A3 /* MBXRasterTileOverlay.h */,
+				FAFEF8CD1A0BEC6D002C11A3 /* MBXRasterTileOverlay.m */,
+			);
+			name = MBXMapKit;
+			path = mbxmapkit/MBXMapKit;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FABCD8CF1A0A61430013FB88 /* graphhopper-ios-sample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FABCD8F31A0A61430013FB88 /* Build configuration list for PBXNativeTarget "graphhopper-ios-sample" */;
+			buildPhases = (
+				FABCD8CC1A0A61430013FB88 /* Sources */,
+				FABCD8CD1A0A61430013FB88 /* Frameworks */,
+				FABCD8CE1A0A61430013FB88 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAFEF8BE1A0BE996002C11A3 /* PBXTargetDependency */,
+			);
+			name = "graphhopper-ios-sample";
+			productName = "graphhopper-ios-sample";
+			productReference = FABCD8D01A0A61430013FB88 /* graphhopper-ios-sample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FABCD8E81A0A61430013FB88 /* graphhopper-ios-sampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FABCD8F61A0A61430013FB88 /* Build configuration list for PBXNativeTarget "graphhopper-ios-sampleTests" */;
+			buildPhases = (
+				FABCD8E51A0A61430013FB88 /* Sources */,
+				FABCD8E61A0A61430013FB88 /* Frameworks */,
+				FABCD8E71A0A61430013FB88 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FABCD8EB1A0A61430013FB88 /* PBXTargetDependency */,
+			);
+			name = "graphhopper-ios-sampleTests";
+			productName = "graphhopper-ios-sampleTests";
+			productReference = FABCD8E91A0A61430013FB88 /* graphhopper-ios-sampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FABCD8C81A0A61430013FB88 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Calin Seciu";
+				TargetAttributes = {
+					FABCD8CF1A0A61430013FB88 = {
+						CreatedOnToolsVersion = 6.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					FABCD8E81A0A61430013FB88 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = FABCD8CF1A0A61430013FB88;
+					};
+				};
+			};
+			buildConfigurationList = FABCD8CB1A0A61430013FB88 /* Build configuration list for PBXProject "graphhopper-ios-sample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FABCD8C71A0A61430013FB88;
+			productRefGroup = FABCD8D11A0A61430013FB88 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FAFEF8851A0BE8FB002C11A3 /* Products */;
+					ProjectRef = FAFEF8841A0BE8FB002C11A3 /* graphhopper.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				FABCD8CF1A0A61430013FB88 /* graphhopper-ios-sample */,
+				FABCD8E81A0A61430013FB88 /* graphhopper-ios-sampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FABCD8CE1A0A61430013FB88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAFEF8BB1A0BE988002C11A3 /* tr.txt in Resources */,
+				FAFEF8B01A0BE988002C11A3 /* he.txt in Resources */,
+				FAFEF8B81A0BE988002C11A3 /* si.txt in Resources */,
+				FAFEF8B91A0BE988002C11A3 /* sk.txt in Resources */,
+				FAFEF8B11A0BE988002C11A3 /* it.txt in Resources */,
+				FAFEF8B51A0BE988002C11A3 /* pt_PT.txt in Resources */,
+				FAFEF8B61A0BE988002C11A3 /* ro.txt in Resources */,
+				FAFEF8B31A0BE988002C11A3 /* nl.txt in Resources */,
+				FAFEF8AE1A0BE988002C11A3 /* fr.txt in Resources */,
+				FAFEF8AD1A0BE988002C11A3 /* fil.txt in Resources */,
+				FAFEF8A91A0BE988002C11A3 /* de_DE.txt in Resources */,
+				FABCD9421A0A65020013FB88 /* Main_iPad.storyboard in Resources */,
+				FAFEF8B21A0BE988002C11A3 /* ja.txt in Resources */,
+				FAFEF8BC1A0BE988002C11A3 /* uk.txt in Resources */,
+				FAFEF8AA1A0BE988002C11A3 /* el.txt in Resources */,
+				FAFEF8A71A0BE988002C11A3 /* bg.txt in Resources */,
+				FABCD9431A0A65020013FB88 /* Main_iPhone.storyboard in Resources */,
+				FAFEF8AB1A0BE988002C11A3 /* en_US.txt in Resources */,
+				FAFEF8891A0BE918002C11A3 /* graph-data.osm-gh in Resources */,
+				FAFEF8AF1A0BE988002C11A3 /* gl.txt in Resources */,
+				FAFEF8AC1A0BE988002C11A3 /* es.txt in Resources */,
+				FAFEF8B41A0BE988002C11A3 /* pt_BR.txt in Resources */,
+				FAFEF8A81A0BE988002C11A3 /* ca.txt in Resources */,
+				FABCD8E41A0A61430013FB88 /* LaunchScreen.xib in Resources */,
+				FABCD8E11A0A61430013FB88 /* Images.xcassets in Resources */,
+				FAFEF8BA1A0BE988002C11A3 /* sv_SE.txt in Resources */,
+				FAFEF8B71A0BE988002C11A3 /* ru.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FABCD8E71A0A61430013FB88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FABCD8CC1A0A61430013FB88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAFEF8D21A0BEC6D002C11A3 /* MBXRasterTileOverlay.m in Sources */,
+				FAFEF8CE1A0BEC6D002C11A3 /* MBXMapKit.m in Sources */,
+				FABCD8DC1A0A61430013FB88 /* ViewController.m in Sources */,
+				FABCD8D91A0A61430013FB88 /* AppDelegate.m in Sources */,
+				FAFEF8D11A0BEC6D002C11A3 /* MBXPointAnnotation.m in Sources */,
+				FABCD8D61A0A61430013FB88 /* main.m in Sources */,
+				FABCD9691A0A8C620013FB88 /* Directions.m in Sources */,
+				FAFEF8CF1A0BEC6D002C11A3 /* MBXOfflineMapDatabase.m in Sources */,
+				FAFEF8D01A0BEC6D002C11A3 /* MBXOfflineMapDownloader.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FABCD8E51A0A61430013FB88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FABCD8F01A0A61430013FB88 /* graphhopper_ios_sampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FABCD8EB1A0A61430013FB88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FABCD8CF1A0A61430013FB88 /* graphhopper-ios-sample */;
+			targetProxy = FABCD8EA1A0A61430013FB88 /* PBXContainerItemProxy */;
+		};
+		FAFEF8BE1A0BE996002C11A3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = graphhopper;
+			targetProxy = FAFEF8BD1A0BE996002C11A3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FABCD8E21A0A61430013FB88 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FABCD8E31A0A61430013FB88 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		FABCD93E1A0A65020013FB88 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FABCD93F1A0A65020013FB88 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		FABCD9401A0A65020013FB88 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FABCD9411A0A65020013FB88 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FABCD8F11A0A61430013FB88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FABCD8F21A0A61430013FB88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FABCD8F41A0A61430013FB88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "graphhopper-ios-sample/PrefixHeader.pch";
+				INFOPLIST_FILE = "graphhopper-ios-sample/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../j2objc/lib",
+					"$(PROJECT_DIR)/../build",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../j2objc/include $(PROJECT_DIR)/../src";
+			};
+			name = Debug;
+		};
+		FABCD8F51A0A61430013FB88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "graphhopper-ios-sample/PrefixHeader.pch";
+				INFOPLIST_FILE = "graphhopper-ios-sample/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../j2objc/lib",
+					"$(PROJECT_DIR)/../build",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../j2objc/include $(PROJECT_DIR)/../src";
+			};
+			name = Release;
+		};
+		FABCD8F71A0A61430013FB88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "graphhopper-ios-sampleTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/graphhopper-ios-sample.app/graphhopper-ios-sample";
+			};
+			name = Debug;
+		};
+		FABCD8F81A0A61430013FB88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "graphhopper-ios-sampleTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/graphhopper-ios-sample.app/graphhopper-ios-sample";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FABCD8CB1A0A61430013FB88 /* Build configuration list for PBXProject "graphhopper-ios-sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FABCD8F11A0A61430013FB88 /* Debug */,
+				FABCD8F21A0A61430013FB88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FABCD8F31A0A61430013FB88 /* Build configuration list for PBXNativeTarget "graphhopper-ios-sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FABCD8F41A0A61430013FB88 /* Debug */,
+				FABCD8F51A0A61430013FB88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FABCD8F61A0A61430013FB88 /* Build configuration list for PBXNativeTarget "graphhopper-ios-sampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FABCD8F71A0A61430013FB88 /* Debug */,
+				FABCD8F81A0A61430013FB88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FABCD8C81A0A61430013FB88 /* Project object */;
+}

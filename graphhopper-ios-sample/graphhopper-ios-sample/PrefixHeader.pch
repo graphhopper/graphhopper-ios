@@ -1,0 +1,22 @@
+//
+//  PrefixHeader.pch
+//  graphhopper-ios-sample
+//
+//  Created by Calin on 11/5/14.
+//  Copyright (c) 2014 Calin Seciu. All rights reserved.
+//
+
+#ifndef graphhopper_ios_sample_PrefixHeader_pch
+#define graphhopper_ios_sample_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <Availability.h>
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#endif
+
+#endif
