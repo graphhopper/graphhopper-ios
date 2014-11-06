@@ -12,3 +12,4 @@ git reset --hard HEAD
 ./graphhopper.sh import $GRAPH_FILE
 cd ..
 make force-compat
+touch class.list
