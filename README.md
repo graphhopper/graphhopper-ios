@@ -6,47 +6,64 @@ and creates the `libgraphhopper.a` library to be used on iOS and OS X.
 It uses [j2objc](https://github.com/google/j2objc) to translate the .java sources 
 into Objective-C.
 
-Take a look at [graphhopper-ios-sample](https://github.com/clns/graphhopper-ios-sample) 
-for the easiest way to get started.
-
 ## Getting Started
 
-Run the following commands in Terminal:
+To get started run the following commands in Terminal:
 
 ```sh
-git clone https://github.com/clns/graphhopper-ios.git
-cd graphhopper-ios
-make -f make/prepare.mk
+git clone https://github.com/graphhopper/graphhopper-ios.git
+cd graphhopper-ios && ./init.sh
 ```
+
+This will clone the repository and all its submodules. Now you are ready 
+to use GraphHopper on iOS or OS X.
+
+You have two options:
+
+1. Head over to the [[graphhopper-ios-sample|tree/master/graphhopper-ios-sample]] 
+project and follow the instructions there. This is the easiest way to get started.
+
+2. Manually add *graphhopper.xcodeproj* to your Xcode project. See the Usage section below.
 
 ## Usage
 
-At this point you are ready to translate and compile the library. 
-You can do this manually from the Terminal or using Xcode.
+You can either add *graphhopper.xcodeproj* to your project and configure it accordingly 
+or you can compile the library from the Terminal and only add the library and sources
+to your Xcode project.
+
+> Note that the Terminal method compiles the library for the following architectures: 
+macosx, simulator, iphoneos, so this method is not recommended.
 
 ### Xcode
 
-The easiest way to use the library is by including *graphhopper.xcodeproj* 
-into your own project. Follow the steps below:
+To configure your project to use *graphhopper.xcodeproj* follow the steps below:
 
-- Drag&drop **graphhopper.xcodeproj** into your project (or use the menu File -> Add Files to...)
+- Drag&drop *graphhopper.xcodeproj* into your project (or use the menu File -> Add Files to...)
 - Expand graphhopper.xcodeproj and drag&drop the **Translations** and **Libraries** 
 groups into your project (make sure you check "Create folder references" and have 
 your target selected in "Add to targets:")
 - In the Build Settings of your project:
     - add `-ObjC` to your target's Other Linker Flags
     - add `{path-to-graphhopper-ios}/j2objc/include` and `{path-to-graphhopper-ios}/src` 
-    to your target's Header Search Paths
+    to your target's User Header Search Paths
 - In the Build Phases of your project:
     - in Target Dependencies add the **graphhopper** target
     - in Link Binary With Libraries add **Security.framework** and **libz.dylib**
 
 You're now ready to use GraphHopper on iOS and OS X.
 
+> Note that you are responsible for loading graph data. For an example check out 
+the graphhopper-ios-sample project.
+
 ### Terminal
 
 Alternatively, you can translate and compile the library by invoking `make` 
-in the Terminal. Note that this will compile the library for the following 
-architectures: macosx, simulator, iphoneos. You can then link the library 
+in the Terminal. You can then link the library 
 `graphhopper-ios/build/libgraphhopper.a` and it's header files at `graphhopper-ios/src` 
-manually into your project. For all other requirements see the Xcode section above.
+manually into your project. For all the other requirements see the Xcode section above.
+
+## Requirements
+
+* iOS 7.0+ or OS X 10.10 (it might work on older versions but haven't tested)
+* JDK 1.7 or higher
+* Xcode 6 or higher

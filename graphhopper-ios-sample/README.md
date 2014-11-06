@@ -1,19 +1,12 @@
 graphhopper-ios-sample
 ======================
 
-This is a sample project that provides a starting point for 
-[graphhopper-ios](https://github.com/clns/graphhopper-ios). 
+This is a sample project that provides a starting point for [[graphhopper-ios|]]. 
 This is the easiest way to get started.
 
 ## Getting Started
 
-To get started run the following commands in Terminal:
-
-```sh
-git clone https://github.com/clns/graphhopper-ios-sample.git
-cd graphhopper-ios-sample
-./prepare.sh
-```
+To get started the only thing you need to do is to import data.
 
 #### Import Data
 
@@ -23,7 +16,15 @@ has a reference to the graph data at *graphhopper-ios/graphhopper/graph-data.osm
 You can import a sample graph by running this command in Terminal:
 
 ```sh
-./import-sample.sh
+./graphhopper-ios-sample/import-sample.sh
 ```
 
-You're done! Open the Xcode project, build & run and experiment with GraphHopper on iOS.
+This will import romania-latest.osm.pbf from http://download.geofabrik.de 
+and you'll be able to create routes inside Romania.
+
+You're done! Open *graphhopper-ios-sample.xcodeproj* in Xcode, build & run 
+and experiment with GraphHopper on iOS and OS X.
+
+## Requirements
+
+Everything that graphhopper-ios requires but was only tested on iOS 8.0+.
