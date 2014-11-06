@@ -1,7 +1,5 @@
-prepare: | j2objc dependencies/graphhopper-compat/.graphhopper-compat class.list
-	@:
-
-class.list: dependencies/trove/trove4j-stripped.jar dependencies/class-exclude.grep graphhopper/core/src
+class.list: dependencies/trove/trove4j-stripped.jar dependencies/class-exclude.grep graphhopper/core/.graphhopper-compat
+	@if [ "$(MAKECMDGOALS)" != "class.list" ]; then echo "error: You need to run \`make class.list\` first"; exit 1; fi
 	@rm -f $@
 	find graphhopper/core/src/main/java -name '*.java' | grep -vf dependencies/class-exclude.grep >> $@
 	unzip -v $< | grep class | grep -v ".*$$.*" | sed s/class/java/ | sed 's/\(.*\)\(gnu\)/dependencies\/trove\/src\/gnu/' >> $@
@@ -13,8 +11,8 @@ graphhopper/core:
 	@git submodule init
 	@git submodule update
 
-dependencies/graphhopper-compat/.graphhopper-compat: dependencies/graphhopper-compat | graphhopper/core
-	cp -R dependencies/graphhopper-compat/ graphhopper/core
+graphhopper/core/.graphhopper-compat: dependencies/graphhopper-compat | graphhopper/core
+	@cp -R dependencies/graphhopper-compat/ graphhopper/core
 	@touch $@
 
 # j2objc
@@ -36,8 +34,3 @@ dependencies/trove/trove4j-stripped.jar : dependencies/trove/trove-class.list | 
 # package trove if it wasn't packaged already
 dependencies/trove/target/classes:
 	cd dependencies/trove && mvn package
-
-clean:
-	@rm -f dependencies/graphhopper-compat/.graphhopper-compat class.list
-
-.PHONY: prepare clean
