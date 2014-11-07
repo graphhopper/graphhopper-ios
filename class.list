@@ -128,7 +128,9 @@ graphhopper/core/src/main/java/com/graphhopper/storage/RAMIntDataAccess.java
 graphhopper/core/src/main/java/com/graphhopper/storage/SimpleFSLockFactory.java
 graphhopper/core/src/main/java/com/graphhopper/storage/Storable.java
 graphhopper/core/src/main/java/com/graphhopper/storage/StorableProperties.java
+graphhopper/core/src/main/java/com/graphhopper/storage/SynchedDAWrapper.java
 graphhopper/core/src/main/java/com/graphhopper/storage/TurnCostStorage.java
+graphhopper/core/src/main/java/com/graphhopper/storage/UnsafeDataAccess.java
 graphhopper/core/src/main/java/com/graphhopper/storage/VLongStorage.java
 graphhopper/core/src/main/java/com/graphhopper/util/AngleCalc.java
 graphhopper/core/src/main/java/com/graphhopper/util/BitUtil.java
