@@ -8,6 +8,7 @@ fi
 if [ ! -e $GRAPH_FILE ]; then
   mv $FILE $GRAPH_FILE
 fi
+rm -rf $(expr "graph-data.osm.pbf" : '\([^\.]*\)\.')".osm-gh"
 git reset --hard HEAD
 ./graphhopper.sh import $GRAPH_FILE
 cd ..
