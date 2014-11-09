@@ -74,13 +74,7 @@
 {
     if (!_hopper) {
         
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
-        
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"graph-data" ofType:@"osm-gh"];
-        NSString *location = [basePath stringByAppendingPathComponent:@"graph-data.osm-gh"];
-        
-        [[NSFileManager defaultManager] copyItemAtPath:path toPath:location error:nil];
+        NSString *location = [[NSBundle mainBundle] pathForResource:@"graph-data" ofType:@"osm-gh"];
         
         _hopper = [[GraphHopper alloc] init];
         [_hopper setCHEnableWithBoolean:YES];
