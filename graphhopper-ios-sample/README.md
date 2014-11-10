@@ -23,6 +23,12 @@ You can import a sample graph by running this command in Terminal
 This will import romania-latest.osm.pbf from http://download.geofabrik.de 
 and you'll be able to create routes inside Romania.
 
+To import another country you can use something like:
+
+```sh
+FILE=germany-latest.osm.pbf ./graphhopper-ios-sample/import-sample.sh
+```
+
 You're done! Open *graphhopper-ios-sample/graphhopper-ios-sample.xcodeproj* in Xcode, build & run 
 and experiment with GraphHopper on iOS and OS X.
 
