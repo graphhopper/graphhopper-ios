@@ -8,10 +8,6 @@ into Objective-C.
 
 *This is experimental so treat it accordingly.*
 
-## Example
-
-![iPhone-offline-routing](screenshots/iPhone-offline-routing.gif)
-
 ## Getting Started
 
 To get started run the following commands in Terminal:
@@ -67,6 +63,10 @@ manually into your project. For all the other configurations see the Xcode secti
 
 > This method compiles the library for the following architectures: 
 macosx, simulator, iphoneos, so using Xcode instead is recommended.
+
+## Example
+
+![iPhone-offline-routing](screenshots/iPhone-offline-routing.gif)
 
 ## Requirements
 
