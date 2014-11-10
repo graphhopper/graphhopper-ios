@@ -1,5 +1,7 @@
 cd graphhopper
-FILE="romania-latest.osm.pbf"
+if [ -z ${FILE+x} ]; then
+  FILE="romania-latest.osm.pbf"
+fi
 GRAPH_FILE="graph-data.osm.pbf"
 if [ ! -e $FILE ] && [ ! -e $GRAPH_FILE ]; then
   echo "Downloading http://download.geofabrik.de/europe/$FILE"
