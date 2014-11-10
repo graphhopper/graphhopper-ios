@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -123,12 +124,23 @@
                                     <constraint firstAttribute="width" constant="183" id="mSN-pX-8gw"/>
                                 </constraints>
                             </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999996" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Drop pins to create a route" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MjA-zR-OWi" customClass="MBAutoGrowingTextView">
+                                <rect key="frame" x="120" y="20" width="528" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="ywr-c4-IBc"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="z8j-zD-Pci"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gPJ-J9-gbW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1ey-mN-3EC"/>
                             <constraint firstAttribute="centerY" secondItem="Dbh-km-XxY" secondAttribute="centerY" id="4Zh-jm-FdP"/>
                             <constraint firstAttribute="trailing" secondItem="fIq-kZ-kh5" secondAttribute="trailing" constant="20" id="9RL-lv-iIB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MjA-zR-OWi" secondAttribute="trailing" constant="100" id="BUE-yo-AxY"/>
                             <constraint firstItem="gPJ-J9-gbW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BeN-et-arb"/>
                             <constraint firstAttribute="centerX" secondItem="Dbh-km-XxY" secondAttribute="centerX" id="FPN-Jv-YJm"/>
                             <constraint firstAttribute="trailing" secondItem="gPJ-J9-gbW" secondAttribute="trailing" id="IP0-68-dPc"/>
@@ -136,6 +148,8 @@
                             <constraint firstItem="FHN-lG-jxi" firstAttribute="top" secondItem="gPJ-J9-gbW" secondAttribute="bottom" id="YIc-iH-Viw"/>
                             <constraint firstItem="FHN-lG-jxi" firstAttribute="top" secondItem="fIq-kZ-kh5" secondAttribute="bottom" constant="20" id="ZMy-Z0-QlN"/>
                             <constraint firstAttribute="centerX" secondItem="9MG-Tv-xht" secondAttribute="centerX" id="bY4-OT-89c"/>
+                            <constraint firstItem="MjA-zR-OWi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="100" id="ceu-44-084"/>
+                            <constraint firstItem="MjA-zR-OWi" firstAttribute="top" secondItem="4OV-TN-Raw" secondAttribute="bottom" id="chq-LU-QfR"/>
                             <constraint firstItem="FHN-lG-jxi" firstAttribute="top" secondItem="9MG-Tv-xht" secondAttribute="bottom" constant="9" id="jlM-JT-oUl"/>
                             <constraint firstAttribute="centerX" secondItem="8ak-mO-GOk" secondAttribute="centerX" id="uXQ-xK-ygk"/>
                         </constraints>
@@ -150,6 +164,7 @@
                         <outlet property="offlineMapProgress" destination="01R-h1-6hN" id="3hl-Sp-kNG"/>
                         <outlet property="offlineMapProgressView" destination="9MG-Tv-xht" id="3Eg-OC-i2M"/>
                         <outlet property="removeOfflineMapsView" destination="8ak-mO-GOk" id="8cA-qg-Iaw"/>
+                        <outlet property="textView" destination="MjA-zR-OWi" id="yIE-LU-n5J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

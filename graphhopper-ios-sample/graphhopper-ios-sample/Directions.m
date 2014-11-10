@@ -7,6 +7,7 @@
 //
 
 #import "Directions.h"
+#import "MBXMapKit.h"
 
 #import "com/graphhopper/GraphHopper.h"
 #import "com/graphhopper/routing/util/EncodingManager.h"
@@ -34,7 +35,7 @@
         _textView = textView;
         
         CLLocationCoordinate2D brasov = CLLocationCoordinate2DMake(45.651796, 25.6125);
-        [_mapView mbx_setCenterCoordinate:brasov zoomLevel:12 animated:NO];
+        [_mapView mbx_setCenterCoordinate:brasov zoomLevel:10 animated:NO];
         
         UILongPressGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
         gesture.minimumPressDuration = 1;
@@ -95,38 +96,41 @@
 
 - (void)route
 {
-    self.textView.text = @"Calculating...";
+    self.textView.text = @"Calculating route...";
     
     MKPointAnnotation *point1 = [[_mapView annotations] objectAtIndex:0],
     *point2 = [[_mapView annotations] objectAtIndex:1];
     
-    GHRequest *request = [[GHRequest alloc] initWithDouble:point1.coordinate.latitude
-                                                withDouble:point1.coordinate.longitude
-                                                withDouble:point2.coordinate.latitude
-                                                withDouble:point2.coordinate.longitude];
-    GHResponse *response = [self.hopper routeWithGHRequest:request];
-    
-    NSString *routeInfo = @"";
-    if ([response hasErrors]) {
-        NSLog(@"%@", [response getErrors]);
-        routeInfo = [routeInfo stringByAppendingString:[NSString stringWithFormat:@"%@\n", [response getErrors]]];
-    }
-    routeInfo = [routeInfo stringByAppendingString:[NSString stringWithFormat:@"%@\n", [response getDebugInfo]]];
-    
-    PointList *points = [response getPoints];
-    NSLog(@"Route consists of %d points.", [points getSize]);
-    routeInfo = [routeInfo stringByAppendingString:[NSString stringWithFormat:@"Route consists of %d points.\n", [points getSize]]];
-    
-    CLLocationCoordinate2D coords[[points getSize]];
-    for (int i = 0; i < [points getSize]; i++) {
-        CLLocationCoordinate2D coord = CLLocationCoordinate2DMake([points getLatitudeWithInt:i], [points getLongitudeWithInt:i]);
-        coords[i] = coord;
-    }
-    
-    _currentRoute = [MKPolyline polylineWithCoordinates:coords count:[points getSize]];
-    [self.mapView addOverlay:_currentRoute];
-    
-    self.textView.text = routeInfo;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        GHRequest *request = [[GHRequest alloc] initWithDouble:point1.coordinate.latitude
+                                                    withDouble:point1.coordinate.longitude
+                                                    withDouble:point2.coordinate.latitude
+                                                    withDouble:point2.coordinate.longitude];
+        GHResponse *response = [self.hopper routeWithGHRequest:request];
+        
+        NSString *routeInfo = @"";
+        if ([response hasErrors]) {
+            NSLog(@"%@", [response getErrors]);
+            routeInfo = [routeInfo stringByAppendingString:[NSString stringWithFormat:@"%@\n", [response getErrors]]];
+        }
+        routeInfo = [routeInfo stringByAppendingString:[NSString stringWithFormat:@"%@", [response getDebugInfo]]];
+        
+        PointList *points = [response getPoints];
+        NSLog(@"Route consists of %d points.", [points getSize]);
+        
+        CLLocationCoordinate2D coords[[points getSize]];
+        for (int i = 0; i < [points getSize]; i++) {
+            CLLocationCoordinate2D coord = CLLocationCoordinate2DMake([points getLatitudeWithInt:i], [points getLongitudeWithInt:i]);
+            coords[i] = coord;
+        }
+        
+        _currentRoute = [MKPolyline polylineWithCoordinates:coords count:[points getSize]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.mapView addOverlay:_currentRoute];
+            self.textView.text = routeInfo;
+        });
+    });
 }
 
 @end

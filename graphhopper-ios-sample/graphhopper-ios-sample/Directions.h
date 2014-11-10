@@ -6,13 +6,12 @@
 //  Copyright (c) 2014 Calin Seciu. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 @import MapKit;
-#import "MBXMapKit.h"
 
 @interface Directions : NSObject
 
 - (id)initWithMapView:(MKMapView *)view andTextView:(UITextView *)textView;
-- (void)route;
+- (void)clearRoute;
 
 @end

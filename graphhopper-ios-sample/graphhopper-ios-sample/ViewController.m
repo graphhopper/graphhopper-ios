@@ -114,6 +114,11 @@
         [[MBXOfflineMapDownloader sharedOfflineMapDownloader] resume];
     }
     
+    [self resetMapViewAndRasterOverlayDefaults];
+    
+    // Style the UITextView a bit
+    _textView.layer.cornerRadius = 5;
+    
     // Enable directions (GraphHopper)
     _directions = [[Directions alloc] initWithMapView:_mapView andTextView:_textView];
 }
@@ -180,6 +185,8 @@
     [_rasterOverlay invalidateAndCancel];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     _currentlyViewingAnOfflineMap = NO;
+    
+    [_directions clearRoute];
 }
 
 
@@ -519,21 +526,6 @@
 }
 
 
-#pragma mark - UITextView resizing
-
-- (void)viewWillLayoutSubviews
-{
-    // If we are using auto layouts, then get a handler to the height constraint.
-    for (NSLayoutConstraint *constraint in self.textView.constraints) {
-        if (constraint.firstAttribute == NSLayoutAttributeHeight) {
-            CGSize size = [self.textView sizeThatFits:CGSizeMake(self.textView.frame.size.width, FLT_MAX)];
-            constraint.constant = size.height;
-            break;
-        }
-    }
-}
-
-
 #pragma mark - MKMapViewDelegate protocol implementation
 
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay
@@ -548,7 +540,7 @@
     if ([overlay isKindOfClass:[MKPolyline class]])
     {
         MKPolylineRenderer *renderer = [[MKPolylineRenderer alloc] initWithPolyline:overlay];
-        renderer.strokeColor = [[UIColor orangeColor] colorWithAlphaComponent:0.5];
+        renderer.strokeColor = [[UIColor greenColor] colorWithAlphaComponent:0.5];
         renderer.lineWidth = 5;
         return renderer;
     }

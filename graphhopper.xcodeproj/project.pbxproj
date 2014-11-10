@@ -32,7 +32,6 @@
 		FABCD8C41A0A47520013FB88 /* tr.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = tr.txt; path = build/translations/tr.txt; sourceTree = "<group>"; };
 		FABCD8C51A0A47520013FB88 /* uk.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = uk.txt; path = build/translations/uk.txt; sourceTree = "<group>"; };
 		FAE1E9911A09527F00654F13 /* libjre_emul.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjre_emul.a; path = j2objc/lib/libjre_emul.a; sourceTree = SOURCE_ROOT; };
-		FAE1E9921A0952A200654F13 /* libj2objc_main.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libj2objc_main.a; path = j2objc/lib/libj2objc_main.a; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -86,7 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				FAE1E9911A09527F00654F13 /* libjre_emul.a */,
-				FAE1E9921A0952A200654F13 /* libj2objc_main.a */,
 				FA9FF1D71A0679A30003C5FA /* libgraphhopper.a */,
 			);
 			name = Libraries;

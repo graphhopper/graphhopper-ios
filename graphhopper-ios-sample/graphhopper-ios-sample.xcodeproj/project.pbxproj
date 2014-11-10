@@ -19,9 +19,9 @@
 		FABCD9421A0A65020013FB88 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABCD93E1A0A65020013FB88 /* Main_iPad.storyboard */; };
 		FABCD9431A0A65020013FB88 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABCD9401A0A65020013FB88 /* Main_iPhone.storyboard */; };
 		FABCD9691A0A8C620013FB88 /* Directions.m in Sources */ = {isa = PBXBuildFile; fileRef = FABCD9681A0A8C620013FB88 /* Directions.m */; };
+		FAF480951A10D97D00B20D8C /* MBAutoGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF480941A10D97D00B20D8C /* MBAutoGrowingTextView.m */; };
 		FAFEF8891A0BE918002C11A3 /* graph-data.osm-gh in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF8881A0BE918002C11A3 /* graph-data.osm-gh */; };
 		FAFEF88D1A0BE96D002C11A3 /* libjre_emul.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFEF88A1A0BE96D002C11A3 /* libjre_emul.a */; };
-		FAFEF88E1A0BE96D002C11A3 /* libj2objc_main.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFEF88B1A0BE96D002C11A3 /* libj2objc_main.a */; };
 		FAFEF88F1A0BE96D002C11A3 /* libgraphhopper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFEF88C1A0BE96D002C11A3 /* libgraphhopper.a */; };
 		FAFEF8A71A0BE988002C11A3 /* bg.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF8901A0BE988002C11A3 /* bg.txt */; };
 		FAFEF8A81A0BE988002C11A3 /* ca.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF8911A0BE988002C11A3 /* ca.txt */; };
@@ -90,10 +90,11 @@
 		FABCD9551A0A6C310013FB88 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		FABCD9671A0A8C620013FB88 /* Directions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Directions.h; sourceTree = "<group>"; };
 		FABCD9681A0A8C620013FB88 /* Directions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Directions.m; sourceTree = "<group>"; };
+		FAF480931A10D97D00B20D8C /* MBAutoGrowingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBAutoGrowingTextView.h; sourceTree = "<group>"; };
+		FAF480941A10D97D00B20D8C /* MBAutoGrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBAutoGrowingTextView.m; sourceTree = "<group>"; };
 		FAFEF8841A0BE8FB002C11A3 /* graphhopper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = graphhopper.xcodeproj; path = ../graphhopper.xcodeproj; sourceTree = "<group>"; };
 		FAFEF8881A0BE918002C11A3 /* graph-data.osm-gh */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "graph-data.osm-gh"; path = "../graphhopper/graph-data.osm-gh"; sourceTree = "<group>"; };
 		FAFEF88A1A0BE96D002C11A3 /* libjre_emul.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjre_emul.a; path = ../j2objc/lib/libjre_emul.a; sourceTree = "<group>"; };
-		FAFEF88B1A0BE96D002C11A3 /* libj2objc_main.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libj2objc_main.a; path = ../j2objc/lib/libj2objc_main.a; sourceTree = "<group>"; };
 		FAFEF88C1A0BE96D002C11A3 /* libgraphhopper.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgraphhopper.a; path = ../build/libgraphhopper.a; sourceTree = "<group>"; };
 		FAFEF8901A0BE988002C11A3 /* bg.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = bg.txt; path = build/translations/bg.txt; sourceTree = "<group>"; };
 		FAFEF8911A0BE988002C11A3 /* ca.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ca.txt; path = build/translations/ca.txt; sourceTree = "<group>"; };
@@ -138,7 +139,6 @@
 				FABCD93B1A0A62EE0013FB88 /* libsqlite3.dylib in Frameworks */,
 				FABCD9391A0A62E20013FB88 /* Security.framework in Frameworks */,
 				FAFEF88F1A0BE96D002C11A3 /* libgraphhopper.a in Frameworks */,
-				FAFEF88E1A0BE96D002C11A3 /* libj2objc_main.a in Frameworks */,
 				FAFEF88D1A0BE96D002C11A3 /* libjre_emul.a in Frameworks */,
 				FABCD9371A0A62D90013FB88 /* libz.dylib in Frameworks */,
 			);
@@ -160,6 +160,7 @@
 				FAFEF8841A0BE8FB002C11A3 /* graphhopper.xcodeproj */,
 				FABCD8D21A0A61430013FB88 /* graphhopper-ios-sample */,
 				FABCD8EC1A0A61430013FB88 /* graphhopper-ios-sampleTests */,
+				FAF480921A10D97D00B20D8C /* MBAutoGrowingTextView */,
 				FAFEF8C21A0BEC6D002C11A3 /* MBXMapKit */,
 				FABCD9A51A0AB4550013FB88 /* Graph */,
 				FABCD8D11A0A61430013FB88 /* Products */,
@@ -229,7 +230,6 @@
 				FABCD9381A0A62E20013FB88 /* Security.framework */,
 				FABCD9361A0A62D90013FB88 /* libz.dylib */,
 				FAFEF88A1A0BE96D002C11A3 /* libjre_emul.a */,
-				FAFEF88B1A0BE96D002C11A3 /* libj2objc_main.a */,
 				FAFEF88C1A0BE96D002C11A3 /* libgraphhopper.a */,
 			);
 			name = Libraries;
@@ -242,6 +242,15 @@
 				FAFEF8881A0BE918002C11A3 /* graph-data.osm-gh */,
 			);
 			name = Graph;
+			sourceTree = "<group>";
+		};
+		FAF480921A10D97D00B20D8C /* MBAutoGrowingTextView */ = {
+			isa = PBXGroup;
+			children = (
+				FAF480931A10D97D00B20D8C /* MBAutoGrowingTextView.h */,
+				FAF480941A10D97D00B20D8C /* MBAutoGrowingTextView.m */,
+			);
+			path = MBAutoGrowingTextView;
 			sourceTree = "<group>";
 		};
 		FAFEF8851A0BE8FB002C11A3 /* Products */ = {
@@ -437,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAFEF8D21A0BEC6D002C11A3 /* MBXRasterTileOverlay.m in Sources */,
+				FAF480951A10D97D00B20D8C /* MBAutoGrowingTextView.m in Sources */,
 				FAFEF8CE1A0BEC6D002C11A3 /* MBXMapKit.m in Sources */,
 				FABCD8DC1A0A61430013FB88 /* ViewController.m in Sources */,
 				FABCD8D91A0A61430013FB88 /* AppDelegate.m in Sources */,
