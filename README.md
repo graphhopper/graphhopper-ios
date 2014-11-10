@@ -8,6 +8,10 @@ into Objective-C.
 
 *This is experimental so treat it accordingly.*
 
+## Example
+
+![iPhone-offline-routing](screenshots/iPhone-offline-routing.gif)
+
 ## Getting Started
 
 To get started run the following commands in Terminal:
