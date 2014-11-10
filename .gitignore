@@ -4,3 +4,5 @@ xcuserdata
 /build/
 /j2objc/
 /src/
+._j2objc
+*~
