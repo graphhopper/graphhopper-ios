@@ -13,7 +13,7 @@ into Objective-C.
 To get started run the following commands in Terminal:
 
 ```sh
-git clone https://github.com/clns/graphhopper-ios.git
+git clone https://github.com/graphhopper/graphhopper-ios.git
 cd graphhopper-ios && ./init.sh
 ```
 
@@ -22,7 +22,7 @@ to use GraphHopper on iOS or OS X.
 
 You have two options:
 
-1. Head over to [graphhopper-ios-sample](https://github.com/clns/graphhopper-ios/tree/master/graphhopper-ios-sample) 
+1. Head over to [graphhopper-ios-sample](https://github.com/graphhopper/graphhopper-ios/tree/master/graphhopper-ios-sample) 
 and follow the instructions there. This is the easiest way to get started.
 
 2. Manually add *graphhopper.xcodeproj* to your Xcode project. See the Usage section below.
@@ -52,7 +52,7 @@ your target selected in "Add to targets:")
 You're now ready to use GraphHopper on iOS and OS X.
 
 > You are responsible for importing graph data. For an example check out 
-[graphhopper-ios-sample](https://github.com/clns/graphhopper-ios/tree/master/graphhopper-ios-sample).
+[graphhopper-ios-sample](https://github.com/graphhopper/graphhopper-ios/tree/master/graphhopper-ios-sample).
 
 ### Terminal
 
