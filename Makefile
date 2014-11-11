@@ -15,8 +15,6 @@ TRANSLATE_SOURCEPATH = graphhopper/core/src/main/java:dependencies/trove/src/:de
 TRANSLATE_ARGS := --doc-comments --mem-debug -encoding UTF-8 --extract-unsequenced --final-methods-as-functions --hide-private-members
 include make/translate.mk
 
-translate: $(COMPAT_FILES)
-
 ifdef PRODUCT_NAME
 FAT_LIB_NAME := $(PRODUCT_NAME)
 else
@@ -51,4 +49,3 @@ clean:
 cleanall: clean
 	@echo Deleting $(GEN_OBJC_DIR) $(TRANSLATE_LIST)
 	@rm -rf $(GEN_OBJC_DIR) $(TRANSLATE_LIST)
-	cd graphhopper && git reset --hard HEAD && git clean -f

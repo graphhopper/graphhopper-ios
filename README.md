@@ -14,7 +14,7 @@ To get started run the following commands in Terminal:
 
 ```sh
 git clone https://github.com/graphhopper/graphhopper-ios.git
-cd graphhopper-ios && ./init.sh
+cd graphhopper-ios && git submodule update --init --depth 1
 ```
 
 This will clone the repository and all its submodules. Now you are ready 

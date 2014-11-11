@@ -11,8 +11,8 @@ if [ ! -e $GRAPH_FILE ]; then
   mv $FILE $GRAPH_FILE
 fi
 rm -rf $(expr $GRAPH_FILE : '\([^\.]*\)\.')".osm-gh"
-git reset --hard HEAD
+git checkout master
 ./graphhopper.sh import $GRAPH_FILE
-cd ..
-make force-compat
-touch class.list
+git checkout ios-compat
+#cd ..
+#touch class.list
