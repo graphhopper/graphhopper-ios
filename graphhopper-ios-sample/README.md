@@ -26,7 +26,8 @@ and you'll be able to create routes inside Romania.
 To import another country you can use something like:
 
 ```sh
-FILE=germany-latest.osm.pbf ./graphhopper-ios-sample/import-sample.sh
+FILE=germany-latest.osm.pbf JAVA_OPTS="-Xmx4096m -Xms1000m -server" ./graphhopper-ios-sample/import-sample.sh
+# if a large file is imported, JAVA_OPTS may need to be changed
 ```
 
 You're done! Open *graphhopper-ios-sample/graphhopper-ios-sample.xcodeproj* in Xcode, build & run 
