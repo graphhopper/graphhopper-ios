@@ -22,7 +22,7 @@ To update GraphHopper inside this project, you can do the following steps
 * Make sure GraphHopper is updated:
 ```sh
 $ cd graphhopper
-git pull
+$ git pull
 ```
 
 * Merge an updated branch (eg. master) into ios-compat, resolving any conflicts:
