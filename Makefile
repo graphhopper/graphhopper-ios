@@ -12,7 +12,7 @@ TRANSLATE_LIST := class.list
 TRANSLATE_JAVA_FULL = $(shell if [ -e $(TRANSLATE_LIST) ]; then cat $(TRANSLATE_LIST); fi)
 TRANSLATE_JAVA_RELATIVE = $(shell if [ -e $(TRANSLATE_LIST) ]; then sed -f dependencies/class.sed $(TRANSLATE_LIST); fi)
 TRANSLATE_SOURCEPATH = graphhopper/core/src/main/java:dependencies/trove/src/:dependencies/fake_slf4j/src/
-TRANSLATE_ARGS := --doc-comments --mem-debug -encoding UTF-8 --extract-unsequenced --final-methods-as-functions --hide-private-members
+TRANSLATE_ARGS := --doc-comments -encoding UTF-8 --extract-unsequenced --final-methods-as-functions --hide-private-members
 include make/translate.mk
 
 ifdef PRODUCT_NAME

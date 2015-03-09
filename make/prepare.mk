@@ -8,11 +8,12 @@ class.list: dependencies/trove/trove4j-stripped.jar dependencies/class-exclude.g
 # j2objc
 
 j2objc:
-	@echo "warning: 'j2objc' doesn't exist and needs to be downloaded. \
-This may take some time, to skip this manually place the j2objc dist directory here."
-	@curl -L -o j2objc.tgz "https://www.dropbox.com/s/ffob0e7lciwoxby/j2objc.tgz?dl=0"; \
-	tar xzf j2objc.tgz; \
-	rm -f j2objc.tgz
+	@echo "warning: 'j2objc' doesn't exist and needs to be downloaded, \
+this may take some time... To skip this, manually place the j2objc dist directory at /graphhopper-ios/j2objc."
+	@curl -L -o j2objc-0.9.6.1.zip "https://github.com/google/j2objc/releases/download/0.9.6.1/j2objc-0.9.6.1.zip"; \
+	unzip j2objc-0.9.6.1.zip; \
+	mv j2objc-0.9.6.1 j2objc; \
+	rm j2objc-0.9.6.1.zip
 
 # Trove
 

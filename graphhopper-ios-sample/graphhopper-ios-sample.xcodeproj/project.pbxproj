@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA59C1761AADB8AB0093F77B /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA59C1751AADB8AB0093F77B /* libicucore.dylib */; };
 		FABCD8D61A0A61430013FB88 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FABCD8D51A0A61430013FB88 /* main.m */; };
 		FABCD8D91A0A61430013FB88 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FABCD8D81A0A61430013FB88 /* AppDelegate.m */; };
 		FABCD8DC1A0A61430013FB88 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FABCD8DB1A0A61430013FB88 /* ViewController.m */; };
@@ -70,6 +71,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA59C1751AADB8AB0093F77B /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		FABCD8D01A0A61430013FB88 /* graphhopper-ios-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "graphhopper-ios-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABCD8D41A0A61430013FB88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FABCD8D51A0A61430013FB88 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA59C1761AADB8AB0093F77B /* libicucore.dylib in Frameworks */,
 				FABCD93B1A0A62EE0013FB88 /* libsqlite3.dylib in Frameworks */,
 				FABCD9391A0A62E20013FB88 /* Security.framework in Frameworks */,
 				FAFEF88F1A0BE96D002C11A3 /* libgraphhopper.a in Frameworks */,
@@ -226,6 +229,7 @@
 		FABCD9021A0A62860013FB88 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				FA59C1751AADB8AB0093F77B /* libicucore.dylib */,
 				FABCD93A1A0A62EE0013FB88 /* libsqlite3.dylib */,
 				FABCD9381A0A62E20013FB88 /* Security.framework */,
 				FABCD9361A0A62D90013FB88 /* libz.dylib */,
