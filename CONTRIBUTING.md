@@ -45,3 +45,5 @@ $ git add graphhopper
 $ git commit -m "Update GraphHopper to ..."
 ```
 **Note:** It's possible the graph data needs to be generated again, using the new version of GraphHopper.
+
+**Note:** It's also possible that after the update new translations become available, so make sure you have all the translations from */graphhopper-ios/build/translations* added into Xcode. This is the case if you get this error while running in Xcode: *"No input stream found in class path!?"*, in util/TranslationMap.java.
