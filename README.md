@@ -8,7 +8,7 @@ into Objective-C.
 
 > **Disclaimer:** This is experimental so treat it accordingly. Besides what the 
 [sample app](graphhopper-ios-sample) 
-does, this hasn't been tested further. Feel free to help in any way.
+does, this hasn't been tested further. [Feel free to help](CONTRIBUTING.md) in any way.
 
 ## Getting Started
 
