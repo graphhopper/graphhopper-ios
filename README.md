@@ -6,7 +6,8 @@ and creates the `libgraphhopper.a` library to be used on iOS and OS X.
 It uses [j2objc](https://github.com/google/j2objc) to translate the .java sources 
 into Objective-C.
 
-**Disclaimer:** This is experimental so treat it accordingly. Besides what the [sample app](tree/master/graphhopper-ios-sample) 
+> **Disclaimer:** This is experimental so treat it accordingly. Besides what the 
+[sample app](graphhopper-ios-sample) 
 does, this hasn't been tested further. Feel free to help in any way.
 
 ## Getting Started
@@ -23,7 +24,7 @@ to use GraphHopper on iOS or OS X.
 
 You have two options:
 
-1. Head over to [graphhopper-ios-sample](https://github.com/graphhopper/graphhopper-ios/tree/master/graphhopper-ios-sample) 
+1. Head over to [graphhopper-ios-sample](graphhopper-ios-sample) 
 and follow the instructions there. This is the easiest way to get started.
 
 2. Manually add *graphhopper.xcodeproj* to your Xcode project. See the Usage section below.
@@ -55,7 +56,7 @@ which is a dependency introduced by [j2objc 0.9.5](https://github.com/google/j2o
 You're now ready to use GraphHopper on iOS and OS X.
 
 > You are responsible for importing graph data. For an example check out 
-[graphhopper-ios-sample](https://github.com/graphhopper/graphhopper-ios/tree/master/graphhopper-ios-sample).
+[graphhopper-ios-sample](graphhopper-ios-sample).
 
 ### Terminal
 
@@ -79,7 +80,7 @@ macosx, simulator, iphoneos, so using Xcode instead is recommended.
 
 ## Troubleshooting
 
-If you run into problems, you can try one of the following things:
+If you run into problems, you can try one of the following:
 
 * if using Xcode, try cleaning up the project (Product -> Clean)
 * if using the Terminal, you can use one of these 2 cleanup commands:

@@ -4,7 +4,7 @@ graphhopper-ios-sample
 This is a sample project that provides a starting point for running GraphHopper on iOS. 
 This is the easiest way to get started. It uses [mbxmapkit](https://github.com/mapbox/mbxmapkit), 
 so most of the code is boilerplate, the GraphHopper-related code is in 
-[Directions.m](blob/master/graphhopper-ios-sample/graphhopper-ios-sample/Directions.m).
+[Directions.m](graphhopper-ios-sample/Directions.m).
 
 ## Getting Started
 
