@@ -38,6 +38,19 @@ FILE=germany-latest.osm.pbf JAVA_OPTS="-Xmx4096m -Xms1000m -server" ./graphhoppe
 You're done! Open *graphhopper-ios-sample/graphhopper-ios-sample.xcodeproj* in Xcode, build & run
 and experiment with GraphHopper on iOS and OS X. You can place start and end points on the map by holding down the tap.
 
+## Troubleshooting
+
+##### Error: JAVA_HOME is not defined correctly
+
+If you get errors when importing data with the above script,
+make sure you have Maven installed by running `mvn -version`.
+If not, you can install it with `brew install maven`.
+
+##### Command /usr/bin/make failed with exit code 2
+
+Most of the times this happens because of some incorrect paths to the SDK.
+Try cleaning the project in Xcode (Product - Clean) and build again.
+
 ## Requirements
 
 Everything that [graphhopper-ios](https://github.com/graphhopper/graphhopper-ios)
