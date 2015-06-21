@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 cd graphhopper
 if [ -z ${FILE+x} ]; then
   FILE="romania-latest.osm.pbf"
