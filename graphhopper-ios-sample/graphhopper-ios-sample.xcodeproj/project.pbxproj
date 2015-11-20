@@ -12,6 +12,15 @@
 		FA59C1AF1AADD1B50093F77B /* ne.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA59C1AE1AADD1B50093F77B /* ne.txt */; };
 		FA59C1B21AADD1D20093F77B /* vi_VI.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA59C1B01AADD1D20093F77B /* vi_VI.txt */; };
 		FA59C1B31AADD1D20093F77B /* zh_CN.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA59C1B11AADD1D20093F77B /* zh_CN.txt */; };
+		FA8E47281BFE9D770037B46C /* ar.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA8E47261BFE9D770037B46C /* ar.txt */; };
+		FA8E47291BFE9D770037B46C /* ast.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA8E47271BFE9D770037B46C /* ast.txt */; };
+		FA8E472C1BFE9D920037B46C /* cs_CZ.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA8E472A1BFE9D920037B46C /* cs_CZ.txt */; };
+		FA8E472D1BFE9D920037B46C /* da_DK.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA8E472B1BFE9D920037B46C /* da_DK.txt */; };
+		FA8E472F1BFE9DA40037B46C /* fa.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA8E472E1BFE9DA40037B46C /* fa.txt */; };
+		FA8E47321BFE9DBE0037B46C /* hsb.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA8E47301BFE9DBE0037B46C /* hsb.txt */; };
+		FA8E47331BFE9DBE0037B46C /* hu_HU.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA8E47311BFE9DBE0037B46C /* hu_HU.txt */; };
+		FA8E47351BFE9DCB0037B46C /* lt_LT.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA8E47341BFE9DCB0037B46C /* lt_LT.txt */; };
+		FA8E47371BFE9DDE0037B46C /* pl_PL.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA8E47361BFE9DDE0037B46C /* pl_PL.txt */; };
 		FABCD8D61A0A61430013FB88 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FABCD8D51A0A61430013FB88 /* main.m */; };
 		FABCD8D91A0A61430013FB88 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FABCD8D81A0A61430013FB88 /* AppDelegate.m */; };
 		FABCD8DC1A0A61430013FB88 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FABCD8DB1A0A61430013FB88 /* ViewController.m */; };
@@ -80,6 +89,15 @@
 		FA59C1AE1AADD1B50093F77B /* ne.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ne.txt; path = build/translations/ne.txt; sourceTree = "<group>"; };
 		FA59C1B01AADD1D20093F77B /* vi_VI.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = vi_VI.txt; path = build/translations/vi_VI.txt; sourceTree = "<group>"; };
 		FA59C1B11AADD1D20093F77B /* zh_CN.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = zh_CN.txt; path = build/translations/zh_CN.txt; sourceTree = "<group>"; };
+		FA8E47261BFE9D770037B46C /* ar.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ar.txt; path = build/translations/ar.txt; sourceTree = "<group>"; };
+		FA8E47271BFE9D770037B46C /* ast.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ast.txt; path = build/translations/ast.txt; sourceTree = "<group>"; };
+		FA8E472A1BFE9D920037B46C /* cs_CZ.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = cs_CZ.txt; path = build/translations/cs_CZ.txt; sourceTree = "<group>"; };
+		FA8E472B1BFE9D920037B46C /* da_DK.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = da_DK.txt; path = build/translations/da_DK.txt; sourceTree = "<group>"; };
+		FA8E472E1BFE9DA40037B46C /* fa.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fa.txt; path = build/translations/fa.txt; sourceTree = "<group>"; };
+		FA8E47301BFE9DBE0037B46C /* hsb.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hsb.txt; path = build/translations/hsb.txt; sourceTree = "<group>"; };
+		FA8E47311BFE9DBE0037B46C /* hu_HU.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hu_HU.txt; path = build/translations/hu_HU.txt; sourceTree = "<group>"; };
+		FA8E47341BFE9DCB0037B46C /* lt_LT.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = lt_LT.txt; path = build/translations/lt_LT.txt; sourceTree = "<group>"; };
+		FA8E47361BFE9DDE0037B46C /* pl_PL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = pl_PL.txt; path = build/translations/pl_PL.txt; sourceTree = "<group>"; };
 		FABCD8D01A0A61430013FB88 /* graphhopper-ios-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "graphhopper-ios-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABCD8D41A0A61430013FB88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FABCD8D51A0A61430013FB88 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -275,21 +293,30 @@
 		FAFEF8A61A0BE988002C11A3 /* Translations */ = {
 			isa = PBXGroup;
 			children = (
+				FA8E47261BFE9D770037B46C /* ar.txt */,
+				FA8E47271BFE9D770037B46C /* ast.txt */,
 				FAFEF8901A0BE988002C11A3 /* bg.txt */,
 				FAFEF8911A0BE988002C11A3 /* ca.txt */,
+				FA8E472A1BFE9D920037B46C /* cs_CZ.txt */,
+				FA8E472B1BFE9D920037B46C /* da_DK.txt */,
 				FAFEF8921A0BE988002C11A3 /* de_DE.txt */,
 				FAFEF8931A0BE988002C11A3 /* el.txt */,
 				FAFEF8941A0BE988002C11A3 /* en_US.txt */,
 				FAFEF8951A0BE988002C11A3 /* es.txt */,
+				FA8E472E1BFE9DA40037B46C /* fa.txt */,
 				FA59C1AC1AADD1950093F77B /* fi.txt */,
 				FAFEF8961A0BE988002C11A3 /* fil.txt */,
 				FAFEF8971A0BE988002C11A3 /* fr.txt */,
 				FAFEF8981A0BE988002C11A3 /* gl.txt */,
 				FAFEF8991A0BE988002C11A3 /* he.txt */,
+				FA8E47301BFE9DBE0037B46C /* hsb.txt */,
+				FA8E47311BFE9DBE0037B46C /* hu_HU.txt */,
 				FAFEF89A1A0BE988002C11A3 /* it.txt */,
 				FAFEF89B1A0BE988002C11A3 /* ja.txt */,
+				FA8E47341BFE9DCB0037B46C /* lt_LT.txt */,
 				FA59C1AE1AADD1B50093F77B /* ne.txt */,
 				FAFEF89C1A0BE988002C11A3 /* nl.txt */,
+				FA8E47361BFE9DDE0037B46C /* pl_PL.txt */,
 				FAFEF89D1A0BE988002C11A3 /* pt_BR.txt */,
 				FAFEF89E1A0BE988002C11A3 /* pt_PT.txt */,
 				FAFEF89F1A0BE988002C11A3 /* ro.txt */,
@@ -375,6 +402,7 @@
 				TargetAttributes = {
 					FABCD8CF1A0A61430013FB88 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 8WN83NU8P5;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -420,17 +448,21 @@
 				FAFEF8BB1A0BE988002C11A3 /* tr.txt in Resources */,
 				FA59C1AF1AADD1B50093F77B /* ne.txt in Resources */,
 				FAFEF8B01A0BE988002C11A3 /* he.txt in Resources */,
+				FA8E472C1BFE9D920037B46C /* cs_CZ.txt in Resources */,
 				FAFEF8B81A0BE988002C11A3 /* si.txt in Resources */,
 				FA59C1B31AADD1D20093F77B /* zh_CN.txt in Resources */,
 				FAFEF8B91A0BE988002C11A3 /* sk.txt in Resources */,
 				FAFEF8B11A0BE988002C11A3 /* it.txt in Resources */,
+				FA8E47281BFE9D770037B46C /* ar.txt in Resources */,
 				FAFEF8B51A0BE988002C11A3 /* pt_PT.txt in Resources */,
 				FAFEF8B61A0BE988002C11A3 /* ro.txt in Resources */,
 				FAFEF8B31A0BE988002C11A3 /* nl.txt in Resources */,
 				FAFEF8AE1A0BE988002C11A3 /* fr.txt in Resources */,
 				FAFEF8AD1A0BE988002C11A3 /* fil.txt in Resources */,
+				FA8E47371BFE9DDE0037B46C /* pl_PL.txt in Resources */,
 				FAFEF8A91A0BE988002C11A3 /* de_DE.txt in Resources */,
 				FABCD9421A0A65020013FB88 /* Main_iPad.storyboard in Resources */,
+				FA8E47331BFE9DBE0037B46C /* hu_HU.txt in Resources */,
 				FAFEF8B21A0BE988002C11A3 /* ja.txt in Resources */,
 				FAFEF8BC1A0BE988002C11A3 /* uk.txt in Resources */,
 				FAFEF8AA1A0BE988002C11A3 /* el.txt in Resources */,
@@ -439,15 +471,20 @@
 				FABCD9431A0A65020013FB88 /* Main_iPhone.storyboard in Resources */,
 				FAFEF8AB1A0BE988002C11A3 /* en_US.txt in Resources */,
 				FAFEF8891A0BE918002C11A3 /* graph-data.osm-gh in Resources */,
+				FA8E472D1BFE9D920037B46C /* da_DK.txt in Resources */,
 				FA59C1AD1AADD1950093F77B /* fi.txt in Resources */,
 				FAFEF8AF1A0BE988002C11A3 /* gl.txt in Resources */,
 				FAFEF8AC1A0BE988002C11A3 /* es.txt in Resources */,
 				FAFEF8B41A0BE988002C11A3 /* pt_BR.txt in Resources */,
+				FA8E47321BFE9DBE0037B46C /* hsb.txt in Resources */,
+				FA8E47291BFE9D770037B46C /* ast.txt in Resources */,
 				FAFEF8A81A0BE988002C11A3 /* ca.txt in Resources */,
 				FABCD8E41A0A61430013FB88 /* LaunchScreen.xib in Resources */,
 				FABCD8E11A0A61430013FB88 /* Images.xcassets in Resources */,
 				FAFEF8BA1A0BE988002C11A3 /* sv_SE.txt in Resources */,
 				FAFEF8B71A0BE988002C11A3 /* ru.txt in Resources */,
+				FA8E47351BFE9DCB0037B46C /* lt_LT.txt in Resources */,
+				FA8E472F1BFE9DA40037B46C /* fa.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,9 +648,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "graphhopper-ios-sample/PrefixHeader.pch";
 				INFOPLIST_FILE = "graphhopper-ios-sample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -622,6 +663,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../j2objc/include $(PROJECT_DIR)/../src";
 			};
 			name = Debug;
@@ -630,9 +672,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "graphhopper-ios-sample/PrefixHeader.pch";
 				INFOPLIST_FILE = "graphhopper-ios-sample/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -641,6 +687,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../j2objc/include $(PROJECT_DIR)/../src";
 			};
 			name = Release;
