@@ -1,5 +1,5 @@
 .SUFFIXES:
-.PHONY: default clean cleanall
+.PHONY: default clean cleanall install
 
 default:
 	@:
@@ -49,3 +49,5 @@ clean:
 cleanall: clean
 	@echo Deleting $(GEN_OBJC_DIR) $(TRANSLATE_LIST)
 	@rm -rf $(GEN_OBJC_DIR) $(TRANSLATE_LIST)
+
+install: default
