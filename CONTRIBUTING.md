@@ -12,6 +12,10 @@ There is some [removed / commented out code](https://github.com/graphhopper/grap
 in the GraphHopper sources in order for it to work with j2objc and iOS. Ideally,
 all these changes will be resolved in the future so that there won't be a need for a separate branch.
 
+## Community
+
+Feel free to raise problems or questions in [our forum](https://discuss.graphhopper.com/c/graphhopper/graphhopper-ios-and-android).
+
 ## Upgrade GraphHopper
 
 The version of GraphHopper used is the tip of the
