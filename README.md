@@ -6,9 +6,7 @@ and creates the `libgraphhopper.a` library to be used on iOS and OS X.
 It uses [j2objc](https://github.com/google/j2objc) to translate the .java sources 
 into Objective-C.
 
-> **Disclaimer:** This is experimental so treat it accordingly. Besides what the 
-[sample app](graphhopper-ios-sample) 
-does, this hasn't been tested further. [Feel free to help](CONTRIBUTING.md) in any way.
+> **Disclaimer:** This is experimental so treat it accordingly. [Feel free to help](CONTRIBUTING.md) in any way.
 
 ## Getting Started
 
@@ -28,6 +26,10 @@ You have two options:
 and follow the instructions there. This is the easiest way to get started.
 
 2. Manually add *graphhopper.xcodeproj* to your Xcode project. See the Usage section below.
+ 
+## Community
+
+Feel free to raise problems or questions in [our forum](https://discuss.graphhopper.com/c/graphhopper/graphhopper-ios-and-android).
 
 ## Usage
 
