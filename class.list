@@ -1,4 +1,4 @@
-graphhopper/core/src/main/java/com/graphhopper/coll/BigLongIntMap.java
+graphhopper/core/src/main/java/com/graphhopper/AltResponse.java
 graphhopper/core/src/main/java/com/graphhopper/coll/BinHeapWrapper.java
 graphhopper/core/src/main/java/com/graphhopper/coll/CompressedArray.java
 graphhopper/core/src/main/java/com/graphhopper/coll/GHBitSet.java
@@ -8,14 +8,10 @@ graphhopper/core/src/main/java/com/graphhopper/coll/GHSortedCollection.java
 graphhopper/core/src/main/java/com/graphhopper/coll/GHTBitSet.java
 graphhopper/core/src/main/java/com/graphhopper/coll/GHTreeMapComposed.java
 graphhopper/core/src/main/java/com/graphhopper/coll/IntDoubleBinHeap.java
-graphhopper/core/src/main/java/com/graphhopper/coll/IntIntBinHeap.java
 graphhopper/core/src/main/java/com/graphhopper/coll/LongIntMap.java
 graphhopper/core/src/main/java/com/graphhopper/coll/MapEntry.java
 graphhopper/core/src/main/java/com/graphhopper/coll/OSMIDMap.java
-graphhopper/core/src/main/java/com/graphhopper/coll/OSMIDSegmentedMap.java
-graphhopper/core/src/main/java/com/graphhopper/coll/SparseArray.java
 graphhopper/core/src/main/java/com/graphhopper/coll/SparseIntIntArray.java
-graphhopper/core/src/main/java/com/graphhopper/coll/SparseLongLongArray.java
 graphhopper/core/src/main/java/com/graphhopper/geohash/KeyAlgo.java
 graphhopper/core/src/main/java/com/graphhopper/geohash/LinearKeyAlgo.java
 graphhopper/core/src/main/java/com/graphhopper/geohash/SpatialKeyAlgo.java
@@ -28,10 +24,16 @@ graphhopper/core/src/main/java/com/graphhopper/reader/dem/CGIARProvider.java
 graphhopper/core/src/main/java/com/graphhopper/reader/dem/ElevationProvider.java
 graphhopper/core/src/main/java/com/graphhopper/reader/dem/HeightTile.java
 graphhopper/core/src/main/java/com/graphhopper/reader/dem/SRTMProvider.java
+graphhopper/core/src/main/java/com/graphhopper/reader/osm/conditional/ConditionalParser.java
+graphhopper/core/src/main/java/com/graphhopper/reader/osm/conditional/ConditionalTagsInspector.java
+graphhopper/core/src/main/java/com/graphhopper/reader/osm/conditional/DateRange.java
+graphhopper/core/src/main/java/com/graphhopper/reader/osm/conditional/DateRangeParser.java
+graphhopper/core/src/main/java/com/graphhopper/reader/osm/conditional/ParsedCalendar.java
 graphhopper/core/src/main/java/com/graphhopper/reader/OSMElement.java
 graphhopper/core/src/main/java/com/graphhopper/reader/OSMNode.java
 graphhopper/core/src/main/java/com/graphhopper/reader/OSMReader.java
 graphhopper/core/src/main/java/com/graphhopper/reader/OSMRelation.java
+graphhopper/core/src/main/java/com/graphhopper/reader/OSMTagParser.java
 graphhopper/core/src/main/java/com/graphhopper/reader/OSMTurnRelation.java
 graphhopper/core/src/main/java/com/graphhopper/reader/OSMWay.java
 graphhopper/core/src/main/java/com/graphhopper/reader/PillarInfo.java
@@ -39,6 +41,7 @@ graphhopper/core/src/main/java/com/graphhopper/reader/PrinctonReader.java
 graphhopper/core/src/main/java/com/graphhopper/routing/AbstractBidirAlgo.java
 graphhopper/core/src/main/java/com/graphhopper/routing/AbstractRoutingAlgorithm.java
 graphhopper/core/src/main/java/com/graphhopper/routing/AlgorithmOptions.java
+graphhopper/core/src/main/java/com/graphhopper/routing/AlternativeRoute.java
 graphhopper/core/src/main/java/com/graphhopper/routing/AStar.java
 graphhopper/core/src/main/java/com/graphhopper/routing/AStarBidirection.java
 graphhopper/core/src/main/java/com/graphhopper/routing/ch/Path4CH.java
@@ -49,15 +52,16 @@ graphhopper/core/src/main/java/com/graphhopper/routing/Dijkstra.java
 graphhopper/core/src/main/java/com/graphhopper/routing/DijkstraBidirectionRef.java
 graphhopper/core/src/main/java/com/graphhopper/routing/DijkstraOneToMany.java
 graphhopper/core/src/main/java/com/graphhopper/routing/Path.java
-graphhopper/core/src/main/java/com/graphhopper/routing/PathBidir.java
 graphhopper/core/src/main/java/com/graphhopper/routing/PathBidirRef.java
 graphhopper/core/src/main/java/com/graphhopper/routing/PathNative.java
 graphhopper/core/src/main/java/com/graphhopper/routing/QueryGraph.java
+graphhopper/core/src/main/java/com/graphhopper/routing/RoundTripAltAlgorithm.java
 graphhopper/core/src/main/java/com/graphhopper/routing/RoutingAlgorithm.java
 graphhopper/core/src/main/java/com/graphhopper/routing/RoutingAlgorithmFactory.java
 graphhopper/core/src/main/java/com/graphhopper/routing/RoutingAlgorithmFactorySimple.java
 graphhopper/core/src/main/java/com/graphhopper/routing/util/AbstractAlgoPreparation.java
 graphhopper/core/src/main/java/com/graphhopper/routing/util/AbstractFlagEncoder.java
+graphhopper/core/src/main/java/com/graphhopper/routing/util/AbstractWeighting.java
 graphhopper/core/src/main/java/com/graphhopper/routing/util/AllCHEdgesIterator.java
 graphhopper/core/src/main/java/com/graphhopper/routing/util/AllEdgesIterator.java
 graphhopper/core/src/main/java/com/graphhopper/routing/util/BeelineWeightApproximator.java
@@ -66,6 +70,7 @@ graphhopper/core/src/main/java/com/graphhopper/routing/util/BikeCommonFlagEncode
 graphhopper/core/src/main/java/com/graphhopper/routing/util/BikeFlagEncoder.java
 graphhopper/core/src/main/java/com/graphhopper/routing/util/CarFlagEncoder.java
 graphhopper/core/src/main/java/com/graphhopper/routing/util/ConsistentWeightApproximator.java
+graphhopper/core/src/main/java/com/graphhopper/routing/util/CurvatureWeighting.java
 graphhopper/core/src/main/java/com/graphhopper/routing/util/DefaultEdgeFilter.java
 graphhopper/core/src/main/java/com/graphhopper/routing/util/EdgeFilter.java
 graphhopper/core/src/main/java/com/graphhopper/routing/util/EncodedDoubleValue.java
@@ -82,7 +87,7 @@ graphhopper/core/src/main/java/com/graphhopper/routing/util/PriorityCode.java
 graphhopper/core/src/main/java/com/graphhopper/routing/util/PriorityWeighting.java
 graphhopper/core/src/main/java/com/graphhopper/routing/util/RacingBikeFlagEncoder.java
 graphhopper/core/src/main/java/com/graphhopper/routing/util/ShortestWeighting.java
-graphhopper/core/src/main/java/com/graphhopper/routing/util/TarjansStronglyConnectedComponentsAlgorithm.java
+graphhopper/core/src/main/java/com/graphhopper/routing/util/TarjansSCCAlgorithm.java
 graphhopper/core/src/main/java/com/graphhopper/routing/util/TestAlgoCollector.java
 graphhopper/core/src/main/java/com/graphhopper/routing/util/TraversalMode.java
 graphhopper/core/src/main/java/com/graphhopper/routing/util/TurnCostEncoder.java
@@ -103,7 +108,6 @@ graphhopper/core/src/main/java/com/graphhopper/storage/DataAccess.java
 graphhopper/core/src/main/java/com/graphhopper/storage/DAType.java
 graphhopper/core/src/main/java/com/graphhopper/storage/Directory.java
 graphhopper/core/src/main/java/com/graphhopper/storage/EdgeAccess.java
-graphhopper/core/src/main/java/com/graphhopper/storage/EdgeEntry.java
 graphhopper/core/src/main/java/com/graphhopper/storage/GHDirectory.java
 graphhopper/core/src/main/java/com/graphhopper/storage/GHNodeAccess.java
 graphhopper/core/src/main/java/com/graphhopper/storage/Graph.java
@@ -131,6 +135,7 @@ graphhopper/core/src/main/java/com/graphhopper/storage/RAMDataAccess.java
 graphhopper/core/src/main/java/com/graphhopper/storage/RAMDirectory.java
 graphhopper/core/src/main/java/com/graphhopper/storage/RAMIntDataAccess.java
 graphhopper/core/src/main/java/com/graphhopper/storage/SimpleFSLockFactory.java
+graphhopper/core/src/main/java/com/graphhopper/storage/SPTEntry.java
 graphhopper/core/src/main/java/com/graphhopper/storage/Storable.java
 graphhopper/core/src/main/java/com/graphhopper/storage/StorableProperties.java
 graphhopper/core/src/main/java/com/graphhopper/storage/SynchedDAWrapper.java
@@ -158,7 +163,6 @@ graphhopper/core/src/main/java/com/graphhopper/util/Downloader.java
 graphhopper/core/src/main/java/com/graphhopper/util/EdgeExplorer.java
 graphhopper/core/src/main/java/com/graphhopper/util/EdgeIterator.java
 graphhopper/core/src/main/java/com/graphhopper/util/EdgeIteratorState.java
-graphhopper/core/src/main/java/com/graphhopper/util/EdgeWrapper.java
 graphhopper/core/src/main/java/com/graphhopper/util/FinishInstruction.java
 graphhopper/core/src/main/java/com/graphhopper/util/GHUtility.java
 graphhopper/core/src/main/java/com/graphhopper/util/GPXEntry.java
@@ -188,6 +192,7 @@ graphhopper/core/src/main/java/com/graphhopper/util/TranslationMap.java
 graphhopper/core/src/main/java/com/graphhopper/util/Unzipper.java
 graphhopper/core/src/main/java/com/graphhopper/util/ViaInstruction.java
 graphhopper/core/src/main/java/com/graphhopper/util/XFirstSearch.java
+graphhopper/tools-lgpl/src/main/java/com/graphhopper/coll/OTPIntDoubleBinHeap.java
 dependencies/trove/src/gnu/trove/list/TDoubleList.java
 dependencies/trove/src/gnu/trove/TDoubleCollection.java
 dependencies/trove/src/gnu/trove/list/TIntList.java
