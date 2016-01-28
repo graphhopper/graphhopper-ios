@@ -10,6 +10,7 @@
 #import "MBXMapKit.h"
 
 #import "com/graphhopper/GraphHopper.h"
+#import "com/graphhopper/AltResponse.h"
 #import "com/graphhopper/routing/util/EncodingManager.h"
 #import "com/graphhopper/GHRequest.h"
 #import "com/graphhopper/GHResponse.h"
@@ -98,8 +99,8 @@
 {
     self.textView.text = @"Calculating route...";
     
-    MKPointAnnotation *point1 = [[_mapView annotations] objectAtIndex:0],
-    *point2 = [[_mapView annotations] objectAtIndex:1];
+    id<MKAnnotation> point1 = [[_mapView annotations] objectAtIndex:0],
+    point2 = [[_mapView annotations] objectAtIndex:1];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         GHRequest *request = [[GHRequest alloc] initWithDouble:point1.coordinate.latitude
@@ -115,7 +116,8 @@
         }
         routeInfo = [routeInfo stringByAppendingString:[NSString stringWithFormat:@"%@", [response getDebugInfo]]];
         
-        PointList *points = [response getPoints];
+        AltResponse *first = [response getFirst];
+        PointList *points = [first getPoints];
         NSLog(@"Route consists of %d points.", [points getSize]);
         
         CLLocationCoordinate2D coords[[points getSize]];
