@@ -1,3 +1,4 @@
+com/graphhopper/reader/OSMFileHeader.java
 com/graphhopper/reader/OSMInputFile.java
 com/graphhopper/reader/pbf/
 com/graphhopper/util/Helper7.java
