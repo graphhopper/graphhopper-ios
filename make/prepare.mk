@@ -1,7 +1,7 @@
 class.list: dependencies/trove/trove4j-stripped.jar dependencies/class-exclude.grep
 	@if [ "$(MAKECMDGOALS)" != "class.list" ]; then echo "error: You need to run \`make class.list\` first"; exit 1; fi
 	@rm -f $@
-	find graphhopper/core/src/main/java -name '*.java' | grep -vf dependencies/class-exclude.grep >> $@
+	find graphhopper/core/src/main/java graphhopper/tools-lgpl/src/main/java -name '*.java' | grep -vf dependencies/class-exclude.grep >> $@
 	unzip -v $< | grep class | grep -v ".*$$.*" | sed s/class/java/ | sed 's/\(.*\)\(gnu\)/dependencies\/trove\/src\/gnu/' >> $@
 	find dependencies/fake_slf4j/src -name '*.java' >> $@
 
