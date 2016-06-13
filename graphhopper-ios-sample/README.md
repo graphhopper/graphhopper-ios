@@ -16,7 +16,7 @@ The sample Xcode project has a reference to the graph data at
 #### Import Data
 
 **Caution:** The import method described below uses the
-[graphhopper 0.6.0-RC1 tag](https://github.com/graphhopper/graphhopper/releases/tag/0.6.0-RC1)
+[graphhopper 0.7 branch](https://github.com/graphhopper/graphhopper/tree/0.7)
 in /graphhopper-ios/graphhopper to import the graph data using `./graphhopper.sh import` command.
 
 You can import a sample graph by running this command in Terminal
