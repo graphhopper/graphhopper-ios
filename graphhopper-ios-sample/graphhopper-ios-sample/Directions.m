@@ -10,7 +10,7 @@
 #import "MBXMapKit.h"
 
 #import "com/graphhopper/GraphHopper.h"
-#import "com/graphhopper/AltResponse.h"
+#import "com/graphhopper/PathWrapper.h"
 #import "com/graphhopper/routing/util/EncodingManager.h"
 #import "com/graphhopper/GHRequest.h"
 #import "com/graphhopper/GHResponse.h"
@@ -116,8 +116,8 @@
         }
         routeInfo = [routeInfo stringByAppendingString:[NSString stringWithFormat:@"%@", [response getDebugInfo]]];
         
-        AltResponse *first = [response getFirst];
-        PointList *points = [first getPoints];
+        PathWrapper *best = [response getBest];
+        PointList *points = [best getPoints];
         NSLog(@"Route consists of %d points.", [points getSize]);
         
         CLLocationCoordinate2D coords[[points getSize]];

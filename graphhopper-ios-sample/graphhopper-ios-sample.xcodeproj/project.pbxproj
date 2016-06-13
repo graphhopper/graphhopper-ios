@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5B899A891C5A35900056E6AD /* fr_CH.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5B899A871C5A35900056E6AD /* fr_CH.txt */; };
 		5B899A8A1C5A35900056E6AD /* fr_FR.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5B899A881C5A35900056E6AD /* fr_FR.txt */; };
+		FA4967201D0F1D1A00D9FBEC /* hr_HR.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA49671F1D0F1D1900D9FBEC /* hr_HR.txt */; };
 		FA59C1761AADB8AB0093F77B /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA59C1751AADB8AB0093F77B /* libicucore.dylib */; };
 		FA59C1AD1AADD1950093F77B /* fi.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA59C1AC1AADD1950093F77B /* fi.txt */; };
 		FA59C1AF1AADD1B50093F77B /* ne.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA59C1AE1AADD1B50093F77B /* ne.txt */; };
@@ -87,6 +88,7 @@
 /* Begin PBXFileReference section */
 		5B899A871C5A35900056E6AD /* fr_CH.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fr_CH.txt; path = build/translations/fr_CH.txt; sourceTree = "<group>"; };
 		5B899A881C5A35900056E6AD /* fr_FR.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fr_FR.txt; path = build/translations/fr_FR.txt; sourceTree = "<group>"; };
+		FA49671F1D0F1D1900D9FBEC /* hr_HR.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = hr_HR.txt; path = build/translations/hr_HR.txt; sourceTree = "<group>"; };
 		FA59C1751AADB8AB0093F77B /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		FA59C1AC1AADD1950093F77B /* fi.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fi.txt; path = build/translations/fi.txt; sourceTree = "<group>"; };
 		FA59C1AE1AADD1B50093F77B /* ne.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ne.txt; path = build/translations/ne.txt; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 				5B899A881C5A35900056E6AD /* fr_FR.txt */,
 				FAFEF8981A0BE988002C11A3 /* gl.txt */,
 				FAFEF8991A0BE988002C11A3 /* he.txt */,
+				FA49671F1D0F1D1900D9FBEC /* hr_HR.txt */,
 				FA8E47301BFE9DBE0037B46C /* hsb.txt */,
 				FA8E47311BFE9DBE0037B46C /* hu_HU.txt */,
 				FAFEF89A1A0BE988002C11A3 /* it.txt */,
@@ -488,6 +491,7 @@
 				FAFEF8BA1A0BE988002C11A3 /* sv_SE.txt in Resources */,
 				FAFEF8B71A0BE988002C11A3 /* ru.txt in Resources */,
 				FA8E47351BFE9DCB0037B46C /* lt_LT.txt in Resources */,
+				FA4967201D0F1D1A00D9FBEC /* hr_HR.txt in Resources */,
 				FA8E472F1BFE9DA40037B46C /* fa.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
