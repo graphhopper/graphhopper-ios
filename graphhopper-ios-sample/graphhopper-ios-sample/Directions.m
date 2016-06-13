@@ -81,8 +81,8 @@
         _hopper = [[GraphHopper alloc] init];
         [_hopper setCHEnableWithBoolean:YES];
         [_hopper setAllowWritesWithBoolean:NO];
-        [_hopper setMemoryMapped];
         [_hopper setEncodingManagerWithEncodingManager:[[EncodingManager alloc] initWithNSString:@"car"]];
+        [_hopper forMobile];
         [_hopper load__WithNSString:location];
     }
     return _hopper;
