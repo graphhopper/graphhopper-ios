@@ -13,7 +13,7 @@ if [ ! -e $GRAPH_FILE ]; then
   mv $FILE $GRAPH_FILE
 fi
 rm -rf $(expr $GRAPH_FILE : '\([^\.]*\)\.')".osm-gh"
-git checkout 0.8.2
+git checkout origin/master
 ./graphhopper.sh import $GRAPH_FILE
 git checkout ios-compat
 cd ..
