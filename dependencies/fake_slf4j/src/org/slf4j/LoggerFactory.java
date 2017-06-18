@@ -15,6 +15,10 @@ public class LoggerFactory {
             public void warn(String str) {
                 log("WARN", str, null);
             }
+
+            public void warn(String format, Object... arguments) {
+                log("WARN", format, null);
+            }
             
             public void error(String str, Throwable t) {
                 log("ERROR", str, t);

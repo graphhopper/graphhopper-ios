@@ -1,0 +1,11 @@
+com.vividsolutions.jts.geom.Coordinate.class
+com.vividsolutions.jts.geom.GeometryFactory.class
+com.vividsolutions.jts.triangulate.ConformingDelaunayTriangulator.class
+com.vividsolutions.jts.triangulate.ConstraintVertex.class
+com.vividsolutions.jts.triangulate.quadedge.QuadEdge.class
+com.vividsolutions.jts.triangulate.quadedge.QuadEdgeSubdivision.class
+com.vividsolutions.jts.triangulate.quadedge.Vertex.class
+com.vividsolutions.jts.operation.linemerge.LineMerger.class
+com.vividsolutions.jts.index.quadtree.Quadtree.class
+com.vividsolutions.jts.operation.overlay.validate.OverlayResultValidator.class
+com.vividsolutions.jts.precision.SimpleGeometryPrecisionReducer.class

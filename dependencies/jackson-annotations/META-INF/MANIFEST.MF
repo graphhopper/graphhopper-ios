@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: tatu
+Build-Jdk: 1.7.0_79
+Specification-Title: Jackson-annotations
+Specification-Version: 2.8.4
+Specification-Vendor: FasterXML
+Implementation-Title: Jackson-annotations
+Implementation-Version: 2.8.4
+Implementation-Vendor-Id: com.fasterxml.jackson.core
+Implementation-Vendor: FasterXML
+Implementation-Build-Date: 2016-10-14 03:45:33+0000
+X-Compile-Source-JDK: 1.6
+X-Compile-Target-JDK: 1.6
+
