@@ -17,6 +17,7 @@
 		FA59C1AF1AADD1B50093F77B /* ne.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA59C1AE1AADD1B50093F77B /* ne.txt */; };
 		FA59C1B21AADD1D20093F77B /* vi_VI.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA59C1B01AADD1D20093F77B /* vi_VI.txt */; };
 		FA59C1B31AADD1D20093F77B /* zh_CN.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA59C1B11AADD1D20093F77B /* zh_CN.txt */; };
+		FA5CF2381ECAD1B300B14E04 /* sl_SI.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA5CF2371ECAD1B300B14E04 /* sl_SI.txt */; };
 		FA8E47281BFE9D770037B46C /* ar.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA8E47261BFE9D770037B46C /* ar.txt */; };
 		FA8E47291BFE9D770037B46C /* ast.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA8E47271BFE9D770037B46C /* ast.txt */; };
 		FA8E472C1BFE9D920037B46C /* cs_CZ.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA8E472A1BFE9D920037B46C /* cs_CZ.txt */; };
@@ -38,6 +39,7 @@
 		FABCD9421A0A65020013FB88 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABCD93E1A0A65020013FB88 /* Main_iPad.storyboard */; };
 		FABCD9431A0A65020013FB88 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABCD9401A0A65020013FB88 /* Main_iPhone.storyboard */; };
 		FABCD9691A0A8C620013FB88 /* Directions.m in Sources */ = {isa = PBXBuildFile; fileRef = FABCD9681A0A8C620013FB88 /* Directions.m */; };
+		FAEF863E1EF6B66400644A71 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FAEF863D1EF6B66400644A71 /* libiconv.tbd */; };
 		FAF480951A10D97D00B20D8C /* MBAutoGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF480941A10D97D00B20D8C /* MBAutoGrowingTextView.m */; };
 		FAFEF8891A0BE918002C11A3 /* graph-data.osm-gh in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF8881A0BE918002C11A3 /* graph-data.osm-gh */; };
 		FAFEF88D1A0BE96D002C11A3 /* libjre_emul.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFEF88A1A0BE96D002C11A3 /* libjre_emul.a */; };
@@ -58,7 +60,6 @@
 		FAFEF8B51A0BE988002C11A3 /* pt_PT.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF89E1A0BE988002C11A3 /* pt_PT.txt */; };
 		FAFEF8B61A0BE988002C11A3 /* ro.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF89F1A0BE988002C11A3 /* ro.txt */; };
 		FAFEF8B71A0BE988002C11A3 /* ru.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF8A01A0BE988002C11A3 /* ru.txt */; };
-		FAFEF8B81A0BE988002C11A3 /* si.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF8A11A0BE988002C11A3 /* si.txt */; };
 		FAFEF8B91A0BE988002C11A3 /* sk.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF8A21A0BE988002C11A3 /* sk.txt */; };
 		FAFEF8BA1A0BE988002C11A3 /* sv_SE.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF8A31A0BE988002C11A3 /* sv_SE.txt */; };
 		FAFEF8BB1A0BE988002C11A3 /* tr.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAFEF8A41A0BE988002C11A3 /* tr.txt */; };
@@ -98,6 +99,7 @@
 		FA59C1AE1AADD1B50093F77B /* ne.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ne.txt; path = build/translations/ne.txt; sourceTree = "<group>"; };
 		FA59C1B01AADD1D20093F77B /* vi_VI.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = vi_VI.txt; path = build/translations/vi_VI.txt; sourceTree = "<group>"; };
 		FA59C1B11AADD1D20093F77B /* zh_CN.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = zh_CN.txt; path = build/translations/zh_CN.txt; sourceTree = "<group>"; };
+		FA5CF2371ECAD1B300B14E04 /* sl_SI.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sl_SI.txt; path = build/translations/sl_SI.txt; sourceTree = "<group>"; };
 		FA8E47261BFE9D770037B46C /* ar.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ar.txt; path = build/translations/ar.txt; sourceTree = "<group>"; };
 		FA8E47271BFE9D770037B46C /* ast.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ast.txt; path = build/translations/ast.txt; sourceTree = "<group>"; };
 		FA8E472A1BFE9D920037B46C /* cs_CZ.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = cs_CZ.txt; path = build/translations/cs_CZ.txt; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 		FABCD9551A0A6C310013FB88 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		FABCD9671A0A8C620013FB88 /* Directions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Directions.h; sourceTree = "<group>"; };
 		FABCD9681A0A8C620013FB88 /* Directions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Directions.m; sourceTree = "<group>"; };
+		FAEF863D1EF6B66400644A71 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		FAF480931A10D97D00B20D8C /* MBAutoGrowingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBAutoGrowingTextView.h; sourceTree = "<group>"; };
 		FAF480941A10D97D00B20D8C /* MBAutoGrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBAutoGrowingTextView.m; sourceTree = "<group>"; };
 		FAFEF8841A0BE8FB002C11A3 /* graphhopper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = graphhopper.xcodeproj; path = ../graphhopper.xcodeproj; sourceTree = "<group>"; };
@@ -149,7 +152,6 @@
 		FAFEF89E1A0BE988002C11A3 /* pt_PT.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = pt_PT.txt; path = build/translations/pt_PT.txt; sourceTree = "<group>"; };
 		FAFEF89F1A0BE988002C11A3 /* ro.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ro.txt; path = build/translations/ro.txt; sourceTree = "<group>"; };
 		FAFEF8A01A0BE988002C11A3 /* ru.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ru.txt; path = build/translations/ru.txt; sourceTree = "<group>"; };
-		FAFEF8A11A0BE988002C11A3 /* si.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = si.txt; path = build/translations/si.txt; sourceTree = "<group>"; };
 		FAFEF8A21A0BE988002C11A3 /* sk.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sk.txt; path = build/translations/sk.txt; sourceTree = "<group>"; };
 		FAFEF8A31A0BE988002C11A3 /* sv_SE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = sv_SE.txt; path = build/translations/sv_SE.txt; sourceTree = "<group>"; };
 		FAFEF8A41A0BE988002C11A3 /* tr.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = tr.txt; path = build/translations/tr.txt; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAEF863E1EF6B66400644A71 /* libiconv.tbd in Frameworks */,
 				FA59C1761AADB8AB0093F77B /* libicucore.dylib in Frameworks */,
 				FABCD93B1A0A62EE0013FB88 /* libsqlite3.dylib in Frameworks */,
 				FABCD9391A0A62E20013FB88 /* Security.framework in Frameworks */,
@@ -203,6 +206,7 @@
 				FABCD8D11A0A61430013FB88 /* Products */,
 				FAFEF8A61A0BE988002C11A3 /* Translations */,
 				FABCD9021A0A62860013FB88 /* Libraries */,
+				FAEF863C1EF6B66400644A71 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -282,6 +286,14 @@
 			name = Graph;
 			sourceTree = "<group>";
 		};
+		FAEF863C1EF6B66400644A71 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAEF863D1EF6B66400644A71 /* libiconv.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FAF480921A10D97D00B20D8C /* MBAutoGrowingTextView */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,8 +344,8 @@
 				FAFEF89E1A0BE988002C11A3 /* pt_PT.txt */,
 				FAFEF89F1A0BE988002C11A3 /* ro.txt */,
 				FAFEF8A01A0BE988002C11A3 /* ru.txt */,
-				FAFEF8A11A0BE988002C11A3 /* si.txt */,
 				FAFEF8A21A0BE988002C11A3 /* sk.txt */,
+				FA5CF2371ECAD1B300B14E04 /* sl_SI.txt */,
 				FAFEF8A31A0BE988002C11A3 /* sv_SE.txt */,
 				FAFEF8A41A0BE988002C11A3 /* tr.txt */,
 				FAFEF8A51A0BE988002C11A3 /* uk.txt */,
@@ -462,11 +474,11 @@
 				5B899A8A1C5A35900056E6AD /* fr_FR.txt in Resources */,
 				FAFEF8B01A0BE988002C11A3 /* he.txt in Resources */,
 				FA8E472C1BFE9D920037B46C /* cs_CZ.txt in Resources */,
-				FAFEF8B81A0BE988002C11A3 /* si.txt in Resources */,
 				FA59C1B31AADD1D20093F77B /* zh_CN.txt in Resources */,
+				FA8E47281BFE9D770037B46C /* ar.txt in Resources */,
 				FAFEF8B91A0BE988002C11A3 /* sk.txt in Resources */,
 				FAFEF8B11A0BE988002C11A3 /* it.txt in Resources */,
-				FA8E47281BFE9D770037B46C /* ar.txt in Resources */,
+				FA5CF2381ECAD1B300B14E04 /* sl_SI.txt in Resources */,
 				FAFEF8B51A0BE988002C11A3 /* pt_PT.txt in Resources */,
 				FAFEF8B61A0BE988002C11A3 /* ro.txt in Resources */,
 				FAFEF8B31A0BE988002C11A3 /* nl.txt in Resources */,
