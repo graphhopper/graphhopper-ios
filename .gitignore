@@ -8,3 +8,7 @@ xcuserdata
 *~
 *.swp
 node_modules
+graphhopper
+dependencies/jts
+dependencies/hppc
+class.list

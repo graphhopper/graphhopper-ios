@@ -10,6 +10,9 @@
 #import "MBXMapKit.h"
 
 #import "com/graphhopper/GraphHopper.h"
+#import "com/graphhopper/config/ProfileConfig.h"
+#import "com/graphhopper/config/CHProfileConfig.h"
+#import "com/graphhopper/routing/ch/CHPreparationHandler.h"
 #import "com/graphhopper/PathWrapper.h"
 #import "com/graphhopper/routing/util/EncodingManager.h"
 #import "com/graphhopper/GHRequest.h"
@@ -35,8 +38,8 @@
         _mapView = view;
         _textView = textView;
         
-        CLLocationCoordinate2D brasov = CLLocationCoordinate2DMake(45.651796, 25.6125);
-        [_mapView mbx_setCenterCoordinate:brasov zoomLevel:10 animated:NO];
+        CLLocationCoordinate2D tuebingen = CLLocationCoordinate2DMake(48.523, 9.048);
+        [_mapView mbx_setCenterCoordinate:tuebingen zoomLevel:10 animated:NO];
         
         UILongPressGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
         gesture.minimumPressDuration = 1;
@@ -77,12 +80,24 @@
     if (!_hopper) {
         
         NSString *location = [[NSBundle mainBundle] pathForResource:@"graph-data" ofType:@"osm-gh"];
-        
         _hopper = [[GraphHopper alloc] init];
-        [_hopper setCHEnableWithBoolean:YES];
-        [_hopper setAllowWritesWithBoolean:NO];
-        [_hopper setEncodingManagerWithEncodingManager:[[EncodingManager alloc] initWithNSString:@"car"]];
         [_hopper forMobile];
+        
+        ComGraphhopperConfigProfileConfig *profile = [[ComGraphhopperConfigProfileConfig alloc] initWithNSString:@"car"];
+          [ profile setVehicleWithNSString:@"car"];
+          [ profile setWeightingWithNSString:@"fastest"];
+        ComGraphhopperConfigProfileConfig *profiles[] = { profile };
+            
+        IOSObjectArray *ar = [ IOSObjectArray newArrayWithObjects:profiles count:1 type:[ComGraphhopperConfigProfileConfig java_getClass]];
+        
+        [ _hopper setProfilesWithComGraphhopperConfigProfileConfigArray:ar ];
+        ComGraphhopperConfigCHProfileConfig *chPC[] = {[[ComGraphhopperConfigCHProfileConfig alloc ] initWithNSString:@"car" ]};
+        CHPreparationHandler * chPH = [ _hopper getCHPreparationHandler ];
+        
+        IOSObjectArray *CHar = [ IOSObjectArray newArrayWithObjects:chPC count:1 type:[ComGraphhopperConfigCHProfileConfig java_getClass]];
+        
+        [ chPH setCHProfileConfigsWithComGraphhopperConfigCHProfileConfigArray: CHar];
+        
         [_hopper load__WithNSString:location];
     }
     return _hopper;
@@ -107,8 +122,9 @@
                                                     withDouble:point1.coordinate.longitude
                                                     withDouble:point2.coordinate.latitude
                                                     withDouble:point2.coordinate.longitude];
+        [[ request setAlgorithmWithNSString:@"dijkstrabi"] setProfileWithNSString:@"car" ];
         GHResponse *response = [self.hopper routeWithGHRequest:request];
-        
+            
         NSString *routeInfo = @"";
         if ([response hasErrors]) {
             NSLog(@"%@", [response getErrors]);

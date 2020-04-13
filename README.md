@@ -20,6 +20,10 @@ cd graphhopper-ios
 This will clone the repository and all its submodules. Now you are ready 
 to use GraphHopper on iOS or OS X.
 
+(For now you need to use  https://github.com/oflebbe/graphhopper/ branch ios_compat_new ) 
+Beware there are unresolved issues
+
+
 You have two options:
 
 1. Head over to [graphhopper-ios-sample](graphhopper-ios-sample) 
@@ -76,9 +80,9 @@ macosx, simulator, iphoneos, so using Xcode instead is recommended.
 
 ## Requirements
 
-* iOS 7.0+ or OS X 10.10 (it might work on older versions but haven't tested)
-* JDK 1.7 or higher
-* Xcode 6.0 or higher
+* iOS 11.0+ or OS X 10.10 (it might work on older versions but haven't tested)
+* JDK 1.8 or higher
+* Xcode 11.0 or higher
 
 ## Troubleshooting
 
@@ -89,3 +93,12 @@ If you run into problems, you can try one of the following:
   * `make clean` - will delete the /graphhopper-ios/build directory
   * `make cleanall` - if the first one didn't do it, this will delete everything 
 related to the build process (you then need to run `make class.list`)
+
+## Refresh Code
+
+The dependencies j2objc, hppc and jts should be downloaded automatically if not present. You can force to reload by removing them: 
+
+```rm -rf dependencies/hppc dependencies/jts j2objc
+make dependencies/hppc dependencies/jts j2objc
+```
+
