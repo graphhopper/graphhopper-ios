@@ -1,8 +1,6 @@
-class.list: dependencies/class-exclude.grep  dependencies/jts dependencies/hppc
+class.list: dependencies/class-exclude.grep  dependencies/jts dependencies/hppc j2objc
 	find graphhopper/core/src/main/java graphhopper/api/src/main/java dependencies/hppc/hppc/src/main/java dependencies/hppc/hppc/target/generated-sources  dependencies/jackson-annotations dependencies/jts/modules/core/src/main/java -name '*.java' | grep -vf dependencies/class-exclude.grep > $@
 	find dependencies/fake_slf4j/src -name '*.java' >> $@
-
-# j2objc
 
 j2objc:
 	@echo "warning: 'j2objc' doesn't exist and needs to be downloaded, \

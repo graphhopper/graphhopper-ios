@@ -2,3 +2,7 @@
 	path = graphhopper-ios-sample/mbxmapkit
 	url = https://github.com/mapbox/mbxmapkit
 
+[submodule "graphhopper"]
+	path = graphhopper
+	url = https://github.com/graphhopper/graphhopper
+        branch = ios_compatibility
