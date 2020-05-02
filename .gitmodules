@@ -5,4 +5,4 @@
 [submodule "graphhopper"]
 	path = graphhopper
 	url = https://github.com/graphhopper/graphhopper
-        branch = ios_compatibility
+	branch = ios_compatibility
