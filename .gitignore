@@ -8,6 +8,4 @@ xcuserdata
 *~
 *.swp
 node_modules
-dependencies/jts
-dependencies/hppc
 class.list

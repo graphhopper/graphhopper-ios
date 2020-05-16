@@ -6,3 +6,9 @@
 	path = graphhopper
 	url = https://github.com/graphhopper/graphhopper
 	branch = ios_compatibility
+[submodule "dependencies/hppc"]
+	path = dependencies/hppc
+	url = https://github.com/carrotsearch/hppc/
+[submodule "dependencies/jts"]
+	path = dependencies/jts
+	url = https://github.com/locationtech/jts.git
