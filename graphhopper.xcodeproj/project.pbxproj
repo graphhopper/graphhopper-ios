@@ -95,7 +95,7 @@
 /* Begin PBXLegacyTarget section */
 		FAF57F741A04E10C00340FDB /* graphhopper */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "$(ACTION) -j3";
+			buildArgumentsString = "$(ACTION) -j6";
 			buildConfigurationList = FAF57F751A04E10C00340FDB /* Build configuration list for PBXLegacyTarget "graphhopper" */;
 			buildPhases = (
 			);

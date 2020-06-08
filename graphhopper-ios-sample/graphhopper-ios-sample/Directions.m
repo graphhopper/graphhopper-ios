@@ -10,10 +10,10 @@
 #import "MBXMapKit.h"
 
 #import "com/graphhopper/GraphHopper.h"
-#import "com/graphhopper/config/ProfileConfig.h"
-#import "com/graphhopper/config/CHProfileConfig.h"
+#import "com/graphhopper/config/Profile.h"
+#import "com/graphhopper/config/CHProfile.h"
 #import "com/graphhopper/routing/ch/CHPreparationHandler.h"
-#import "com/graphhopper/PathWrapper.h"
+#import "com/graphhopper/ResponsePath.h"
 #import "com/graphhopper/routing/util/EncodingManager.h"
 #import "com/graphhopper/GHRequest.h"
 #import "com/graphhopper/GHResponse.h"
@@ -80,24 +80,24 @@
     if (!_hopper) {
         
         NSString *location = [[NSBundle mainBundle] pathForResource:@"graph-data" ofType:@"osm-gh"];
+        NSLog(@"LOC %@\n", location);
         _hopper = [[GraphHopper alloc] init];
         [_hopper forMobile];
         
-        ComGraphhopperConfigProfileConfig *profile = [[ComGraphhopperConfigProfileConfig alloc] initWithNSString:@"car"];
+        ComGraphhopperConfigProfile *profile = [[ComGraphhopperConfigProfile alloc] initWithNSString:@"car"];
           [ profile setVehicleWithNSString:@"car"];
           [ profile setWeightingWithNSString:@"fastest"];
-        ComGraphhopperConfigProfileConfig *profiles[] = { profile };
+        ComGraphhopperConfigProfile *profiles[] = { profile };
             
-        IOSObjectArray *ar = [ IOSObjectArray newArrayWithObjects:profiles count:1 type:[ComGraphhopperConfigProfileConfig java_getClass]];
+        IOSObjectArray *ar = [ IOSObjectArray newArrayWithObjects:profiles count:1 type:[ComGraphhopperConfigProfile java_getClass]];
         
-        [ _hopper setProfilesWithComGraphhopperConfigProfileConfigArray:ar ];
-        ComGraphhopperConfigCHProfileConfig *chPC[] = {[[ComGraphhopperConfigCHProfileConfig alloc ] initWithNSString:@"car" ]};
+        [ _hopper setProfilesWithComGraphhopperConfigProfileArray:ar ];
+        ComGraphhopperConfigCHProfile *chPC[] = {[[ComGraphhopperConfigCHProfile alloc ] initWithNSString:@"car" ]};
         CHPreparationHandler * chPH = [ _hopper getCHPreparationHandler ];
         
-        IOSObjectArray *CHar = [ IOSObjectArray newArrayWithObjects:chPC count:1 type:[ComGraphhopperConfigCHProfileConfig java_getClass]];
+        IOSObjectArray *CHar = [ IOSObjectArray newArrayWithObjects:chPC count:1 type:[ComGraphhopperConfigCHProfile java_getClass]];
         
-        [ chPH setCHProfileConfigsWithComGraphhopperConfigCHProfileConfigArray: CHar];
-        
+        [ chPH setCHProfilesWithComGraphhopperConfigCHProfileArray: CHar];
         [_hopper load__WithNSString:location];
     }
     return _hopper;
@@ -132,7 +132,7 @@
         }
         routeInfo = [routeInfo stringByAppendingString:[NSString stringWithFormat:@"%@", [response getDebugInfo]]];
         
-        PathWrapper *best = [response getBest];
+        ResponsePath *best = [response getBest];
         PointList *points = [best getPoints];
         NSLog(@"Route consists of %d points.", [points getSize]);
         

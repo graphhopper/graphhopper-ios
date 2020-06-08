@@ -24,10 +24,11 @@ To get started run the following commands in Terminal:
 git clone --recursive https://github.com/graphhopper/graphhopper-ios.git
 cd graphhopper-ios
 make class.list
+make translate
 open graphhopper-ios-sample/graphhopper-ios-sample.xcodeproj
 ```
 
-Switch to graphhopper project build (two times, first time usually gives error)
+Switch to graphhopper project build
 Switch to graphhoppper-ios-sample -> build (two times, first time usually gives error)
  
 
