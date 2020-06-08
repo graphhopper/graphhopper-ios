@@ -7,6 +7,10 @@ public class LoggerFactory {
             public void info(String str) {
                log("INFO", str, null);
             }
+
+	    public void info(String format, Object... arguments) {
+                log("INFO", format, null);
+            }
             
             public void warn(String str, Throwable t) {
                 log("WARN", str, t);
@@ -27,12 +31,24 @@ public class LoggerFactory {
             public void error(String str) {
                 log("ERROR", str, null);
             }
+ 
+            public void trace(String str) {
+                log("TRACE", str, null);
+            }
+
+            public void trace(String format, Object... arguments) {
+                log("TRACE", format, null);
+            }
+
+            public void debug(String format, Object... arguments) {
+                log("DEBUG", format, null);
+            }
             
             public void log(String type, String message, Throwable t) {
                if(t == null)
                  System.out.println(new java.util.Date().toString() + " " + type + " " + message);
                else
-                 System.out.println(new java.util.Date().toString() + " " + type + " " + message + " " + t.toString());                                  
+                 System.out.println(new java.util.Date().toString() + " " + type + " " + message + " " + t.toString());
             }
         };
     }

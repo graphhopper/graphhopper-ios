@@ -1,6 +1,7 @@
 s|graphhopper/core/src/main/java/||
-s|graphhopper/tools-lgpl/src/main/java/||
+s|graphhopper/api/src/main/java/||
 s|dependencies/fake_slf4j/src/||
-s|dependencies/hppc/||
+s|dependencies/hppc/hppc/src/main/java/||
+s|dependencies/hppc/hppc/target/generated-sources/main/java/||
 s|dependencies/jackson-annotations/||
-s|dependencies/jts/||
+s|dependencies/jts/modules/core/src/main/java/||
