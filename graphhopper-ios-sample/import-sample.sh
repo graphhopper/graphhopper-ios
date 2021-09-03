@@ -2,7 +2,7 @@
 
 cd graphhopper
 if [ -z ${FILE+x} ]; then
-  FILE="romania-latest.osm.pbf"
+  FILE="isle-of-man-latest.osm.pbf"
 fi
 GRAPH_FILE="graph-data.osm.pbf"
 if [ ! -e $FILE ] && [ ! -e $GRAPH_FILE ]; then
@@ -13,8 +13,6 @@ if [ ! -e $GRAPH_FILE ]; then
   mv $FILE $GRAPH_FILE
 fi
 rm -rf $(expr $GRAPH_FILE : '\([^\.]*\)\.')".osm-gh"
-git checkout origin/master
 ./graphhopper.sh import $GRAPH_FILE
-git checkout ios-compat
 cd ..
 touch class.list

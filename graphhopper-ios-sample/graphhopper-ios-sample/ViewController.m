@@ -128,6 +128,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [_mapView setCenterCoordinate: CLLocationCoordinate2DMake(54.185386, -4.564190) animated: true];
+}
+
 #pragma mark - Things for switching between maps
 
 - (UIActionSheet *)universalActionSheet
