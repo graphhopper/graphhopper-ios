@@ -1,14 +1,13 @@
 [submodule "graphhopper-ios-sample/mbxmapkit"]
 	path = graphhopper-ios-sample/mbxmapkit
 	url = https://github.com/mapbox/mbxmapkit
-
-[submodule "graphhopper"]
-	path = graphhopper
-	url = https://github.com/graphhopper/graphhopper
-	branch = ios_compatibility
 [submodule "dependencies/hppc"]
 	path = dependencies/hppc
 	url = https://github.com/carrotsearch/hppc/
 [submodule "dependencies/jts"]
 	path = dependencies/jts
 	url = https://github.com/locationtech/jts.git
+[submodule "graphhopper"]
+	path = graphhopper
+	url = https://github.com/OlKir/graphhopper.git
+        branch = ios_compatibility_1_0
