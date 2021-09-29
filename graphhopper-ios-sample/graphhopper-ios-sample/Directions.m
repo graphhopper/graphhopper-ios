@@ -19,6 +19,8 @@
 #import "com/graphhopper/GHResponse.h"
 #import "com/graphhopper/util/PointList.h"
 #import "com/graphhopper/storage/GraphStorage.h"
+#import "com/graphhopper/util/TranslationMap.h"
+#include "java/io/File.h"
 
 @interface Directions ()
 
@@ -78,10 +80,12 @@
 - (GraphHopper *)hopper
 {
     if (!_hopper) {
-        
-        NSString *location = [[NSBundle mainBundle] pathForResource:@"graph-data" ofType:@"osm-gh"];
-        NSLog(@"LOC %@\n", location);
-        _hopper = [[GraphHopper alloc] init];
+      
+        NSString *folderPath = [[NSBundle mainBundle] resourcePath];
+        JavaIoFile *localizationsFolder = create_JavaIoFile_initWithNSString_(JreStrcat("$", folderPath));
+        TranslationMap *translationMap = [create_TranslationMap_init() doImportWithJavaIoFile: localizationsFolder];
+      
+        _hopper = [[GraphHopper alloc] initWithTranslationMap: translationMap];
         [_hopper forMobile];
         
         ComGraphhopperConfigProfile *profile = [[ComGraphhopperConfigProfile alloc] initWithNSString:@"car"];
@@ -99,6 +103,9 @@
         [ chPH setCHProfilesWithComGraphhopperConfigCHProfileArray: CHar];
       
         [_hopper setAllowWritesWithBoolean: false];
+      
+        NSString *location = [[NSBundle mainBundle] pathForResource:@"graph-data" ofType:@"osm-gh"];
+        NSLog(@"LOC %@\n", location);
         [_hopper load__WithNSString:location];
     }
     return _hopper;
