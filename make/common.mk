@@ -9,7 +9,8 @@ ARCH_INCLUDE_DIR = $(ARCH_BUILD_DIR)/include
 endif
 
 ifndef J2OBJC_ARCHS
-J2OBJC_ARCHS = macosx iphone iphone64 iphonev7s simulator
+# Possible architectures: macosx iphone iphone64 iphonev7s simulator
+J2OBJC_ARCHS = iphone64 simulator
 endif
 
 # xcrun finds a specified tool in the current SDK /usr/bin directory.
