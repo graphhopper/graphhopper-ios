@@ -9,7 +9,8 @@ ARCH_INCLUDE_DIR = $(ARCH_BUILD_DIR)/include
 endif
 
 ifndef J2OBJC_ARCHS
-J2OBJC_ARCHS = macosx iphone iphone64 iphonev7s simulator
+# Possible architectures: macosx iphone iphone64 iphonev7s simulator
+J2OBJC_ARCHS = iphone64 simulator
 endif
 
 # xcrun finds a specified tool in the current SDK /usr/bin directory.
@@ -34,13 +35,6 @@ ifndef CONFIGURATION_BUILD_DIR
 SDKROOT := $(shell bash ${SYSROOT_SCRIPT})
 endif
 
-# Xcode seems to set ARCHS incorrectly in command-line builds when the only
-# active architecture setting is on. Use NATIVE_ARCH instead.
-ifeq ($(ONLY_ACTIVE_ARCH), YES)
-ifdef NATIVE_ARCH
-ARCHS = $(NATIVE_ARCH)
-endif
-endif
 ARCH_FLAGS = $(ARCHS:%=-arch %)
 
 ifeq ($(DEBUGGING_SYMBOLS), YES)

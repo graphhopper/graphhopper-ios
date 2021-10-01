@@ -2,4 +2,5 @@
  
  * [clns](https://github.com/clns/), maintainer of GraphHopper-iOS
  * karussell, minor improvements
+ * OlKir, updating iOS code and project for v1.0 compatibility
  * spirossi, initial work

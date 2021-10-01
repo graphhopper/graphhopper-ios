@@ -2,30 +2,41 @@ graphhopper-ios
 ===============
 
 graphhopper-ios wraps [graphhopper](https://github.com/graphhopper/graphhopper/) 
-and creates the `libgraphhopper.a` library to be used on iOS and OS X. 
+and creates the `libgraphhopper.a` library to be used on iOS. 
+Theoretically it should be possible to include other architectures, but for example MacOS currently doesn't work. 
+
 It uses [j2objc](https://github.com/google/j2objc) to translate the .java sources 
 into Objective-C.
 
 > **Disclaimer:** This is experimental so treat it accordingly. [Feel free to help](CONTRIBUTING.md) in any way.
+
+
+## Prerequistes
+JDK 8 (Yes, jts source needs JDK 8), recommended is AdoptOpenJDK8
+Maven 
+XCode 11.4+ (works with XCode 13)
 
 ## Getting Started
 
 To get started run the following commands in Terminal:
 
 ```sh
-git clone --recursive https://github.com/graphhopper/graphhopper-ios.git
+git clone https://github.com/graphhopper/graphhopper-ios.git
 cd graphhopper-ios
+git submodule init
+git submodule update
+make cleanall
+make class.list
+make translate
+make
+./graphhopper-ios-sample/import-sample.sh
+open graphhopper-ios-sample/graphhopper-ios-sample.xcodeproj
 ```
 
-This will clone the repository and all its submodules. Now you are ready 
-to use GraphHopper on iOS or OS X.
+Switch scheme to graphhoppper-ios-sample and run against Simulator or the real device
+(requires Apple Developer account and signing setup in place).
 
-You have two options:
-
-1. Head over to [graphhopper-ios-sample](graphhopper-ios-sample) 
-and follow the instructions there. This is the easiest way to get started.
-
-2. Manually add *graphhopper.xcodeproj* to your Xcode project. See the Usage section below.
+To integrate GraphHopper in your project see Usage section below.
  
 ## Community
 
@@ -33,9 +44,10 @@ Feel free to raise problems or questions in [our forum](https://discuss.graphhop
 
 ## Usage
 
-You can either add *graphhopper.xcodeproj* to your project and let Xcode compile the library 
-or you can compile it from the Terminal and then add the library and sources
-to your Xcode project.
+- You can add *graphhopper.xcodeproj* as subproject to your project (see details in Xcode section).
+- Or you can compile it as fat library (libgraphhopper.a) using `make` and add it and necessary interface files to your project.
+Current setup includes Simulator (x86_64) and iPhone 5s and higher (arm64) architectures. 
+Not checked on Apple Silicon, although arm64 should cover it (see other details in Terminal section). 
 
 ### Xcode
 
@@ -62,13 +74,13 @@ You're now ready to use GraphHopper on iOS and OS X.
 
 ### Terminal
 
-Alternatively, you can translate and compile the library by invoking `make` 
-in the Terminal. You can then link the library 
-`graphhopper-ios/build/libgraphhopper.a` and it's header files at `graphhopper-ios/src` 
+Alternatively, you can translate and compile the library by invoking `make`  in the Terminal.
+You can modify `common.mk` and `library.mk` to include all necessary arhitectures. This article provides
+good overview of options: https://docs.elementscompiler.com/Platforms/Cocoa/CpuArchitectures/ 
+Then link the library `graphhopper-ios/build/libgraphhopper.a` and it's header files at `graphhopper-ios/src` 
 manually into your project. For all the other configurations see the Xcode section above.
 
-> This method compiles the library for the following architectures: 
-macosx, simulator, iphoneos, so using Xcode instead is recommended.
+> By default this method compiles the library for the following architectures: simulator, iphoneos.
 
 ## Example
 
@@ -76,9 +88,9 @@ macosx, simulator, iphoneos, so using Xcode instead is recommended.
 
 ## Requirements
 
-* iOS 7.0+ or OS X 10.10 (it might work on older versions but haven't tested)
-* JDK 1.7 or higher
-* Xcode 6.0 or higher
+* iOS 11.0+ or OS X 10.10 (it might work on older versions but haven't tested)
+* JDK 1.8 or higher
+* Xcode 11.0 or higher
 
 ## Troubleshooting
 
@@ -89,3 +101,12 @@ If you run into problems, you can try one of the following:
   * `make clean` - will delete the /graphhopper-ios/build directory
   * `make cleanall` - if the first one didn't do it, this will delete everything 
 related to the build process (you then need to run `make class.list`)
+
+## Refresh Code
+
+The dependencies j2objc, hppc and jts should be downloaded automatically if not present. You can force to reload by removing them: 
+
+```rm -rf dependencies/hppc dependencies/jts j2objc
+make dependencies/hppc dependencies/jts j2objc
+```
+

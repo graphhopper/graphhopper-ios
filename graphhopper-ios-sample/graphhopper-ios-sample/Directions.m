@@ -10,12 +10,17 @@
 #import "MBXMapKit.h"
 
 #import "com/graphhopper/GraphHopper.h"
-#import "com/graphhopper/PathWrapper.h"
+#import "com/graphhopper/config/Profile.h"
+#import "com/graphhopper/config/CHProfile.h"
+#import "com/graphhopper/routing/ch/CHPreparationHandler.h"
+#import "com/graphhopper/ResponsePath.h"
 #import "com/graphhopper/routing/util/EncodingManager.h"
 #import "com/graphhopper/GHRequest.h"
 #import "com/graphhopper/GHResponse.h"
 #import "com/graphhopper/util/PointList.h"
 #import "com/graphhopper/storage/GraphStorage.h"
+#import "com/graphhopper/util/TranslationMap.h"
+#include "java/io/File.h"
 
 @interface Directions ()
 
@@ -35,8 +40,8 @@
         _mapView = view;
         _textView = textView;
         
-        CLLocationCoordinate2D brasov = CLLocationCoordinate2DMake(45.651796, 25.6125);
-        [_mapView mbx_setCenterCoordinate:brasov zoomLevel:10 animated:NO];
+        CLLocationCoordinate2D tuebingen = CLLocationCoordinate2DMake(48.523, 9.048);
+        [_mapView mbx_setCenterCoordinate:tuebingen zoomLevel:10 animated:NO];
         
         UILongPressGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
         gesture.minimumPressDuration = 1;
@@ -75,14 +80,32 @@
 - (GraphHopper *)hopper
 {
     if (!_hopper) {
-        
-        NSString *location = [[NSBundle mainBundle] pathForResource:@"graph-data" ofType:@"osm-gh"];
-        
-        _hopper = [[GraphHopper alloc] init];
-        [_hopper setCHEnableWithBoolean:YES];
-        [_hopper setAllowWritesWithBoolean:NO];
-        [_hopper setEncodingManagerWithEncodingManager:[[EncodingManager alloc] initWithNSString:@"car"]];
+      
+        NSString *folderPath = [[NSBundle mainBundle] resourcePath];
+        JavaIoFile *localizationsFolder = create_JavaIoFile_initWithNSString_(JreStrcat("$", folderPath));
+        TranslationMap *translationMap = [create_TranslationMap_init() doImportWithJavaIoFile: localizationsFolder];
+      
+        _hopper = [[GraphHopper alloc] initWithTranslationMap: translationMap];
         [_hopper forMobile];
+        
+        ComGraphhopperConfigProfile *profile = [[ComGraphhopperConfigProfile alloc] initWithNSString:@"car"];
+          [ profile setVehicleWithNSString:@"car"];
+          [ profile setWeightingWithNSString:@"fastest"];
+        ComGraphhopperConfigProfile *profiles[] = { profile };
+            
+        IOSObjectArray *ar = [ IOSObjectArray newArrayWithObjects:profiles count:1 type:[ComGraphhopperConfigProfile java_getClass]];
+        
+        [ _hopper setProfilesWithComGraphhopperConfigProfileArray:ar];
+        ComGraphhopperConfigCHProfile *chPC[] = {[[ComGraphhopperConfigCHProfile alloc ] initWithNSString:@"car" ]};
+        CHPreparationHandler * chPH = [ _hopper getCHPreparationHandler];
+        
+        IOSObjectArray *CHar = [ IOSObjectArray newArrayWithObjects:chPC count:1 type:[ComGraphhopperConfigCHProfile java_getClass]];
+        [ chPH setCHProfilesWithComGraphhopperConfigCHProfileArray: CHar];
+      
+        [_hopper setAllowWritesWithBoolean: false];
+      
+        NSString *location = [[NSBundle mainBundle] pathForResource:@"graph-data" ofType:@"osm-gh"];
+        NSLog(@"LOC %@\n", location);
         [_hopper load__WithNSString:location];
     }
     return _hopper;
@@ -107,8 +130,9 @@
                                                     withDouble:point1.coordinate.longitude
                                                     withDouble:point2.coordinate.latitude
                                                     withDouble:point2.coordinate.longitude];
+        [[ request setAlgorithmWithNSString:@"dijkstrabi"] setProfileWithNSString:@"car" ];
         GHResponse *response = [self.hopper routeWithGHRequest:request];
-        
+            
         NSString *routeInfo = @"";
         if ([response hasErrors]) {
             NSLog(@"%@", [response getErrors]);
@@ -116,7 +140,7 @@
         }
         routeInfo = [routeInfo stringByAppendingString:[NSString stringWithFormat:@"%@", [response getDebugInfo]]];
         
-        PathWrapper *best = [response getBest];
+        ResponsePath *best = [response getBest];
         PointList *points = [best getPoints];
         NSLog(@"Route consists of %d points.", [points getSize]);
         
